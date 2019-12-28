@@ -1,0 +1,1 @@
+C:\swig\swig.exe -I"./src/vendor/mga/src/" -I"./src/vendor/mga/src/library/" -I"./src/vendor/mga/src/aal/" -I"./src/vendor/mga/src/aal/windows/" -I"./src/vendor/mga/src/aal/windows/accessible.wr/" -w-205,-503 -cpperraswarn -includeall -ignoremissing -javascript -node -module node_aal -c++ -v -o src/windows/mga-aal.cc src/windows/mga-aal.i
