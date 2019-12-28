@@ -157,9 +157,9 @@ template <typename T> T SwigValueInit() {
 
 
 
-#define SWIG_exception_fail(code, msg) do { SWIG_Error(code, msg); SWIG_fail; } while(0)
+#define SWIG_exception_fail(code, msg) do { SWIG_Error(code, msg); SWIG_fail; } while(0) 
 
-#define SWIG_contract_assert(expr, msg) if (!(expr)) { SWIG_Error(SWIG_RuntimeError, msg); SWIG_fail; } else
+#define SWIG_contract_assert(expr, msg) if (!(expr)) { SWIG_Error(SWIG_RuntimeError, msg); SWIG_fail; } else 
 
 
 
@@ -963,7 +963,7 @@ public:
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
     handle.ClearWeak();
     handle.Dispose();
-#else
+#else    
     handle.ClearWeak();
     handle.Reset();
 #endif
@@ -1141,7 +1141,7 @@ SWIGRUNTIME void SWIGV8_SetPrivateData(v8::Handle<v8::Object> obj, void *ptr, sw
 
 SWIGRUNTIME int SWIG_V8_ConvertPtr(v8::Handle<v8::Value> valRef, void **ptr, swig_type_info *info, int flags) {
   SWIGV8_HANDLESCOPE();
-
+  
   /* special case: JavaScript null => C NULL pointer */
   if(valRef->IsNull()) {
     *ptr=0;
@@ -1156,13 +1156,13 @@ SWIGRUNTIME int SWIG_V8_ConvertPtr(v8::Handle<v8::Value> valRef, void **ptr, swi
 
 SWIGRUNTIME v8::Handle<v8::Value> SWIG_V8_NewPointerObj(void *ptr, swig_type_info *info, int flags) {
   SWIGV8_HANDLESCOPE_ESC();
-
+  
   v8::Handle<v8::FunctionTemplate> class_templ;
 
   if (ptr == NULL) {
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
     SWIGV8_ESCAPE(SWIGV8_NULL());
-#else
+#else    
     v8::Local<v8::Primitive> result = SWIGV8_NULL();
     SWIGV8_ESCAPE(result);
 #endif
@@ -1204,7 +1204,7 @@ SWIGRUNTIME v8::Handle<v8::Value> SWIG_V8_NewPointerObj(void *ptr, swig_type_inf
 
 SWIGRUNTIME SwigV8ReturnValue _SWIGV8_wrap_equals(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   void *arg1 = (void *) 0 ;
   void *arg2 = (void *) 0 ;
@@ -1234,7 +1234,7 @@ fail:
 
 SWIGRUNTIME SwigV8ReturnValue _wrap_getCPtr(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   void *arg1 = (void *) 0 ;
   long result;
@@ -1276,7 +1276,7 @@ public:
 SWIGRUNTIMEINLINE
 int SwigV8Packed_Check(v8::Handle<v8::Value> valRef) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> objRef = SWIGV8_TO_OBJECT(valRef);
   if(objRef->InternalFieldCount() < 1) return false;
 #if (V8_MAJOR_VERSION-0) < 5
@@ -1294,7 +1294,7 @@ SWIGRUNTIME
 swig_type_info *SwigV8Packed_UnpackData(v8::Handle<v8::Value> valRef, void *ptr, size_t size) {
   if (SwigV8Packed_Check(valRef)) {
     SWIGV8_HANDLESCOPE();
-
+    
     SwigV8PackedData *sobj;
 
     v8::Handle<v8::Object> objRef = SWIGV8_TO_OBJECT(valRef);
@@ -1432,13 +1432,13 @@ v8::Handle<v8::Value> SWIGV8_AppendOutput(v8::Handle<v8::Value> result, v8::Hand
 v8::Handle<v8::Value> SWIGV8_AppendOutput(v8::Local<v8::Value> result, v8::Handle<v8::Value> obj) {
 #endif
   SWIGV8_HANDLESCOPE_ESC();
-
+  
   if (result->IsUndefined()) {
     result = SWIGV8_ARRAY_NEW();
   }
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
   v8::Handle<v8::Array> arr = v8::Handle<v8::Array>::Cast(result);
-#else
+#else  
   v8::Local<v8::Array> arr = v8::Local<v8::Array>::Cast(result);
 #endif
   arr->Set(arr->Length(), obj);
@@ -1471,7 +1471,7 @@ typedef v8::PropertyCallbackInfo<void>  SwigV8PropertyCallbackInfoVoid;
  */
 SWIGRUNTIME v8::Handle<v8::FunctionTemplate> SWIGV8_CreateClassTemplate(const char* symbol) {
     SWIGV8_HANDLESCOPE_ESC();
-
+    
     v8::Local<v8::FunctionTemplate> class_templ = SWIGV8_FUNCTEMPLATE_NEW_VOID();
     class_templ->SetClassName(SWIGV8_SYMBOL_NEW(symbol));
 
@@ -1569,47 +1569,63 @@ fail: ;
 #define SWIGTYPE_p_CGMouseButton swig_types[5]
 #define SWIGTYPE_p_CGPoint swig_types[6]
 #define SWIGTYPE_p_CGWindowID swig_types[7]
-#define SWIGTYPE_p_HighlightWindow swig_types[8]
-#define SWIGTYPE_p_NSColor swig_types[9]
-#define SWIGTYPE_p_aal__Accessible swig_types[10]
-#define SWIGTYPE_p_aal__AccessibleAction swig_types[11]
-#define SWIGTYPE_p_aal__AccessibleDetails swig_types[12]
-#define SWIGTYPE_p_aal__AccessibleProperty swig_types[13]
-#define SWIGTYPE_p_aal__TextRange swig_types[14]
-#define SWIGTYPE_p_char swig_types[15]
-#define SWIGTYPE_p_difference_type swig_types[16]
-#define SWIGTYPE_p_geometry__Point swig_types[17]
-#define SWIGTYPE_p_geometry__Rectangle swig_types[18]
-#define SWIGTYPE_p_geometry__Size swig_types[19]
-#define SWIGTYPE_p_mga__SerializableObject swig_types[20]
-#define SWIGTYPE_p_mga__Utilities swig_types[21]
-#define SWIGTYPE_p_size_type swig_types[22]
-#define SWIGTYPE_p_std__chrono__milliseconds swig_types[23]
-#define SWIGTYPE_p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t swig_types[24]
-#define SWIGTYPE_p_std__functionT_void_fmga__JSClass_RF_t swig_types[25]
-#define SWIGTYPE_p_std__functionT_void_fmga__JSExport_p_mga__JSValues_RF_t swig_types[26]
-#define SWIGTYPE_p_std__functionT_void_fmga__JSObject_RF_t swig_types[27]
-#define SWIGTYPE_p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t swig_types[28]
-#define SWIGTYPE_p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t swig_types[29]
-#define SWIGTYPE_p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t swig_types[30]
-#define SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t swig_types[31]
-#define SWIGTYPE_p_std__setT_size_t_t swig_types[32]
-#define SWIGTYPE_p_std__setT_std__string_t swig_types[33]
-#define SWIGTYPE_p_std__shared_ptrT_std__vectorT_std__string_t_t swig_types[34]
-#define SWIGTYPE_p_std__string swig_types[35]
-#define SWIGTYPE_p_std__unique_ptrT_aal__Accessible_t swig_types[36]
-#define SWIGTYPE_p_std__unique_ptrT_mga__UIElement_t swig_types[37]
-#define SWIGTYPE_p_std__vectorT_CFStringRef_t swig_types[38]
-#define SWIGTYPE_p_std__vectorT_CGKeyCode_t swig_types[39]
-#define SWIGTYPE_p_std__vectorT_aal__AccessibleAction_t swig_types[40]
-#define SWIGTYPE_p_std__vectorT_aal__AccessibleProperty_t swig_types[41]
-#define SWIGTYPE_p_std__vectorT_aal__AccessibleRef_t swig_types[42]
-#define SWIGTYPE_p_std__vectorT_std__string_t swig_types[43]
-#define SWIGTYPE_p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t swig_types[44]
-#define SWIGTYPE_p_std__wstring swig_types[45]
-#define SWIGTYPE_p_value_type swig_types[46]
-static swig_type_info *swig_types[48];
-static swig_module_info swig_module = {swig_types, 47, 0, 0, 0, 0};
+#define SWIGTYPE_p_CPPCONN_PUBLIC_FUNC swig_types[8]
+#define SWIGTYPE_p_HighlightWindow swig_types[9]
+#define SWIGTYPE_p_NSColor swig_types[10]
+#define SWIGTYPE_p_SQLString swig_types[11]
+#define SWIGTYPE_p_aal__Accessible swig_types[12]
+#define SWIGTYPE_p_aal__AccessibleAction swig_types[13]
+#define SWIGTYPE_p_aal__AccessibleDetails swig_types[14]
+#define SWIGTYPE_p_aal__AccessibleProperty swig_types[15]
+#define SWIGTYPE_p_aal__TextRange swig_types[16]
+#define SWIGTYPE_p_char swig_types[17]
+#define SWIGTYPE_p_difference_type swig_types[18]
+#define SWIGTYPE_p_geometry__Point swig_types[19]
+#define SWIGTYPE_p_geometry__Rectangle swig_types[20]
+#define SWIGTYPE_p_geometry__Size swig_types[21]
+#define SWIGTYPE_p_mga__SerializableObject swig_types[22]
+#define SWIGTYPE_p_mga__Utilities swig_types[23]
+#define SWIGTYPE_p_size_type swig_types[24]
+#define SWIGTYPE_p_sql__Connection swig_types[25]
+#define SWIGTYPE_p_sql__DatabaseMetaData swig_types[26]
+#define SWIGTYPE_p_sql__ResultSet swig_types[27]
+#define SWIGTYPE_p_sql__ResultSet__enum_type swig_types[28]
+#define SWIGTYPE_p_sql__SQLString swig_types[29]
+#define SWIGTYPE_p_sql__SQLWarning swig_types[30]
+#define SWIGTYPE_p_sql__Savepoint swig_types[31]
+#define SWIGTYPE_p_sql__Statement swig_types[32]
+#define SWIGTYPE_p_sql__Variant swig_types[33]
+#define SWIGTYPE_p_sql__transaction_isolation swig_types[34]
+#define SWIGTYPE_p_std__chrono__milliseconds swig_types[35]
+#define SWIGTYPE_p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t swig_types[36]
+#define SWIGTYPE_p_std__functionT_void_fmga__JSClass_RF_t swig_types[37]
+#define SWIGTYPE_p_std__functionT_void_fmga__JSExport_p_mga__JSValues_RF_t swig_types[38]
+#define SWIGTYPE_p_std__functionT_void_fmga__JSObject_RF_t swig_types[39]
+#define SWIGTYPE_p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t swig_types[40]
+#define SWIGTYPE_p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t swig_types[41]
+#define SWIGTYPE_p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t swig_types[42]
+#define SWIGTYPE_p_std__listT_int_t swig_types[43]
+#define SWIGTYPE_p_std__listT_sql__SQLString_t swig_types[44]
+#define SWIGTYPE_p_std__mapT_sql__SQLString_sql__Variant_std__lessT_sql__SQLString_t_t swig_types[45]
+#define SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t swig_types[46]
+#define SWIGTYPE_p_std__setT_size_t_t swig_types[47]
+#define SWIGTYPE_p_std__setT_std__string_t swig_types[48]
+#define SWIGTYPE_p_std__shared_ptrT_std__vectorT_std__string_t_t swig_types[49]
+#define SWIGTYPE_p_std__string swig_types[50]
+#define SWIGTYPE_p_std__unique_ptrT_aal__Accessible_t swig_types[51]
+#define SWIGTYPE_p_std__unique_ptrT_mga__UIElement_t swig_types[52]
+#define SWIGTYPE_p_std__vectorT_CFStringRef_t swig_types[53]
+#define SWIGTYPE_p_std__vectorT_CGKeyCode_t swig_types[54]
+#define SWIGTYPE_p_std__vectorT_aal__AccessibleAction_t swig_types[55]
+#define SWIGTYPE_p_std__vectorT_aal__AccessibleProperty_t swig_types[56]
+#define SWIGTYPE_p_std__vectorT_aal__AccessibleRef_t swig_types[57]
+#define SWIGTYPE_p_std__vectorT_std__string_t swig_types[58]
+#define SWIGTYPE_p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t swig_types[59]
+#define SWIGTYPE_p_std__wstring swig_types[60]
+#define SWIGTYPE_p_uint64_t swig_types[61]
+#define SWIGTYPE_p_value_type swig_types[62]
+static swig_type_info *swig_types[64];
+static swig_module_info swig_module = {swig_types, 63, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -1617,12 +1633,12 @@ static swig_module_info swig_module = {swig_types, 47, 0, 0, 0, 0};
 
 
 
-#define SWIGVERSION 0x040001
+#define SWIGVERSION 0x040001 
 #define SWIG_VERSION SWIGVERSION
 
 
-#define SWIG_as_voidptr(a) const_cast< void * >(static_cast< const void * >(a))
-#define SWIG_as_voidptrptr(a) ((void)SWIG_as_voidptr(*a),reinterpret_cast< void** >(a))
+#define SWIG_as_voidptr(a) const_cast< void * >(static_cast< const void * >(a)) 
+#define SWIG_as_voidptrptr(a) ((void)SWIG_as_voidptr(*a),reinterpret_cast< void** >(a)) 
 
 
 #include <stdexcept>
@@ -1641,118 +1657,6 @@ v8::Handle<v8::Value> SWIG_From_int  (int value)
 }
 
 
-SWIGINTERN swig_type_info*
-SWIG_pchar_descriptor(void)
-{
-  static int init = 0;
-  static swig_type_info* info = 0;
-  if (!init) {
-    info = SWIG_TypeQuery("_p_char");
-    init = 1;
-  }
-  return info;
-}
-
-
-SWIGINTERNINLINE v8::Handle<v8::Value>
-SWIG_FromCharPtrAndSize(const char* carray, size_t size)
-{
-  if (carray) {
-    if (size > INT_MAX) {
-      // TODO: handle extra long strings
-      return SWIGV8_UNDEFINED();
-    } else {
-      v8::Handle<v8::String> js_str = SWIGV8_STRING_NEW2(carray, size);
-      return js_str;
-    }
-  } else {
-    return SWIGV8_UNDEFINED();
-  }
-}
-
-
-SWIGINTERNINLINE v8::Handle<v8::Value>
-SWIG_FromCharPtr(const char *cptr)
-{
-  return SWIG_FromCharPtrAndSize(cptr, (cptr ? strlen(cptr) : 0));
-}
-
-
-SWIGINTERNINLINE v8::Handle<v8::Value>
-SWIG_From_std_string  (const std::string& s)
-{
-  return SWIG_FromCharPtrAndSize(s.data(), s.size());
-}
-
-
-SWIGINTERN int
-SWIG_AsCharPtrAndSize(v8::Handle<v8::Value> valRef, char** cptr, size_t* psize, int *alloc)
-{
-  if(valRef->IsString()) {
-    v8::Handle<v8::String> js_str = SWIGV8_TO_STRING(valRef);
-
-    size_t len = SWIGV8_UTF8_LENGTH(js_str) + 1;
-    char* cstr = new char[len];
-    SWIGV8_WRITE_UTF8(js_str, cstr, len);
-
-    if(alloc) *alloc = SWIG_NEWOBJ;
-    if(psize) *psize = len;
-    if(cptr) *cptr = cstr;
-
-    return SWIG_OK;
-  } else {
-    if(valRef->IsObject()) {
-      v8::Handle<v8::Object> obj = SWIGV8_TO_OBJECT(valRef);
-      // try if the object is a wrapped char[]
-      swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
-      if (pchar_descriptor) {
-        void* vptr = 0;
-        if (SWIG_ConvertPtr(obj, &vptr, pchar_descriptor, 0) == SWIG_OK) {
-          if (cptr) *cptr = (char *) vptr;
-          if (psize) *psize = vptr ? (strlen((char *)vptr) + 1) : 0;
-          if (alloc) *alloc = SWIG_OLDOBJ;
-          return SWIG_OK;
-        }
-      }
-      return SWIG_TypeError;
-    } else {
-      return SWIG_TypeError;
-    }
-  }
-}
-
-
-SWIGINTERN int
-SWIG_AsPtr_std_string (v8::Handle<v8::Value> obj, std::string **val)
-{
-  char* buf = 0 ; size_t size = 0; int alloc = SWIG_OLDOBJ;
-  if (SWIG_IsOK((SWIG_AsCharPtrAndSize(obj, &buf, &size, &alloc)))) {
-    if (buf) {
-      if (val) *val = new std::string(buf, size - 1);
-      if (alloc == SWIG_NEWOBJ) delete[] buf;
-      return SWIG_NEWOBJ;
-    } else {
-      if (val) *val = 0;
-      return SWIG_OLDOBJ;
-    }
-  } else {
-    static int init = 0;
-    static swig_type_info* descriptor = 0;
-    if (!init) {
-      descriptor = SWIG_TypeQuery("std::string" " *");
-      init = 1;
-    }
-    if (descriptor) {
-      std::string *vptr;
-      int res = SWIG_ConvertPtr(obj, (void**)&vptr, descriptor, 0);
-      if (SWIG_IsOK(res) && val) *val = vptr;
-      return res;
-    }
-  }
-  return SWIG_ERROR;
-}
-
-
 SWIGINTERNINLINE
 v8::Handle<v8::Value>
 SWIG_From_bool  (bool value)
@@ -1761,19 +1665,76 @@ SWIG_From_bool  (bool value)
 }
 
 
-SWIGINTERN
-int SWIG_AsVal_int (v8::Handle<v8::Value> valRef, int* val)
+SWIGINTERNINLINE
+v8::Handle<v8::Value> SWIG_From_long  (long value)
 {
-  if (!valRef->IsNumber()) {
-    return SWIG_TypeError;
-  }
-  if(val) *val = SWIGV8_INTEGER_VALUE(valRef);
-
-  return SWIG_OK;
+  return SWIGV8_NUMBER_NEW(value);
 }
 
 
+SWIGINTERNINLINE
+v8::Handle<v8::Value> SWIG_From_unsigned_SS_long  (unsigned long value)
+{
+  return (value > LONG_MAX) ?
+    SWIGV8_INTEGER_NEW_UNS(value) : SWIGV8_INTEGER_NEW(static_cast< long >(value));
+}
 
+
+#include <limits.h>
+#if !defined(SWIG_NO_LLONG_MAX)
+# if !defined(LLONG_MAX) && defined(__GNUC__) && defined (__LONG_LONG_MAX__)
+#   define LLONG_MAX __LONG_LONG_MAX__
+#   define LLONG_MIN (-LLONG_MAX - 1LL)
+#   define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
+# endif
+#endif
+
+
+#if defined(LLONG_MAX) && !defined(SWIG_LONG_LONG_AVAILABLE)
+#  define SWIG_LONG_LONG_AVAILABLE
+#endif
+
+
+#ifdef SWIG_LONG_LONG_AVAILABLE
+SWIGINTERNINLINE
+v8::Handle<v8::Value> SWIG_From_long_SS_long  (long long value)
+{
+  return SWIGV8_NUMBER_NEW(value);
+}
+#endif
+
+
+#ifdef SWIG_LONG_LONG_AVAILABLE
+SWIGINTERNINLINE
+v8::Handle<v8::Value> SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
+{
+  return (value > LONG_MAX) ?
+    SWIGV8_INTEGER_NEW_UNS(value) : SWIGV8_INTEGER_NEW(static_cast< long >(value));
+}
+#endif
+
+
+SWIGINTERNINLINE v8::Handle<v8::Value>
+SWIG_From_size_t  (size_t value)
+{    
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  if (sizeof(size_t) <= sizeof(unsigned long)) {
+#endif
+    return SWIG_From_unsigned_SS_long  (static_cast< unsigned long >(value));
+#ifdef SWIG_LONG_LONG_AVAILABLE
+  } else {
+    /* assume sizeof(size_t) <= sizeof(unsigned long long) */
+    return SWIG_From_unsigned_SS_long_SS_long  (static_cast< unsigned long long >(value));
+  }
+#endif
+}
+
+
+SWIGINTERNINLINE v8::Handle<v8::Value>
+SWIG_From_unsigned_SS_int  (unsigned int value)
+{    
+  return SWIG_From_unsigned_SS_long  (value);
+}
 
 
 SWIGINTERN
@@ -1825,6 +1786,30 @@ SWIG_CanCastAsInteger(double *d, double min, double max) {
 
 
 SWIGINTERN
+int SWIG_AsVal_long (v8::Handle<v8::Value> obj, long* val)
+{
+  if (!obj->IsNumber()) {
+    return SWIG_TypeError;
+  }
+  if(val) *val = (long) SWIGV8_INTEGER_VALUE(obj);
+
+  return SWIG_OK;
+}
+
+
+SWIGINTERN
+int SWIG_AsVal_bool (v8::Handle<v8::Value> obj, bool *val)
+{
+  if(!obj->IsBoolean()) {
+    return SWIG_ERROR;
+  }
+
+  if (val) *val = SWIGV8_BOOLEAN_VALUE(obj);
+  return SWIG_OK;
+}
+
+
+SWIGINTERN
 int SWIG_AsVal_unsigned_SS_long (v8::Handle<v8::Value> obj, unsigned long *val)
 {
   if(!obj->IsNumber()) {
@@ -1841,21 +1826,6 @@ int SWIG_AsVal_unsigned_SS_long (v8::Handle<v8::Value> obj, unsigned long *val)
 
   return SWIG_OK;
 }
-
-
-#include <limits.h>
-#if !defined(SWIG_NO_LLONG_MAX)
-# if !defined(LLONG_MAX) && defined(__GNUC__) && defined (__LONG_LONG_MAX__)
-#   define LLONG_MAX __LONG_LONG_MAX__
-#   define LLONG_MIN (-LLONG_MAX - 1LL)
-#   define ULLONG_MAX (LLONG_MAX * 2ULL + 1ULL)
-# endif
-#endif
-
-
-#if defined(LLONG_MAX) && !defined(SWIG_LONG_LONG_AVAILABLE)
-#  define SWIG_LONG_LONG_AVAILABLE
-#endif
 
 
 #ifdef SWIG_LONG_LONG_AVAILABLE
@@ -1900,78 +1870,147 @@ SWIG_AsVal_size_t (v8::Handle<v8::Value> obj, size_t *val)
 }
 
 
-SWIGINTERNINLINE
-v8::Handle<v8::Value> SWIG_From_long  (long value)
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_int (v8::Handle<v8::Value> obj, unsigned int *val)
 {
-  return SWIGV8_NUMBER_NEW(value);
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v > UINT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< unsigned int >(v);
+    }
+  }  
+  return res;
 }
 
 
-SWIGINTERNINLINE
-v8::Handle<v8::Value> SWIG_From_unsigned_SS_long  (unsigned long value)
+SWIGINTERN
+int SWIG_AsVal_int (v8::Handle<v8::Value> valRef, int* val)
 {
-  return (value > LONG_MAX) ?
-    SWIGV8_INTEGER_NEW_UNS(value) : SWIGV8_INTEGER_NEW(static_cast< long >(value));
+  if (!valRef->IsNumber()) {
+    return SWIG_TypeError;
+  }
+  if(val) *val = SWIGV8_INTEGER_VALUE(valRef);
+
+  return SWIG_OK;
 }
 
 
-#ifdef SWIG_LONG_LONG_AVAILABLE
-SWIGINTERNINLINE
-v8::Handle<v8::Value> SWIG_From_long_SS_long  (long long value)
+SWIGINTERN swig_type_info*
+SWIG_pchar_descriptor(void)
 {
-  return SWIGV8_NUMBER_NEW(value);
+  static int init = 0;
+  static swig_type_info* info = 0;
+  if (!init) {
+    info = SWIG_TypeQuery("_p_char");
+    init = 1;
+  }
+  return info;
 }
-#endif
-
-
-#ifdef SWIG_LONG_LONG_AVAILABLE
-SWIGINTERNINLINE
-v8::Handle<v8::Value> SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
-{
-  return (value > LONG_MAX) ?
-    SWIGV8_INTEGER_NEW_UNS(value) : SWIGV8_INTEGER_NEW(static_cast< long >(value));
-}
-#endif
 
 
 SWIGINTERNINLINE v8::Handle<v8::Value>
-SWIG_From_size_t  (size_t value)
+SWIG_FromCharPtrAndSize(const char* carray, size_t size)
 {
-#ifdef SWIG_LONG_LONG_AVAILABLE
-  if (sizeof(size_t) <= sizeof(unsigned long)) {
-#endif
-    return SWIG_From_unsigned_SS_long  (static_cast< unsigned long >(value));
-#ifdef SWIG_LONG_LONG_AVAILABLE
+  if (carray) {
+    if (size > INT_MAX) {
+      // TODO: handle extra long strings
+      return SWIGV8_UNDEFINED();
+    } else {
+      v8::Handle<v8::String> js_str = SWIGV8_STRING_NEW2(carray, size);
+      return js_str;
+    }
   } else {
-    /* assume sizeof(size_t) <= sizeof(unsigned long long) */
-    return SWIG_From_unsigned_SS_long_SS_long  (static_cast< unsigned long long >(value));
+    return SWIGV8_UNDEFINED();
   }
-#endif
 }
 
 
-SWIGINTERN
-int SWIG_AsVal_long (v8::Handle<v8::Value> obj, long* val)
+SWIGINTERNINLINE v8::Handle<v8::Value> 
+SWIG_FromCharPtr(const char *cptr)
+{ 
+  return SWIG_FromCharPtrAndSize(cptr, (cptr ? strlen(cptr) : 0));
+}
+
+
+SWIGINTERNINLINE v8::Handle<v8::Value>
+SWIG_From_std_string  (const std::string& s)
 {
-  if (!obj->IsNumber()) {
-    return SWIG_TypeError;
-  }
-  if(val) *val = (long) SWIGV8_INTEGER_VALUE(obj);
-
-  return SWIG_OK;
+  return SWIG_FromCharPtrAndSize(s.data(), s.size());
 }
 
 
-SWIGINTERN
-int SWIG_AsVal_bool (v8::Handle<v8::Value> obj, bool *val)
+SWIGINTERN int
+SWIG_AsCharPtrAndSize(v8::Handle<v8::Value> valRef, char** cptr, size_t* psize, int *alloc)
 {
-  if(!obj->IsBoolean()) {
-    return SWIG_ERROR;
-  }
+  if(valRef->IsString()) {
+    v8::Handle<v8::String> js_str = SWIGV8_TO_STRING(valRef);
 
-  if (val) *val = SWIGV8_BOOLEAN_VALUE(obj);
-  return SWIG_OK;
+    size_t len = SWIGV8_UTF8_LENGTH(js_str) + 1;
+    char* cstr = new char[len];
+    SWIGV8_WRITE_UTF8(js_str, cstr, len);
+    
+    if(alloc) *alloc = SWIG_NEWOBJ;
+    if(psize) *psize = len;
+    if(cptr) *cptr = cstr;
+    
+    return SWIG_OK;
+  } else {
+    if(valRef->IsObject()) {
+      v8::Handle<v8::Object> obj = SWIGV8_TO_OBJECT(valRef);
+      // try if the object is a wrapped char[]
+      swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
+      if (pchar_descriptor) {
+        void* vptr = 0;
+        if (SWIG_ConvertPtr(obj, &vptr, pchar_descriptor, 0) == SWIG_OK) {
+          if (cptr) *cptr = (char *) vptr;
+          if (psize) *psize = vptr ? (strlen((char *)vptr) + 1) : 0;
+          if (alloc) *alloc = SWIG_OLDOBJ;
+          return SWIG_OK;
+        }
+      }
+      return SWIG_TypeError;
+    } else {
+      return SWIG_TypeError;
+    }
+  }
 }
+
+
+SWIGINTERN int
+SWIG_AsPtr_std_string (v8::Handle<v8::Value> obj, std::string **val) 
+{
+  char* buf = 0 ; size_t size = 0; int alloc = SWIG_OLDOBJ;
+  if (SWIG_IsOK((SWIG_AsCharPtrAndSize(obj, &buf, &size, &alloc)))) {
+    if (buf) {
+      if (val) *val = new std::string(buf, size - 1);
+      if (alloc == SWIG_NEWOBJ) delete[] buf;
+      return SWIG_NEWOBJ;
+    } else {
+      if (val) *val = 0;
+      return SWIG_OLDOBJ;
+    }
+  } else {
+    static int init = 0;
+    static swig_type_info* descriptor = 0;
+    if (!init) {
+      descriptor = SWIG_TypeQuery("std::string" " *");
+      init = 1;
+    }
+    if (descriptor) {
+      std::string *vptr;
+      int res = SWIG_ConvertPtr(obj, (void**)&vptr, descriptor, 0);
+      if (SWIG_IsOK(res) && val) *val = vptr;
+      return res;
+    }
+  }
+  return SWIG_ERROR;
+}
+
+
+
 
 
 SWIGINTERN
@@ -1984,6 +2023,9 @@ v8::Handle<v8::Value> SWIG_From_double   (double val)
 #define SWIGV8_INIT node_aal_initialize
 
 
+SWIGV8_ClientData _exports_Savepoint_clientData;
+SWIGV8_ClientData _exports_Statement_clientData;
+SWIGV8_ClientData _exports_DatabaseMetaData_clientData;
 SWIGV8_ClientData _exports_Utilities_clientData;
 SWIGV8_ClientData _exports_SerializableObject_clientData;
 SWIGV8_ClientData _exports_Point_clientData;
@@ -1997,18 +2039,9944 @@ SWIGV8_ClientData _exports_Accessible_clientData;
 
 
 #if (V8_MAJOR_VERSION-0) < 5
+static void _wrap_Driver_set(v8::Local<v8::String> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
+#else
+  static void _wrap_Driver_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    CPPCONN_PUBLIC_FUNC arg1 ;
+    void *argp1 ;
+    int res1 = 0 ;
+    
+    {
+      res1 = SWIG_ConvertPtr(value, &argp1, SWIGTYPE_p_CPPCONN_PUBLIC_FUNC,  0 );
+      if (!SWIG_IsOK(res1)) {
+        SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Driver_set" "', argument " "1"" of type '" "CPPCONN_PUBLIC_FUNC""'"); 
+      }  
+      if (!argp1) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Driver_set" "', argument " "1"" of type '" "CPPCONN_PUBLIC_FUNC""'");
+      } else {
+        arg1 = *(reinterpret_cast< CPPCONN_PUBLIC_FUNC * >(argp1));
+      }
+    }
+    sql::Driver = arg1;
+    
+    goto fail;
+  fail:
+    return;
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_Driver_get(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_Driver_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    CPPCONN_PUBLIC_FUNC result;
+    
+    result = sql::Driver;
+    jsresult = SWIG_NewPointerObj((new CPPCONN_PUBLIC_FUNC(static_cast< const CPPCONN_PUBLIC_FUNC& >(result))), SWIGTYPE_p_CPPCONN_PUBLIC_FUNC, SWIG_POINTER_OWN |  0 );
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_TRANSACTION_NONE(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_TRANSACTION_NONE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::TRANSACTION_NONE));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_TRANSACTION_READ_COMMITTED(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_TRANSACTION_READ_COMMITTED(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::TRANSACTION_READ_COMMITTED));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_TRANSACTION_READ_UNCOMMITTED(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_TRANSACTION_READ_UNCOMMITTED(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::TRANSACTION_READ_UNCOMMITTED));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_TRANSACTION_REPEATABLE_READ(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_TRANSACTION_REPEATABLE_READ(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::TRANSACTION_REPEATABLE_READ));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_TRANSACTION_SERIALIZABLE(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_TRANSACTION_SERIALIZABLE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::TRANSACTION_SERIALIZABLE));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_SSL_MODE_DISABLED(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_SSL_MODE_DISABLED(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::SSL_MODE_DISABLED));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_SSL_MODE_PREFERRED(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_SSL_MODE_PREFERRED(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::SSL_MODE_PREFERRED));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_SSL_MODE_REQUIRED(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_SSL_MODE_REQUIRED(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::SSL_MODE_REQUIRED));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_SSL_MODE_VERIFY_CA(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_SSL_MODE_VERIFY_CA(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::SSL_MODE_VERIFY_CA));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_SSL_MODE_VERIFY_IDENTITY(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_SSL_MODE_VERIFY_IDENTITY(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::SSL_MODE_VERIFY_IDENTITY));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
+static void _wrap_delete_Savepoint(v8::Persistent<v8::Value> object, void *parameter) {
+  SWIGV8_Proxy *proxy = static_cast<SWIGV8_Proxy *>(parameter);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
+  static void _wrap_delete_Savepoint(v8::Isolate *isolate, v8::Persistent<v8::Value> object, void *parameter) {
+    SWIGV8_Proxy *proxy = static_cast<SWIGV8_Proxy *>(parameter);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
+    static void _wrap_delete_Savepoint(v8::Isolate *isolate, v8::Persistent< v8::Object> *object, SWIGV8_Proxy *proxy) {
+#elif (V8_MAJOR_VERSION-0) < 5
+      static void _wrap_delete_Savepoint(const v8::WeakCallbackData<v8::Object, SWIGV8_Proxy> &data) {
+        v8::Local<v8::Object> object = data.GetValue();
+        SWIGV8_Proxy *proxy = data.GetParameter();
+#else
+        static void _wrap_delete_Savepoint(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
+          SWIGV8_Proxy *proxy = data.GetParameter();
+#endif
+          
+          if(proxy->swigCMemOwn && proxy->swigCObject) {
+            sql::Savepoint * arg1 = (sql::Savepoint *)proxy->swigCObject;
+            delete arg1;
+          }
+          delete proxy;
+          
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
+          object.Dispose();
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
+          object.Dispose(isolate);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x032100)
+          object->Dispose(isolate);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
+          object->Dispose();
+#elif (V8_MAJOR_VERSION-0) < 5
+          object.Clear();
+#endif
+        }
+
+
+static SwigV8ReturnValue _wrap_Savepoint_getSavepointId(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Savepoint *arg1 = (sql::Savepoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Savepoint_getSavepointId.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Savepoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Savepoint_getSavepointId" "', argument " "1"" of type '" "sql::Savepoint *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Savepoint * >(argp1);
+  {
+    try {
+      result = (int)(arg1)->getSavepointId();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_int(static_cast< int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Savepoint_getSavepointName(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Savepoint *arg1 = (sql::Savepoint *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Savepoint_getSavepointName.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Savepoint, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Savepoint_getSavepointName" "', argument " "1"" of type '" "sql::Savepoint *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Savepoint * >(argp1);
+  {
+    try {
+      result = (arg1)->getSavepointName();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj((new sql::SQLString(static_cast< const sql::SQLString& >(result))), SWIGTYPE_p_sql__SQLString, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_new_veto_Savepoint(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIG_exception(SWIG_ERROR, "Class Savepoint can not be instantiated");
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static void _wrap_Connection_set(v8::Local<v8::String> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
+#else
+  static void _wrap_Connection_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    CPPCONN_PUBLIC_FUNC arg1 ;
+    void *argp1 ;
+    int res1 = 0 ;
+    
+    {
+      res1 = SWIG_ConvertPtr(value, &argp1, SWIGTYPE_p_CPPCONN_PUBLIC_FUNC,  0 );
+      if (!SWIG_IsOK(res1)) {
+        SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Connection_set" "', argument " "1"" of type '" "CPPCONN_PUBLIC_FUNC""'"); 
+      }  
+      if (!argp1) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Connection_set" "', argument " "1"" of type '" "CPPCONN_PUBLIC_FUNC""'");
+      } else {
+        arg1 = *(reinterpret_cast< CPPCONN_PUBLIC_FUNC * >(argp1));
+      }
+    }
+    sql::Connection = arg1;
+    
+    goto fail;
+  fail:
+    return;
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_Connection_get(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_Connection_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    CPPCONN_PUBLIC_FUNC result;
+    
+    result = sql::Connection;
+    jsresult = SWIG_NewPointerObj((new CPPCONN_PUBLIC_FUNC(static_cast< const CPPCONN_PUBLIC_FUNC& >(result))), SWIGTYPE_p_CPPCONN_PUBLIC_FUNC, SWIG_POINTER_OWN |  0 );
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
+static void _wrap_delete_Statement(v8::Persistent<v8::Value> object, void *parameter) {
+  SWIGV8_Proxy *proxy = static_cast<SWIGV8_Proxy *>(parameter);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
+  static void _wrap_delete_Statement(v8::Isolate *isolate, v8::Persistent<v8::Value> object, void *parameter) {
+    SWIGV8_Proxy *proxy = static_cast<SWIGV8_Proxy *>(parameter);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
+    static void _wrap_delete_Statement(v8::Isolate *isolate, v8::Persistent< v8::Object> *object, SWIGV8_Proxy *proxy) {
+#elif (V8_MAJOR_VERSION-0) < 5
+      static void _wrap_delete_Statement(const v8::WeakCallbackData<v8::Object, SWIGV8_Proxy> &data) {
+        v8::Local<v8::Object> object = data.GetValue();
+        SWIGV8_Proxy *proxy = data.GetParameter();
+#else
+        static void _wrap_delete_Statement(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
+          SWIGV8_Proxy *proxy = data.GetParameter();
+#endif
+          
+          if(proxy->swigCMemOwn && proxy->swigCObject) {
+            sql::Statement * arg1 = (sql::Statement *)proxy->swigCObject;
+            delete arg1;
+          }
+          delete proxy;
+          
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
+          object.Dispose();
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
+          object.Dispose(isolate);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x032100)
+          object->Dispose(isolate);
+#elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
+          object->Dispose();
+#elif (V8_MAJOR_VERSION-0) < 5
+          object.Clear();
+#endif
+        }
+
+
+static SwigV8ReturnValue _wrap_Statement_getConnection(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::Connection *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getConnection.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getConnection" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (sql::Connection *)(arg1)->getConnection();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__Connection, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_cancel(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_cancel.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_cancel" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      (arg1)->cancel();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_clearWarnings(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_clearWarnings.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_clearWarnings" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      (arg1)->clearWarnings();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_close(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_close.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_close" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      (arg1)->close();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_execute(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_execute.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_execute" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Statement_execute" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Statement_execute" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  {
+    try {
+      result = (bool)(arg1)->execute((sql::SQLString const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_executeQuery(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_executeQuery.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_executeQuery" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Statement_executeQuery" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Statement_executeQuery" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->executeQuery((sql::SQLString const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_executeUpdate(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  int result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_executeUpdate.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_executeUpdate" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Statement_executeUpdate" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Statement_executeUpdate" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  {
+    try {
+      result = (int)(arg1)->executeUpdate((sql::SQLString const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_int(static_cast< int >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getFetchSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getFetchSize.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getFetchSize" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (arg1)->getFetchSize();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_size_t(static_cast< size_t >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getMaxFieldSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getMaxFieldSize.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getMaxFieldSize" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxFieldSize();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getMaxRows(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint64_t result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getMaxRows.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getMaxRows" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (arg1)->getMaxRows();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj((new uint64_t(static_cast< const uint64_t& >(result))), SWIGTYPE_p_uint64_t, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getMoreResults(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getMoreResults.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getMoreResults" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->getMoreResults();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getQueryTimeout(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getQueryTimeout.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getQueryTimeout" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getQueryTimeout();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getResultSet(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getResultSet.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getResultSet" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getResultSet();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getResultSetType(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet::enum_type result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getResultSetType.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getResultSetType" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (arg1)->getResultSetType();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj((new sql::ResultSet::enum_type(static_cast< const sql::ResultSet::enum_type& >(result))), SWIGTYPE_p_sql__ResultSet__enum_type, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getUpdateCount(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  uint64_t result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getUpdateCount.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getUpdateCount" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (arg1)->getUpdateCount();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj((new uint64_t(static_cast< const uint64_t& >(result))), SWIGTYPE_p_uint64_t, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_getWarnings(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLWarning *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_getWarnings.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_getWarnings" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    try {
+      result = (sql::SQLWarning *)(arg1)->getWarnings();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLWarning, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_setCursorName(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_setCursorName.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_setCursorName" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Statement_setCursorName" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Statement_setCursorName" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  {
+    try {
+      (arg1)->setCursorName((sql::SQLString const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_setEscapeProcessing(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_setEscapeProcessing.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_setEscapeProcessing" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  ecode2 = SWIG_AsVal_bool(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Statement_setEscapeProcessing" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    try {
+      (arg1)->setEscapeProcessing(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_setFetchSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_setFetchSize.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_setFetchSize" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Statement_setFetchSize" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  {
+    try {
+      (arg1)->setFetchSize(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_setMaxFieldSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_setMaxFieldSize.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_setMaxFieldSize" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Statement_setMaxFieldSize" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  {
+    try {
+      (arg1)->setMaxFieldSize(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_setMaxRows(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_setMaxRows.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_setMaxRows" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Statement_setMaxRows" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  {
+    try {
+      (arg1)->setMaxRows(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_setQueryTimeout(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_setQueryTimeout.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_setQueryTimeout" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Statement_setQueryTimeout" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  {
+    try {
+      (arg1)->setQueryTimeout(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Statement_setResultSetType(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::Statement *arg1 = (sql::Statement *) 0 ;
+  sql::ResultSet::enum_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  sql::Statement *result = 0 ;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Statement_setResultSetType.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__Statement, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Statement_setResultSetType" "', argument " "1"" of type '" "sql::Statement *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::Statement * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__ResultSet__enum_type,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Statement_setResultSetType" "', argument " "2"" of type '" "sql::ResultSet::enum_type""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Statement_setResultSetType" "', argument " "2"" of type '" "sql::ResultSet::enum_type""'");
+    } else {
+      arg2 = *(reinterpret_cast< sql::ResultSet::enum_type * >(argp2));
+    }
+  }
+  {
+    try {
+      result = (sql::Statement *)(arg1)->setResultSetType(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__Statement, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_new_veto_Statement(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIG_exception(SWIG_ERROR, "Class Statement can not be instantiated");
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_attributeNoNulls(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_attributeNoNulls(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::attributeNoNulls));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_attributeNullable(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_attributeNullable(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::attributeNullable));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_attributeNullableUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_attributeNullableUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::attributeNullableUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowTemporary(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowTemporary(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::bestRowTemporary));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowTransaction(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowTransaction(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::bestRowTransaction));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowSession(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowSession(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::bestRowSession));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::bestRowUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowNotPseudo(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowNotPseudo(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::bestRowNotPseudo));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowPseudo(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_bestRowPseudo(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::bestRowPseudo));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_columnNoNulls(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_columnNoNulls(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::columnNoNulls));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_columnNullable(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_columnNullable(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::columnNullable));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_columnNullableUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_columnNullableUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::columnNullableUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyCascade(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyCascade(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeyCascade));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyInitiallyDeferred(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyInitiallyDeferred(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeyInitiallyDeferred));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyInitiallyImmediate(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyInitiallyImmediate(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeyInitiallyImmediate));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyNoAction(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyNoAction(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeyNoAction));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyNotDeferrable(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyNotDeferrable(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeyNotDeferrable));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyRestrict(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeyRestrict(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeyRestrict));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeySetDefault(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeySetDefault(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeySetDefault));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeySetNull(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_importedKeySetNull(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::importedKeySetNull));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnIn(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnIn(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureColumnIn));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnInOut(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnInOut(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureColumnInOut));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnOut(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnOut(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureColumnOut));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnResult(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnResult(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureColumnResult));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnReturn(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnReturn(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureColumnReturn));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureColumnUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureColumnUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNoNulls(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNoNulls(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureNoNulls));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNoResult(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNoResult(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureNoResult));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNullable(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNullable(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureNullable));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNullableUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureNullableUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureNullableUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureResultUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureResultUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureResultUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureReturnsResult(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_procedureReturnsResult(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::procedureReturnsResult));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_sqlStateSQL99(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_sqlStateSQL99(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::sqlStateSQL99));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_sqlStateXOpen(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_sqlStateXOpen(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::sqlStateXOpen));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexClustered(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexClustered(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::tableIndexClustered));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexHashed(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexHashed(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::tableIndexHashed));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexOther(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexOther(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::tableIndexOther));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexStatistic(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_tableIndexStatistic(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::tableIndexStatistic));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_versionColumnUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_versionColumnUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::versionColumnUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_versionColumnNotPseudo(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_versionColumnNotPseudo(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::versionColumnNotPseudo));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_versionColumnPseudo(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_versionColumnPseudo(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::versionColumnPseudo));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeNoNulls(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeNoNulls(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::typeNoNulls));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeNullable(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeNullable(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::typeNullable));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeNullableUnknown(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeNullableUnknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::typeNullableUnknown));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typePredNone(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typePredNone(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::typePredNone));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typePredChar(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typePredChar(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::typePredChar));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typePredBasic(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typePredBasic(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::typePredBasic));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+#if (V8_MAJOR_VERSION-0) < 5
+static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeSearchable(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
+#else
+  static SwigV8ReturnValue _wrap_sql_DatabaseMetaData_typeSearchable(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
+#endif
+    SWIGV8_HANDLESCOPE();
+    
+    v8::Handle<v8::Value> jsresult;
+    
+    jsresult = SWIG_From_int(static_cast< int >(sql::DatabaseMetaData::typeSearchable));
+    
+    SWIGV8_RETURN_INFO(jsresult, info);
+    
+    goto fail;
+  fail:
+    SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
+  }
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_allProceduresAreCallable(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_allProceduresAreCallable.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_allProceduresAreCallable" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->allProceduresAreCallable();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_allTablesAreSelectable(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_allTablesAreSelectable.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_allTablesAreSelectable" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->allTablesAreSelectable();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_dataDefinitionCausesTransactionCommit(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_dataDefinitionCausesTransactionCommit.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_dataDefinitionCausesTransactionCommit" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->dataDefinitionCausesTransactionCommit();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_dataDefinitionIgnoredInTransactions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_dataDefinitionIgnoredInTransactions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_dataDefinitionIgnoredInTransactions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->dataDefinitionIgnoredInTransactions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_deletesAreDetected(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_deletesAreDetected.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_deletesAreDetected" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_deletesAreDetected" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->deletesAreDetected(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_doesMaxRowSizeIncludeBlobs(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_doesMaxRowSizeIncludeBlobs.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_doesMaxRowSizeIncludeBlobs" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->doesMaxRowSizeIncludeBlobs();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getAttributes(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  sql::SQLString *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getAttributes.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getAttributes" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getAttributes" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getAttributes" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getAttributes" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getAttributes" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getAttributes" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getAttributes" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  res5 = SWIG_ConvertPtr(args[3], &argp5, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "DatabaseMetaData_getAttributes" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getAttributes" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg5 = reinterpret_cast< sql::SQLString * >(argp5);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getAttributes((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,(sql::SQLString const &)*arg5);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getBestRowIdentifier(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  int arg5 ;
+  bool arg6 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  bool val6 ;
+  int ecode6 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 5) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getBestRowIdentifier.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  ecode5 = SWIG_AsVal_int(args[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  ecode6 = SWIG_AsVal_bool(args[4], &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "DatabaseMetaData_getBestRowIdentifier" "', argument " "6"" of type '" "bool""'");
+  } 
+  arg6 = static_cast< bool >(val6);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getBestRowIdentifier((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,arg5,arg6);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getCatalogs(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getCatalogs.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getCatalogs" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getCatalogs();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getCatalogSeparator(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getCatalogSeparator.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getCatalogSeparator" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getCatalogSeparator();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getCatalogTerm(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getCatalogTerm.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getCatalogTerm" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getCatalogTerm();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getColumnPrivileges(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  sql::SQLString *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getColumnPrivileges.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  res5 = SWIG_ConvertPtr(args[3], &argp5, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumnPrivileges" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg5 = reinterpret_cast< sql::SQLString * >(argp5);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getColumnPrivileges((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,(sql::SQLString const &)*arg5);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getColumns(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  sql::SQLString *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getColumns.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getColumns" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getColumns" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumns" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getColumns" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumns" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getColumns" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumns" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  res5 = SWIG_ConvertPtr(args[3], &argp5, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "DatabaseMetaData_getColumns" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getColumns" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg5 = reinterpret_cast< sql::SQLString * >(argp5);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getColumns((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,(sql::SQLString const &)*arg5);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getConnection(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::Connection *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getConnection.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getConnection" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::Connection *)(arg1)->getConnection();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__Connection, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getCrossReference(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  sql::SQLString *arg5 = 0 ;
+  sql::SQLString *arg6 = 0 ;
+  sql::SQLString *arg7 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  void *argp7 ;
+  int res7 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 6) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getCrossReference.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getCrossReference" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getCrossReference" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getCrossReference" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getCrossReference" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getCrossReference" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getCrossReference" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getCrossReference" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  res5 = SWIG_ConvertPtr(args[3], &argp5, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "DatabaseMetaData_getCrossReference" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getCrossReference" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg5 = reinterpret_cast< sql::SQLString * >(argp5);
+  res6 = SWIG_ConvertPtr(args[4], &argp6, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "DatabaseMetaData_getCrossReference" "', argument " "6"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getCrossReference" "', argument " "6"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg6 = reinterpret_cast< sql::SQLString * >(argp6);
+  res7 = SWIG_ConvertPtr(args[5], &argp7, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res7)) {
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "DatabaseMetaData_getCrossReference" "', argument " "7"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp7) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getCrossReference" "', argument " "7"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg7 = reinterpret_cast< sql::SQLString * >(argp7);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getCrossReference((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,(sql::SQLString const &)*arg5,(sql::SQLString const &)*arg6,(sql::SQLString const &)*arg7);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDatabaseMajorVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDatabaseMajorVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDatabaseMajorVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getDatabaseMajorVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDatabaseMinorVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDatabaseMinorVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDatabaseMinorVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getDatabaseMinorVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDatabasePatchVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDatabasePatchVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDatabasePatchVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getDatabasePatchVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDatabaseProductName(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDatabaseProductName.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDatabaseProductName" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getDatabaseProductName();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDatabaseProductVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  SQLString result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDatabaseProductVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDatabaseProductVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (arg1)->getDatabaseProductVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj((new SQLString(static_cast< const SQLString& >(result))), SWIGTYPE_p_SQLString, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDefaultTransactionIsolation(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDefaultTransactionIsolation.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDefaultTransactionIsolation" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (int)(arg1)->getDefaultTransactionIsolation();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_int(static_cast< int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDriverMajorVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDriverMajorVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDriverMajorVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getDriverMajorVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDriverMinorVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDriverMinorVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDriverMinorVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getDriverMinorVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDriverPatchVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDriverPatchVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDriverPatchVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getDriverPatchVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDriverName(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDriverName.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDriverName" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getDriverName();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getDriverVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getDriverVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getDriverVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getDriverVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getExportedKeys(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getExportedKeys.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getExportedKeys" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getExportedKeys" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getExportedKeys" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getExportedKeys" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getExportedKeys" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getExportedKeys" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getExportedKeys" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getExportedKeys((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getExtraNameCharacters(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getExtraNameCharacters.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getExtraNameCharacters" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getExtraNameCharacters();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getIdentifierQuoteString(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getIdentifierQuoteString.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getIdentifierQuoteString" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getIdentifierQuoteString();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getImportedKeys(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getImportedKeys.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getImportedKeys" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getImportedKeys" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getImportedKeys" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getImportedKeys" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getImportedKeys" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getImportedKeys" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getImportedKeys" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getImportedKeys((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getIndexInfo(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  bool arg5 ;
+  bool arg6 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
+  bool val6 ;
+  int ecode6 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 5) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getIndexInfo.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  ecode5 = SWIG_AsVal_bool(args[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "5"" of type '" "bool""'");
+  } 
+  arg5 = static_cast< bool >(val5);
+  ecode6 = SWIG_AsVal_bool(args[4], &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "DatabaseMetaData_getIndexInfo" "', argument " "6"" of type '" "bool""'");
+  } 
+  arg6 = static_cast< bool >(val6);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getIndexInfo((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,arg5,arg6);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getCDBCMajorVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getCDBCMajorVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getCDBCMajorVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getCDBCMajorVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getCDBCMinorVersion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getCDBCMinorVersion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getCDBCMinorVersion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getCDBCMinorVersion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxBinaryLiteralLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxBinaryLiteralLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxBinaryLiteralLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxBinaryLiteralLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxCatalogNameLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxCatalogNameLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxCatalogNameLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxCatalogNameLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxCharLiteralLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxCharLiteralLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxCharLiteralLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxCharLiteralLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxColumnNameLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxColumnNameLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxColumnNameLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxColumnNameLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxColumnsInGroupBy(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxColumnsInGroupBy.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxColumnsInGroupBy" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxColumnsInGroupBy();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxColumnsInIndex(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxColumnsInIndex.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxColumnsInIndex" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxColumnsInIndex();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxColumnsInOrderBy(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxColumnsInOrderBy.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxColumnsInOrderBy" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxColumnsInOrderBy();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxColumnsInSelect(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxColumnsInSelect.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxColumnsInSelect" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxColumnsInSelect();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxColumnsInTable(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxColumnsInTable.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxColumnsInTable" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxColumnsInTable();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxConnections(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxConnections.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxConnections" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxConnections();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxCursorNameLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxCursorNameLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxCursorNameLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxCursorNameLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxIndexLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxIndexLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxIndexLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxIndexLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxProcedureNameLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxProcedureNameLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxProcedureNameLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxProcedureNameLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxRowSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxRowSize.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxRowSize" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxRowSize();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxSchemaNameLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxSchemaNameLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxSchemaNameLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxSchemaNameLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxStatementLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxStatementLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxStatementLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxStatementLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxStatements(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxStatements.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxStatements" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxStatements();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxTableNameLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxTableNameLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxTableNameLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxTableNameLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxTablesInSelect(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxTablesInSelect.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxTablesInSelect" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxTablesInSelect();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getMaxUserNameLength(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getMaxUserNameLength.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getMaxUserNameLength" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->getMaxUserNameLength();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getNumericFunctions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getNumericFunctions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getNumericFunctions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getNumericFunctions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getPrimaryKeys(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getPrimaryKeys.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getPrimaryKeys" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getPrimaryKeys" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getPrimaryKeys" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getPrimaryKeys" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getPrimaryKeys" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getPrimaryKeys" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getPrimaryKeys" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getPrimaryKeys((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getProcedureColumns(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  sql::SQLString *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getProcedureColumns.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  res5 = SWIG_ConvertPtr(args[3], &argp5, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getProcedureColumns" "', argument " "5"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg5 = reinterpret_cast< sql::SQLString * >(argp5);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getProcedureColumns((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,(sql::SQLString const &)*arg5);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getProcedures(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getProcedures.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getProcedures" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getProcedures" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getProcedures" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getProcedures" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getProcedures" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getProcedures" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getProcedures" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getProcedures((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getProcedureTerm(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getProcedureTerm.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getProcedureTerm" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getProcedureTerm();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getResultSetHoldability(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getResultSetHoldability.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getResultSetHoldability" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (int)(arg1)->getResultSetHoldability();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_int(static_cast< int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemas(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSchemas.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemas" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemas();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaTerm(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSchemaTerm.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaTerm" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getSchemaTerm();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaCollation(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSchemaCollation.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaCollation" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaCollation" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaCollation" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSchemaCollation" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaCollation" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaCollation((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaCharset(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSchemaCharset.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaCharset" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaCharset" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaCharset" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSchemaCharset" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaCharset" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaCharset((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSearchStringEscape(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSearchStringEscape.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSearchStringEscape" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getSearchStringEscape();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSQLKeywords(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSQLKeywords.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSQLKeywords" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getSQLKeywords();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSQLStateType(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSQLStateType.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSQLStateType" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (int)(arg1)->getSQLStateType();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_int(static_cast< int >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getStringFunctions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getStringFunctions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getStringFunctions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getStringFunctions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSuperTables(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSuperTables.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSuperTables" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSuperTables" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSuperTables" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSuperTables" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSuperTables" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getSuperTables" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSuperTables" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSuperTables((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSuperTypes(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSuperTypes.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSuperTypes" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSuperTypes" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSuperTypes" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSuperTypes" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSuperTypes" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getSuperTypes" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSuperTypes" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSuperTypes((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSystemFunctions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSystemFunctions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSystemFunctions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getSystemFunctions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getTablePrivileges(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getTablePrivileges.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getTablePrivileges" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getTablePrivileges" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTablePrivileges" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getTablePrivileges" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTablePrivileges" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getTablePrivileges" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTablePrivileges" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getTablePrivileges((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getTables(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  std::list< sql::SQLString > *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getTables.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getTables" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getTables" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTables" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getTables" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTables" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getTables" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTables" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  res5 = SWIG_ConvertPtr(args[3], &argp5, SWIGTYPE_p_std__listT_sql__SQLString_t,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "DatabaseMetaData_getTables" "', argument " "5"" of type '" "std::list< sql::SQLString > &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTables" "', argument " "5"" of type '" "std::list< sql::SQLString > &""'"); 
+  }
+  arg5 = reinterpret_cast< std::list< sql::SQLString > * >(argp5);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getTables((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,*arg5);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getTableTypes(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getTableTypes.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getTableTypes" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getTableTypes();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getTableCollation(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getTableCollation.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getTableCollation" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getTableCollation" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTableCollation" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getTableCollation" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTableCollation" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getTableCollation" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTableCollation" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getTableCollation((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getTableCharset(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getTableCharset.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getTableCharset" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getTableCharset" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTableCharset" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getTableCharset" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTableCharset" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getTableCharset" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getTableCharset" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getTableCharset((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getTimeDateFunctions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::SQLString *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getTimeDateFunctions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getTimeDateFunctions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::SQLString *) &(arg1)->getTimeDateFunctions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__SQLString, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getTypeInfo(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getTypeInfo.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getTypeInfo" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getTypeInfo();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getUDTs(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  std::list< int > *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getUDTs.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getUDTs" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getUDTs" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getUDTs" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getUDTs" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getUDTs" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getUDTs" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getUDTs" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  res5 = SWIG_ConvertPtr(args[3], &argp5, SWIGTYPE_p_std__listT_int_t,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "DatabaseMetaData_getUDTs" "', argument " "5"" of type '" "std::list< int > &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getUDTs" "', argument " "5"" of type '" "std::list< int > &""'"); 
+  }
+  arg5 = reinterpret_cast< std::list< int > * >(argp5);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getUDTs((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,*arg5);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getURL(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  SQLString result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getURL.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getURL" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (arg1)->getURL();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj((new SQLString(static_cast< const SQLString& >(result))), SWIGTYPE_p_SQLString, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getUserName(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  SQLString result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getUserName.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getUserName" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (arg1)->getUserName();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj((new SQLString(static_cast< const SQLString& >(result))), SWIGTYPE_p_SQLString, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getVersionColumns(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getVersionColumns.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getVersionColumns" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getVersionColumns" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getVersionColumns" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getVersionColumns" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getVersionColumns" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getVersionColumns" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getVersionColumns" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getVersionColumns((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_insertsAreDetected(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_insertsAreDetected.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_insertsAreDetected" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_insertsAreDetected" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->insertsAreDetected(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_isCatalogAtStart(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_isCatalogAtStart.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_isCatalogAtStart" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->isCatalogAtStart();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_isReadOnly(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_isReadOnly.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_isReadOnly" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->isReadOnly();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_locatorsUpdateCopy(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_locatorsUpdateCopy.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_locatorsUpdateCopy" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->locatorsUpdateCopy();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_nullPlusNonNullIsNull(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_nullPlusNonNullIsNull.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_nullPlusNonNullIsNull" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->nullPlusNonNullIsNull();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_nullsAreSortedAtEnd(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_nullsAreSortedAtEnd.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_nullsAreSortedAtEnd" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->nullsAreSortedAtEnd();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_nullsAreSortedAtStart(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_nullsAreSortedAtStart.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_nullsAreSortedAtStart" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->nullsAreSortedAtStart();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_nullsAreSortedHigh(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_nullsAreSortedHigh.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_nullsAreSortedHigh" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->nullsAreSortedHigh();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_nullsAreSortedLow(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_nullsAreSortedLow.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_nullsAreSortedLow" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->nullsAreSortedLow();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_othersDeletesAreVisible(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_othersDeletesAreVisible.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_othersDeletesAreVisible" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_othersDeletesAreVisible" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->othersDeletesAreVisible(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_othersInsertsAreVisible(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_othersInsertsAreVisible.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_othersInsertsAreVisible" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_othersInsertsAreVisible" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->othersInsertsAreVisible(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_othersUpdatesAreVisible(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_othersUpdatesAreVisible.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_othersUpdatesAreVisible" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_othersUpdatesAreVisible" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->othersUpdatesAreVisible(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_ownDeletesAreVisible(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_ownDeletesAreVisible.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_ownDeletesAreVisible" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_ownDeletesAreVisible" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->ownDeletesAreVisible(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_ownInsertsAreVisible(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_ownInsertsAreVisible.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_ownInsertsAreVisible" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_ownInsertsAreVisible" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->ownInsertsAreVisible(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_ownUpdatesAreVisible(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_ownUpdatesAreVisible.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_ownUpdatesAreVisible" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_ownUpdatesAreVisible" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->ownUpdatesAreVisible(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_storesLowerCaseIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_storesLowerCaseIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_storesLowerCaseIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->storesLowerCaseIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_storesLowerCaseQuotedIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_storesLowerCaseQuotedIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_storesLowerCaseQuotedIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->storesLowerCaseQuotedIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_storesMixedCaseIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_storesMixedCaseIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_storesMixedCaseIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->storesMixedCaseIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_storesMixedCaseQuotedIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_storesMixedCaseQuotedIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_storesMixedCaseQuotedIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->storesMixedCaseQuotedIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_storesUpperCaseIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_storesUpperCaseIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_storesUpperCaseIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->storesUpperCaseIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_storesUpperCaseQuotedIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_storesUpperCaseQuotedIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_storesUpperCaseQuotedIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->storesUpperCaseQuotedIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsAlterTableWithAddColumn(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsAlterTableWithAddColumn.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsAlterTableWithAddColumn" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsAlterTableWithAddColumn();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsAlterTableWithDropColumn(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsAlterTableWithDropColumn.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsAlterTableWithDropColumn" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsAlterTableWithDropColumn();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsANSI92EntryLevelSQL(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsANSI92EntryLevelSQL.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsANSI92EntryLevelSQL" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsANSI92EntryLevelSQL();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsANSI92FullSQL(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsANSI92FullSQL.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsANSI92FullSQL" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsANSI92FullSQL();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsANSI92IntermediateSQL(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsANSI92IntermediateSQL.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsANSI92IntermediateSQL" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsANSI92IntermediateSQL();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsBatchUpdates(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsBatchUpdates.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsBatchUpdates" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsBatchUpdates();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsCatalogsInDataManipulation(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsCatalogsInDataManipulation.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsCatalogsInDataManipulation" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsCatalogsInDataManipulation();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsCatalogsInIndexDefinitions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsCatalogsInIndexDefinitions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsCatalogsInIndexDefinitions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsCatalogsInIndexDefinitions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsCatalogsInPrivilegeDefinitions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsCatalogsInPrivilegeDefinitions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsCatalogsInPrivilegeDefinitions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsCatalogsInPrivilegeDefinitions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsCatalogsInProcedureCalls(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsCatalogsInProcedureCalls.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsCatalogsInProcedureCalls" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsCatalogsInProcedureCalls();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsCatalogsInTableDefinitions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsCatalogsInTableDefinitions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsCatalogsInTableDefinitions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsCatalogsInTableDefinitions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsColumnAliasing(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsColumnAliasing.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsColumnAliasing" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsColumnAliasing();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsConvert__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsConvert" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsConvert();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsConvert__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  bool result;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsConvert" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_supportsConvert" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(args[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "DatabaseMetaData_supportsConvert" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  {
+    try {
+      result = (bool)(arg1)->supportsConvert(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData__wrap_DatabaseMetaData_supportsConvert(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  OverloadErrorHandler errorHandler;
+  
+  
+  if(args.Length() == 0) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_supportsConvert__SWIG_0(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_supportsConvert__SWIG_0(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 2) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_supportsConvert__SWIG_1(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_supportsConvert__SWIG_1(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function supportsConvert.");
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsCoreSQLGrammar(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsCoreSQLGrammar.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsCoreSQLGrammar" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsCoreSQLGrammar();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsCorrelatedSubqueries(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsCorrelatedSubqueries.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsCorrelatedSubqueries" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsCorrelatedSubqueries();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsDataDefinitionAndDataManipulationTransactions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsDataDefinitionAndDataManipulationTransactions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsDataDefinitionAndDataManipulationTransactions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsDataDefinitionAndDataManipulationTransactions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsDataManipulationTransactionsOnly(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsDataManipulationTransactionsOnly.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsDataManipulationTransactionsOnly" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsDataManipulationTransactionsOnly();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsDifferentTableCorrelationNames(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsDifferentTableCorrelationNames.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsDifferentTableCorrelationNames" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsDifferentTableCorrelationNames();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsExpressionsInOrderBy(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsExpressionsInOrderBy.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsExpressionsInOrderBy" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsExpressionsInOrderBy();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsExtendedSQLGrammar(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsExtendedSQLGrammar.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsExtendedSQLGrammar" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsExtendedSQLGrammar();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsFullOuterJoins(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsFullOuterJoins.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsFullOuterJoins" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsFullOuterJoins();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsGetGeneratedKeys(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsGetGeneratedKeys.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsGetGeneratedKeys" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsGetGeneratedKeys();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsGroupBy(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsGroupBy.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsGroupBy" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsGroupBy();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsGroupByBeyondSelect(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsGroupByBeyondSelect.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsGroupByBeyondSelect" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsGroupByBeyondSelect();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsGroupByUnrelated(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsGroupByUnrelated.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsGroupByUnrelated" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsGroupByUnrelated();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsIntegrityEnhancementFacility(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsIntegrityEnhancementFacility.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsIntegrityEnhancementFacility" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsIntegrityEnhancementFacility();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsLikeEscapeClause(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsLikeEscapeClause.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsLikeEscapeClause" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsLikeEscapeClause();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsLimitedOuterJoins(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsLimitedOuterJoins.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsLimitedOuterJoins" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsLimitedOuterJoins();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsMinimumSQLGrammar(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsMinimumSQLGrammar.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsMinimumSQLGrammar" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsMinimumSQLGrammar();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsMixedCaseIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsMixedCaseIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsMixedCaseIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsMixedCaseIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsMixedCaseQuotedIdentifiers(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsMixedCaseQuotedIdentifiers.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsMixedCaseQuotedIdentifiers" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsMixedCaseQuotedIdentifiers();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsMultipleOpenResults(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsMultipleOpenResults.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsMultipleOpenResults" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsMultipleOpenResults();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsMultipleResultSets(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsMultipleResultSets.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsMultipleResultSets" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsMultipleResultSets();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsMultipleTransactions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsMultipleTransactions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsMultipleTransactions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsMultipleTransactions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsNamedParameters(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsNamedParameters.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsNamedParameters" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsNamedParameters();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsNonNullableColumns(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsNonNullableColumns.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsNonNullableColumns" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsNonNullableColumns();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsOpenCursorsAcrossCommit(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsOpenCursorsAcrossCommit.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsOpenCursorsAcrossCommit" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsOpenCursorsAcrossCommit();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsOpenCursorsAcrossRollback(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsOpenCursorsAcrossRollback.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsOpenCursorsAcrossRollback" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsOpenCursorsAcrossRollback();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsOpenStatementsAcrossCommit(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsOpenStatementsAcrossCommit.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsOpenStatementsAcrossCommit" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsOpenStatementsAcrossCommit();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsOpenStatementsAcrossRollback(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsOpenStatementsAcrossRollback.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsOpenStatementsAcrossRollback" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsOpenStatementsAcrossRollback();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsOrderByUnrelated(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsOrderByUnrelated.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsOrderByUnrelated" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsOrderByUnrelated();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsOuterJoins(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsOuterJoins.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsOuterJoins" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsOuterJoins();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsPositionedDelete(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsPositionedDelete.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsPositionedDelete" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsPositionedDelete();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsPositionedUpdate(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsPositionedUpdate.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsPositionedUpdate" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsPositionedUpdate();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsResultSetConcurrency(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  bool result;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsResultSetConcurrency.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsResultSetConcurrency" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_supportsResultSetConcurrency" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(args[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "DatabaseMetaData_supportsResultSetConcurrency" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  {
+    try {
+      result = (bool)(arg1)->supportsResultSetConcurrency(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsResultSetHoldability(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsResultSetHoldability.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsResultSetHoldability" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_supportsResultSetHoldability" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->supportsResultSetHoldability(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsResultSetType(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsResultSetType.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsResultSetType" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_supportsResultSetType" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->supportsResultSetType(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSavepoints(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSavepoints.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSavepoints" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSavepoints();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSchemasInDataManipulation(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSchemasInDataManipulation.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSchemasInDataManipulation" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSchemasInDataManipulation();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSchemasInIndexDefinitions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSchemasInIndexDefinitions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSchemasInIndexDefinitions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSchemasInIndexDefinitions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSchemasInPrivilegeDefinitions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSchemasInPrivilegeDefinitions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSchemasInPrivilegeDefinitions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSchemasInPrivilegeDefinitions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSchemasInProcedureCalls(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSchemasInProcedureCalls.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSchemasInProcedureCalls" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSchemasInProcedureCalls();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSchemasInTableDefinitions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSchemasInTableDefinitions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSchemasInTableDefinitions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSchemasInTableDefinitions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSelectForUpdate(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSelectForUpdate.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSelectForUpdate" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSelectForUpdate();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsStatementPooling(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsStatementPooling.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsStatementPooling" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsStatementPooling();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsStoredProcedures(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsStoredProcedures.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsStoredProcedures" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsStoredProcedures();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSubqueriesInComparisons(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSubqueriesInComparisons.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSubqueriesInComparisons" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSubqueriesInComparisons();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSubqueriesInExists(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSubqueriesInExists.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSubqueriesInExists" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSubqueriesInExists();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSubqueriesInIns(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSubqueriesInIns.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSubqueriesInIns" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSubqueriesInIns();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsSubqueriesInQuantifieds(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsSubqueriesInQuantifieds.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsSubqueriesInQuantifieds" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsSubqueriesInQuantifieds();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsTableCorrelationNames(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsTableCorrelationNames.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsTableCorrelationNames" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsTableCorrelationNames();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsTransactionIsolationLevel(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsTransactionIsolationLevel.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsTransactionIsolationLevel" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_supportsTransactionIsolationLevel" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->supportsTransactionIsolationLevel(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsTransactions(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsTransactions.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsTransactions" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsTransactions();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsTypeConversion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsTypeConversion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsTypeConversion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsTypeConversion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsUnion(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsUnion.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsUnion" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsUnion();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_supportsUnionAll(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_supportsUnionAll.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_supportsUnionAll" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->supportsUnionAll();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_updatesAreDetected(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_updatesAreDetected.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_updatesAreDetected" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DatabaseMetaData_updatesAreDetected" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try {
+      result = (bool)(arg1)->updatesAreDetected(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_usesLocalFilePerTable(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_usesLocalFilePerTable.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_usesLocalFilePerTable" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->usesLocalFilePerTable();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_usesLocalFiles(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_usesLocalFiles.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_usesLocalFiles" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->usesLocalFiles();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_From_bool(static_cast< bool >(result));
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemata__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemata" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemata" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemata" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemata((sql::SQLString const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemata__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemata" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemata();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData__wrap_DatabaseMetaData_getSchemata(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  OverloadErrorHandler errorHandler;
+  
+  
+  if(args.Length() == 1) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemata__SWIG_0(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemata__SWIG_0(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 0) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemata__SWIG_1(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemata__SWIG_1(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function getSchemata.");
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjects__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  bool arg5 ;
+  sql::SQLString *arg6 = 0 ;
+  sql::SQLString *arg7 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  void *argp7 ;
+  int res7 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  ecode5 = SWIG_AsVal_bool(args[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "5"" of type '" "bool""'");
+  } 
+  arg5 = static_cast< bool >(val5);
+  res6 = SWIG_ConvertPtr(args[4], &argp6, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "6"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "6"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg6 = reinterpret_cast< sql::SQLString * >(argp6);
+  res7 = SWIG_ConvertPtr(args[5], &argp7, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res7)) {
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "7"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp7) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "7"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg7 = reinterpret_cast< sql::SQLString * >(argp7);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjects((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,arg5,(sql::SQLString const &)*arg6,(sql::SQLString const &)*arg7);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjects__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  bool arg5 ;
+  sql::SQLString *arg6 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
+  void *argp6 ;
+  int res6 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  ecode5 = SWIG_AsVal_bool(args[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "5"" of type '" "bool""'");
+  } 
+  arg5 = static_cast< bool >(val5);
+  res6 = SWIG_ConvertPtr(args[4], &argp6, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "6"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "6"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg6 = reinterpret_cast< sql::SQLString * >(argp6);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjects((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,arg5,(sql::SQLString const &)*arg6);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjects__SWIG_2(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  bool arg5 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  ecode5 = SWIG_AsVal_bool(args[3], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "5"" of type '" "bool""'");
+  } 
+  arg5 = static_cast< bool >(val5);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjects((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4,arg5);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjects__SWIG_3(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  sql::SQLString *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "4"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg4 = reinterpret_cast< sql::SQLString * >(argp4);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjects((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3,(sql::SQLString const &)*arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjects__SWIG_4(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  sql::SQLString *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "3"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg3 = reinterpret_cast< sql::SQLString * >(argp3);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjects((sql::SQLString const &)*arg2,(sql::SQLString const &)*arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjects__SWIG_5(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  sql::SQLString *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_sql__SQLString,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "2"" of type '" "sql::SQLString const &""'"); 
+  }
+  arg2 = reinterpret_cast< sql::SQLString * >(argp2);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjects((sql::SQLString const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjects__SWIG_6(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
+{
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjects" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjects();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData__wrap_DatabaseMetaData_getSchemaObjects(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  OverloadErrorHandler errorHandler;
+  
+  
+  if(args.Length() == 6) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemaObjects__SWIG_0(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemaObjects__SWIG_0(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 5) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemaObjects__SWIG_1(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemaObjects__SWIG_1(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 4) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemaObjects__SWIG_2(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemaObjects__SWIG_2(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 3) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemaObjects__SWIG_3(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemaObjects__SWIG_3(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 2) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemaObjects__SWIG_4(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemaObjects__SWIG_4(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 1) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemaObjects__SWIG_5(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemaObjects__SWIG_5(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  if(args.Length() == 0) {
+    errorHandler.err.Clear();
+#if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
+    jsresult = _wrap_DatabaseMetaData_getSchemaObjects__SWIG_6(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      SWIGV8_ESCAPE(jsresult);
+    }
+#else
+    _wrap_DatabaseMetaData_getSchemaObjects__SWIG_6(args, errorHandler);
+    if(errorHandler.err.IsEmpty()) {
+      return;
+    }
+#endif
+  }
+  
+  
+  SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function getSchemaObjects.");
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DatabaseMetaData_getSchemaObjectTypes(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  sql::DatabaseMetaData *arg1 = (sql::DatabaseMetaData *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  sql::ResultSet *result = 0 ;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DatabaseMetaData_getSchemaObjectTypes.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_sql__DatabaseMetaData, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DatabaseMetaData_getSchemaObjectTypes" "', argument " "1"" of type '" "sql::DatabaseMetaData *""'"); 
+  }
+  arg1 = reinterpret_cast< sql::DatabaseMetaData * >(argp1);
+  {
+    try {
+      result = (sql::ResultSet *)(arg1)->getSchemaObjectTypes();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_sql__ResultSet, 0 |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_new_veto_DatabaseMetaData(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIG_exception(SWIG_ERROR, "Class DatabaseMetaData can not be instantiated");
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+#if (V8_MAJOR_VERSION-0) < 5
 static SwigV8ReturnValue _wrap_mga_Hidden(v8::Local<v8::String> property, const SwigV8PropertyCallbackInfo &info) {
 #else
   static SwigV8ReturnValue _wrap_mga_Hidden(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::Hidden));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2021,13 +11989,13 @@ static SwigV8ReturnValue _wrap_mga_Normal(v8::Local<v8::String> property, const 
   static SwigV8ReturnValue _wrap_mga_Normal(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::Normal));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2040,13 +12008,13 @@ static SwigV8ReturnValue _wrap_mga_Maximized(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_mga_Maximized(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::Maximized));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2059,13 +12027,13 @@ static SwigV8ReturnValue _wrap_mga_HideOthers(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_mga_HideOthers(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::HideOthers));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2078,13 +12046,13 @@ static SwigV8ReturnValue _wrap_SPACES(v8::Local<v8::String> property, const Swig
   static SwigV8ReturnValue _wrap_SPACES(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_FromCharPtr((const char *)" \t\r\n");
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2097,13 +12065,13 @@ static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFC(v8::Local<v8::String> p
   static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFC(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::NormalizationForm::NFC));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2116,13 +12084,13 @@ static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFD(v8::Local<v8::String> p
   static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFD(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::NormalizationForm::NFD));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2135,13 +12103,13 @@ static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFKC(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFKC(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::NormalizationForm::NFKC));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2154,13 +12122,13 @@ static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFKD(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFKD(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::NormalizationForm::NFKD));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2169,31 +12137,37 @@ static SwigV8ReturnValue _wrap_mga_NormalizationForm_NFKD(v8::Local<v8::String> 
 
 static SwigV8ReturnValue _wrap_Utilities_formatTime(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::chrono::milliseconds arg1 ;
   void *argp1 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_formatTime.");
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_std__chrono__milliseconds,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_formatTime" "', argument " "1"" of type '" "std::chrono::milliseconds""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_formatTime" "', argument " "1"" of type '" "std::chrono::milliseconds""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_formatTime" "', argument " "1"" of type '" "std::chrono::milliseconds""'");
     } else {
       arg1 = *(reinterpret_cast< std::chrono::milliseconds * >(argp1));
     }
   }
-  result = mga::Utilities::formatTime(arg1);
+  {
+    try {
+      result = mga::Utilities::formatTime(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2202,31 +12176,37 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_toLower(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_toLower.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_toLower" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_toLower" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_toLower" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_toLower" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
-  result = mga::Utilities::toLower((std::string const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::toLower((std::string const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
   if (SWIG_IsNewObj(res1)) delete arg1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2235,24 +12215,24 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_hasPrefix(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   int res2 = SWIG_OLDOBJ ;
   bool result;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_hasPrefix.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_hasPrefix" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_hasPrefix" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasPrefix" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasPrefix" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -2260,20 +12240,26 @@ static SwigV8ReturnValue _wrap_Utilities_hasPrefix(const SwigV8Arguments &args) 
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_hasPrefix" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_hasPrefix" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasPrefix" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasPrefix" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = (bool)mga::Utilities::hasPrefix((std::string const &)*arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = (bool)mga::Utilities::hasPrefix((std::string const &)*arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
   if (SWIG_IsNewObj(res1)) delete arg1;
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2282,24 +12268,24 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_hasSuffix(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   int res2 = SWIG_OLDOBJ ;
   bool result;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_hasSuffix.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_hasSuffix" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_hasSuffix" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasSuffix" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasSuffix" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -2307,20 +12293,26 @@ static SwigV8ReturnValue _wrap_Utilities_hasSuffix(const SwigV8Arguments &args) 
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_hasSuffix" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_hasSuffix" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasSuffix" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_hasSuffix" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = (bool)mga::Utilities::hasSuffix((std::string const &)*arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = (bool)mga::Utilities::hasSuffix((std::string const &)*arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
   if (SWIG_IsNewObj(res1)) delete arg1;
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2330,7 +12322,7 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_splitBySet__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -2340,15 +12332,15 @@ static SwigV8ReturnValue _wrap_Utilities_splitBySet__SWIG_0(const SwigV8Argument
   int val3 ;
   int ecode3 = 0 ;
   SwigValueWrapper< std::vector< std::string > > result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -2356,26 +12348,32 @@ static SwigV8ReturnValue _wrap_Utilities_splitBySet__SWIG_0(const SwigV8Argument
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Utilities_splitBySet" "', argument " "3"" of type '" "int""'");
-  }
+  } 
   arg3 = static_cast< int >(val3);
-  result = mga::Utilities::splitBySet((std::string const &)*arg1,(std::string const &)*arg2,arg3);
+  {
+    try {
+      result = mga::Utilities::splitBySet((std::string const &)*arg1,(std::string const &)*arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::vector< std::string >(static_cast< const std::vector< std::string >& >(result))), SWIGTYPE_p_std__vectorT_std__string_t, SWIG_POINTER_OWN |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
   if (SWIG_IsNewObj(res2)) delete arg2;
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2385,22 +12383,22 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_splitBySet__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   int res2 = SWIG_OLDOBJ ;
   SwigValueWrapper< std::vector< std::string > > result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -2408,20 +12406,26 @@ static SwigV8ReturnValue _wrap_Utilities_splitBySet__SWIG_1(const SwigV8Argument
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = mga::Utilities::splitBySet((std::string const &)*arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = mga::Utilities::splitBySet((std::string const &)*arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::vector< std::string >(static_cast< const std::vector< std::string >& >(result))), SWIGTYPE_p_std__vectorT_std__string_t, SWIG_POINTER_OWN |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2431,29 +12435,35 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_splitBySet__SWIG_2(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   SwigValueWrapper< std::vector< std::string > > result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_splitBySet" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
-  result = mga::Utilities::splitBySet((std::string const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::splitBySet((std::string const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::vector< std::string >(static_cast< const std::vector< std::string >& >(result))), SWIGTYPE_p_std__vectorT_std__string_t, SWIG_POINTER_OWN |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2462,11 +12472,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_splitBySet(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 3) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2481,8 +12491,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_splitBySet(const SwigV8
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2497,8 +12507,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_splitBySet(const SwigV8
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2513,10 +12523,10 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_splitBySet(const SwigV8
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function splitBySet.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2526,7 +12536,7 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_split__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -2536,15 +12546,15 @@ static SwigV8ReturnValue _wrap_Utilities_split__SWIG_0(const SwigV8Arguments &ar
   int val3 ;
   int ecode3 = 0 ;
   SwigValueWrapper< std::vector< std::string > > result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -2552,26 +12562,32 @@ static SwigV8ReturnValue _wrap_Utilities_split__SWIG_0(const SwigV8Arguments &ar
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Utilities_split" "', argument " "3"" of type '" "int""'");
-  }
+  } 
   arg3 = static_cast< int >(val3);
-  result = mga::Utilities::split((std::string const &)*arg1,(std::string const &)*arg2,arg3);
+  {
+    try {
+      result = mga::Utilities::split((std::string const &)*arg1,(std::string const &)*arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::vector< std::string >(static_cast< const std::vector< std::string >& >(result))), SWIGTYPE_p_std__vectorT_std__string_t, SWIG_POINTER_OWN |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
   if (SWIG_IsNewObj(res2)) delete arg2;
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2581,22 +12597,22 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_split__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   int res2 = SWIG_OLDOBJ ;
   SwigValueWrapper< std::vector< std::string > > result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -2604,20 +12620,26 @@ static SwigV8ReturnValue _wrap_Utilities_split__SWIG_1(const SwigV8Arguments &ar
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = mga::Utilities::split((std::string const &)*arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = mga::Utilities::split((std::string const &)*arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::vector< std::string >(static_cast< const std::vector< std::string >& >(result))), SWIGTYPE_p_std__vectorT_std__string_t, SWIG_POINTER_OWN |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2627,29 +12649,35 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_split__SWIG_2(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   SwigValueWrapper< std::vector< std::string > > result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_split" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
-  result = mga::Utilities::split((std::string const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::split((std::string const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::vector< std::string >(static_cast< const std::vector< std::string >& >(result))), SWIGTYPE_p_std__vectorT_std__string_t, SWIG_POINTER_OWN |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2658,11 +12686,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_split(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 3) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2677,8 +12705,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_split(const SwigV8Argum
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2693,8 +12721,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_split(const SwigV8Argum
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2709,10 +12737,10 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_split(const SwigV8Argum
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function split.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2722,7 +12750,7 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_concat__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::vector< std::string > *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -2730,33 +12758,39 @@ static SwigV8ReturnValue _wrap_Utilities_concat__SWIG_0(const SwigV8Arguments &a
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_std__vectorT_std__string_t,  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'"); 
   }
   arg1 = reinterpret_cast< std::vector< std::string > * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_concat" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_concat" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_concat" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_concat" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = mga::Utilities::concat((std::vector< std::string > const &)*arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = mga::Utilities::concat((std::vector< std::string > const &)*arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2766,27 +12800,33 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_concat__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::vector< std::string > *arg1 = 0 ;
   void *argp1 ;
   int res1 = 0 ;
   std::string result;
-
+  
   res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_std__vectorT_std__string_t,  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_concat" "', argument " "1"" of type '" "std::vector< std::string > const &""'"); 
   }
   arg1 = reinterpret_cast< std::vector< std::string > * >(argp1);
-  result = mga::Utilities::concat((std::vector< std::string > const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::concat((std::vector< std::string > const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2795,11 +12835,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_concat(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2814,8 +12854,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_concat(const SwigV8Argu
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -2830,10 +12870,10 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_concat(const SwigV8Argu
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function concat.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2842,7 +12882,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_replaceStringInplace(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
@@ -2851,25 +12891,25 @@ static SwigV8ReturnValue _wrap_Utilities_replaceStringInplace(const SwigV8Argume
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
   int res3 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_replaceStringInplace.");
-
+  
   res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_std__string,  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_replaceStringInplace" "', argument " "1"" of type '" "std::string &""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_replaceStringInplace" "', argument " "1"" of type '" "std::string &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_replaceStringInplace" "', argument " "1"" of type '" "std::string &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_replaceStringInplace" "', argument " "1"" of type '" "std::string &""'"); 
   }
   arg1 = reinterpret_cast< std::string * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_replaceStringInplace" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_replaceStringInplace" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_replaceStringInplace" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_replaceStringInplace" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
@@ -2877,21 +12917,27 @@ static SwigV8ReturnValue _wrap_Utilities_replaceStringInplace(const SwigV8Argume
     std::string *ptr = (std::string *)0;
     res3 = SWIG_AsPtr_std_string(args[2], &ptr);
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Utilities_replaceStringInplace" "', argument " "3"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Utilities_replaceStringInplace" "', argument " "3"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_replaceStringInplace" "', argument " "3"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_replaceStringInplace" "', argument " "3"" of type '" "std::string const &""'"); 
     }
     arg3 = ptr;
   }
-  mga::Utilities::replaceStringInplace(*arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+  {
+    try {
+      mga::Utilities::replaceStringInplace(*arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
   if (SWIG_IsNewObj(res3)) delete arg3;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2900,29 +12946,35 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_ws2s(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::wstring *arg1 = 0 ;
   void *argp1 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_ws2s.");
-
+  
   res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_std__wstring,  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_ws2s" "', argument " "1"" of type '" "std::wstring const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_ws2s" "', argument " "1"" of type '" "std::wstring const &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_ws2s" "', argument " "1"" of type '" "std::wstring const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_ws2s" "', argument " "1"" of type '" "std::wstring const &""'"); 
   }
   arg1 = reinterpret_cast< std::wstring * >(argp1);
-  result = mga::Utilities::ws2s((std::wstring const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::ws2s((std::wstring const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2931,31 +12983,37 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_s2ws(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   std::wstring result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_s2ws.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_s2ws" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_s2ws" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_s2ws" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_s2ws" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
-  result = mga::Utilities::s2ws((std::string const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::s2ws((std::string const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::wstring(static_cast< const std::wstring& >(result))), SWIGTYPE_p_std__wstring, SWIG_POINTER_OWN |  0 );
   if (SWIG_IsNewObj(res1)) delete arg1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2964,17 +13022,23 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_getLastError(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_getLastError.");
-
-  result = mga::Utilities::getLastError();
+  
+  {
+    try {
+      result = mga::Utilities::getLastError();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2984,18 +13048,18 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_trimRight__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string arg1 ;
   std::string *arg2 = 0 ;
   int res2 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     int res = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimRight" "', argument " "1"" of type '" "std::string""'");
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimRight" "', argument " "1"" of type '" "std::string""'"); 
     }
     arg1 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
@@ -3004,20 +13068,26 @@ static SwigV8ReturnValue _wrap_Utilities_trimRight__SWIG_0(const SwigV8Arguments
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_trimRight" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_trimRight" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_trimRight" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_trimRight" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = mga::Utilities::trimRight(arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = mga::Utilities::trimRight(arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3027,26 +13097,32 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_trimRight__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string arg1 ;
   std::string result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     int res = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimRight" "', argument " "1"" of type '" "std::string""'");
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimRight" "', argument " "1"" of type '" "std::string""'"); 
     }
     arg1 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
   }
-  result = mga::Utilities::trimRight(arg1);
+  {
+    try {
+      result = mga::Utilities::trimRight(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3055,11 +13131,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trimRight(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -3074,8 +13150,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trimRight(const SwigV8A
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -3090,10 +13166,10 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trimRight(const SwigV8A
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function trimRight.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3103,18 +13179,18 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_trimLeft__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string arg1 ;
   std::string *arg2 = 0 ;
   int res2 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     int res = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimLeft" "', argument " "1"" of type '" "std::string""'");
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimLeft" "', argument " "1"" of type '" "std::string""'"); 
     }
     arg1 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
@@ -3123,20 +13199,26 @@ static SwigV8ReturnValue _wrap_Utilities_trimLeft__SWIG_0(const SwigV8Arguments 
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_trimLeft" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_trimLeft" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_trimLeft" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_trimLeft" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = mga::Utilities::trimLeft(arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = mga::Utilities::trimLeft(arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3146,26 +13228,32 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_trimLeft__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string arg1 ;
   std::string result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     int res = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimLeft" "', argument " "1"" of type '" "std::string""'");
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trimLeft" "', argument " "1"" of type '" "std::string""'"); 
     }
     arg1 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
   }
-  result = mga::Utilities::trimLeft(arg1);
+  {
+    try {
+      result = mga::Utilities::trimLeft(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3174,11 +13262,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trimLeft(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -3193,8 +13281,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trimLeft(const SwigV8Ar
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -3209,10 +13297,10 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trimLeft(const SwigV8Ar
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function trimLeft.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3222,18 +13310,18 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_trim__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string arg1 ;
   std::string *arg2 = 0 ;
   int res2 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     int res = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trim" "', argument " "1"" of type '" "std::string""'");
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trim" "', argument " "1"" of type '" "std::string""'"); 
     }
     arg1 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
@@ -3242,20 +13330,26 @@ static SwigV8ReturnValue _wrap_Utilities_trim__SWIG_0(const SwigV8Arguments &arg
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_trim" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_trim" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_trim" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_trim" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  result = mga::Utilities::trim(arg1,(std::string const &)*arg2);
+  {
+    try {
+      result = mga::Utilities::trim(arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3265,26 +13359,32 @@ fail:
 static SwigV8ReturnValue _wrap_Utilities_trim__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string arg1 ;
   std::string result;
-
+  
   {
     std::string *ptr = (std::string *)0;
     int res = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trim" "', argument " "1"" of type '" "std::string""'");
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Utilities_trim" "', argument " "1"" of type '" "std::string""'"); 
     }
     arg1 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
   }
-  result = mga::Utilities::trim(arg1);
+  {
+    try {
+      result = mga::Utilities::trim(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3293,11 +13393,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trim(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -3312,8 +13412,8 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trim(const SwigV8Argume
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -3328,10 +13428,10 @@ static SwigV8ReturnValue _wrap_Utilities__wrap_Utilities_trim(const SwigV8Argume
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function trim.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3340,7 +13440,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_format(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   char *arg1 = (char *) 0 ;
   void *arg2 = 0 ;
@@ -3348,20 +13448,26 @@ static SwigV8ReturnValue _wrap_Utilities_format(const SwigV8Arguments &args) {
   char *buf1 = 0 ;
   int alloc1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_format.");
-
+  
   res1 = SWIG_AsCharPtrAndSize(args[0], &buf1, NULL, &alloc1);
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_format" "', argument " "1"" of type '" "char const *""'");
   }
   arg1 = reinterpret_cast< char * >(buf1);
-  result = mga::Utilities::format((char const *)arg1,arg2);
+  {
+    try {
+      result = mga::Utilities::format((char const *)arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3370,7 +13476,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_normalize(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   mga::NormalizationForm arg2 ;
@@ -3378,32 +13484,38 @@ static SwigV8ReturnValue _wrap_Utilities_normalize(const SwigV8Arguments &args) 
   int val2 ;
   int ecode2 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_normalize.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_normalize" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_normalize" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_normalize" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_normalize" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Utilities_normalize" "', argument " "2"" of type '" "mga::NormalizationForm""'");
-  }
+  } 
   arg2 = static_cast< mga::NormalizationForm >(val2);
-  result = mga::Utilities::normalize((std::string const &)*arg1,arg2);
+  {
+    try {
+      result = mga::Utilities::normalize((std::string const &)*arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
   if (SWIG_IsNewObj(res1)) delete arg1;
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3412,31 +13524,37 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_readFile(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_readFile.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_readFile" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_readFile" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_readFile" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_readFile" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
-  result = mga::Utilities::readFile((std::string const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::readFile((std::string const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
   if (SWIG_IsNewObj(res1)) delete arg1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3445,23 +13563,23 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_writeFile(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   std::string *arg2 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_writeFile.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_writeFile" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_writeFile" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_writeFile" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_writeFile" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
@@ -3469,20 +13587,26 @@ static SwigV8ReturnValue _wrap_Utilities_writeFile(const SwigV8Arguments &args) 
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_writeFile" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Utilities_writeFile" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_writeFile" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_writeFile" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  mga::Utilities::writeFile((std::string const &)*arg1,(std::string const &)*arg2);
+  {
+    try {
+      mga::Utilities::writeFile((std::string const &)*arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
   if (SWIG_IsNewObj(res1)) delete arg1;
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3491,31 +13615,37 @@ fail:
 
 static SwigV8ReturnValue _wrap_Utilities_escapeJSONString(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Utilities_escapeJSONString.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_escapeJSONString" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Utilities_escapeJSONString" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_escapeJSONString" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Utilities_escapeJSONString" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
-  result = mga::Utilities::escapeJSONString((std::string const &)*arg1);
+  {
+    try {
+      result = mga::Utilities::escapeJSONString((std::string const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
   if (SWIG_IsNewObj(res1)) delete arg1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3524,17 +13654,23 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Utilities(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   mga::Utilities *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_Utilities.");
-  result = (mga::Utilities *)new mga::Utilities();
-
-
-
+  {
+    try {
+      result = (mga::Utilities *)new mga::Utilities();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_mga__Utilities, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3557,13 +13693,13 @@ static void _wrap_delete_Utilities(v8::Persistent<v8::Value> object, void *param
         static void _wrap_delete_Utilities(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             mga::Utilities * arg1 = (mga::Utilities *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -3584,13 +13720,13 @@ static SwigV8ReturnValue _wrap_aal_CheckState_Unchecked(v8::Local<v8::String> pr
   static SwigV8ReturnValue _wrap_aal_CheckState_Unchecked(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::CheckState::Unchecked));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3603,13 +13739,13 @@ static SwigV8ReturnValue _wrap_aal_CheckState_Checked(v8::Local<v8::String> prop
   static SwigV8ReturnValue _wrap_aal_CheckState_Checked(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::CheckState::Checked));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3622,13 +13758,13 @@ static SwigV8ReturnValue _wrap_aal_CheckState_Indeterminate(v8::Local<v8::String
   static SwigV8ReturnValue _wrap_aal_CheckState_Indeterminate(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::CheckState::Indeterminate));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3641,13 +13777,13 @@ static SwigV8ReturnValue _wrap_aal_MouseButton_NoButton(v8::Local<v8::String> pr
   static SwigV8ReturnValue _wrap_aal_MouseButton_NoButton(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::MouseButton::NoButton));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3660,13 +13796,13 @@ static SwigV8ReturnValue _wrap_aal_MouseButton_Left(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_MouseButton_Left(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::MouseButton::Left));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3679,13 +13815,13 @@ static SwigV8ReturnValue _wrap_aal_MouseButton_Right(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap_aal_MouseButton_Right(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::MouseButton::Right));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3698,13 +13834,13 @@ static SwigV8ReturnValue _wrap_aal_MouseButton_Middle(v8::Local<v8::String> prop
   static SwigV8ReturnValue _wrap_aal_MouseButton_Middle(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::MouseButton::Middle));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3717,13 +13853,13 @@ static SwigV8ReturnValue _wrap_aal_Key_NoKey(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_NoKey(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::NoKey));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3736,13 +13872,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key0(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key0(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key0));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3755,13 +13891,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key1(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key1(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key1));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3774,13 +13910,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key2(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key2(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key2));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3793,13 +13929,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key3(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key3(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key3));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3812,13 +13948,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key4(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key4(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key4));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3831,13 +13967,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key5(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key5(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key5));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3850,13 +13986,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key6(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key6(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key6));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3869,13 +14005,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key7(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key7(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key7));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3888,13 +14024,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key8(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key8(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key8));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3907,13 +14043,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Key9(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_Key9(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Key9));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3926,13 +14062,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyPlus(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Key_KeyPlus(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyPlus));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3945,13 +14081,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyMinus(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Key_KeyMinus(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyMinus));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3964,13 +14100,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyA(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyA(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyA));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3983,13 +14119,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyB(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyB(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyB));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4002,13 +14138,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyC(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyC(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyC));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4021,13 +14157,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyD(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyD(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyD));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4040,13 +14176,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyE(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyE));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4059,13 +14195,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyF(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4078,13 +14214,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyG(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyG(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyG));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4097,13 +14233,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyH(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyH(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyH));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4116,13 +14252,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyI(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyI(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyI));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4135,13 +14271,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyJ(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyJ(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyJ));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4154,13 +14290,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyK(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyK(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyK));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4173,13 +14309,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyL(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyL(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyL));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4192,13 +14328,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyM(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyM(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyM));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4211,13 +14347,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyN(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyN(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyN));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4230,13 +14366,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyO(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyO(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyO));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4249,13 +14385,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyP(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyP(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyP));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4268,13 +14404,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyQ(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyQ(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyQ));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4287,13 +14423,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyR(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyR(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyR));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4306,13 +14442,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyS(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyS(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyS));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4325,13 +14461,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyT(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyT(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyT));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4344,13 +14480,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyU(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyU(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyU));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4363,13 +14499,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyV(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyV(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyV));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4382,13 +14518,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyW(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyW(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyW));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4401,13 +14537,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyX(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyX(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyX));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4420,13 +14556,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyY(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyY(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyY));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4439,13 +14575,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyZ(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Key_KeyZ(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyZ));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4458,13 +14594,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyTab(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Key_KeyTab(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyTab));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4477,13 +14613,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyBackspace(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_Key_KeyBackspace(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyBackspace));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4496,13 +14632,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyReturn(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Key_KeyReturn(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyReturn));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4515,13 +14651,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyDot(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Key_KeyDot(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyDot));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4534,13 +14670,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyComma(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Key_KeyComma(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyComma));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4553,13 +14689,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyColon(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Key_KeyColon(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyColon));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4572,13 +14708,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeySlash(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Key_KeySlash(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeySlash));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4591,13 +14727,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyBackslash(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_Key_KeyBackslash(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyBackslash));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4610,13 +14746,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyBraceLeft(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_Key_KeyBraceLeft(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyBraceLeft));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4629,13 +14765,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyBraceRight(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap_aal_Key_KeyBraceRight(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyBraceRight));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4648,13 +14784,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyDelete(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Key_KeyDelete(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyDelete));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4667,13 +14803,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyUp(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyUp(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyUp));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4686,13 +14822,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyEscape(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Key_KeyEscape(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyEscape));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4705,13 +14841,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyDown(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Key_KeyDown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyDown));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4724,13 +14860,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyLeft(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Key_KeyLeft(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyLeft));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4743,13 +14879,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyRight(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Key_KeyRight(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyRight));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4762,13 +14898,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyPageUp(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Key_KeyPageUp(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyPageUp));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4781,13 +14917,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyPageDown(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_aal_Key_KeyPageDown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyPageDown));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4800,13 +14936,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyEnd(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Key_KeyEnd(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyEnd));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4819,13 +14955,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyHome(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Key_KeyHome(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyHome));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4838,13 +14974,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeySpace(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Key_KeySpace(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeySpace));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4857,13 +14993,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF1(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF1(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF1));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4876,13 +15012,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF2(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF2(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF2));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4895,13 +15031,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF3(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF3(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF3));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4914,13 +15050,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF4(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF4(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF4));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4933,13 +15069,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF5(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF5(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF5));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4952,13 +15088,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF6(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF6(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF6));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4971,13 +15107,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF7(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF7(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF7));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4990,13 +15126,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF8(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF8(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF8));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5009,13 +15145,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF9(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Key_KeyF9(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF9));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5028,13 +15164,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF10(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Key_KeyF10(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF10));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5047,13 +15183,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF11(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Key_KeyF11(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF11));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5066,13 +15202,13 @@ static SwigV8ReturnValue _wrap_aal_Key_KeyF12(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Key_KeyF12(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::KeyF12));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5085,13 +15221,13 @@ static SwigV8ReturnValue _wrap_aal_Key_Sentinel(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Key_Sentinel(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Key::Sentinel));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5104,13 +15240,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_NoModifier(v8::Local<v8::String> pro
   static SwigV8ReturnValue _wrap_aal_Modifier_NoModifier(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::NoModifier));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5123,13 +15259,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_ShiftLeft(v8::Local<v8::String> prop
   static SwigV8ReturnValue _wrap_aal_Modifier_ShiftLeft(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::ShiftLeft));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5142,13 +15278,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_ShiftRight(v8::Local<v8::String> pro
   static SwigV8ReturnValue _wrap_aal_Modifier_ShiftRight(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::ShiftRight));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5161,13 +15297,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_ControlLeft(v8::Local<v8::String> pr
   static SwigV8ReturnValue _wrap_aal_Modifier_ControlLeft(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::ControlLeft));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5180,13 +15316,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_ControlRight(v8::Local<v8::String> p
   static SwigV8ReturnValue _wrap_aal_Modifier_ControlRight(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::ControlRight));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5199,13 +15335,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_AltLeft(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_Modifier_AltLeft(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::AltLeft));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5218,13 +15354,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_AltRight(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap_aal_Modifier_AltRight(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::AltRight));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5237,13 +15373,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_MetaLeft(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap_aal_Modifier_MetaLeft(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::MetaLeft));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5256,13 +15392,13 @@ static SwigV8ReturnValue _wrap_aal_Modifier_MetaRight(v8::Local<v8::String> prop
   static SwigV8ReturnValue _wrap_aal_Modifier_MetaRight(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Modifier::MetaRight));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5271,26 +15407,32 @@ static SwigV8ReturnValue _wrap_aal_Modifier_MetaRight(v8::Local<v8::String> prop
 
 static SwigV8ReturnValue _wrap_keyToString(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Key arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_keyToString.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "keyToString" "', argument " "1"" of type '" "aal::Key""'");
-  }
+  } 
   arg1 = static_cast< aal::Key >(val1);
-  result = aal::keyToString(arg1);
+  {
+    try {
+      result = aal::keyToString(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5299,26 +15441,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_modifierToString(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Modifier arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_modifierToString.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "modifierToString" "', argument " "1"" of type '" "aal::Modifier""'");
-  }
+  } 
   arg1 = static_cast< aal::Modifier >(val1);
-  result = aal::modifierToString(arg1);
+  {
+    try {
+      result = aal::modifierToString(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5327,7 +15475,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_containsModifier(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Modifier arg1 ;
   aal::Modifier arg2 ;
@@ -5336,26 +15484,32 @@ static SwigV8ReturnValue _wrap_containsModifier(const SwigV8Arguments &args) {
   int val2 ;
   int ecode2 = 0 ;
   bool result;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_containsModifier.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "containsModifier" "', argument " "1"" of type '" "aal::Modifier""'");
-  }
+  } 
   arg1 = static_cast< aal::Modifier >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "containsModifier" "', argument " "2"" of type '" "aal::Modifier""'");
-  }
+  } 
   arg2 = static_cast< aal::Modifier >(val2);
-  result = (bool)aal::containsModifier(arg1,arg2);
+  {
+    try {
+      result = (bool)aal::containsModifier(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5364,26 +15518,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_modifierFromNumber(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   size_t arg1 ;
   size_t val1 ;
   int ecode1 = 0 ;
   aal::Modifier result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_modifierFromNumber.");
-
+  
   ecode1 = SWIG_AsVal_size_t(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "modifierFromNumber" "', argument " "1"" of type '" "size_t""'");
-  }
+  } 
   arg1 = static_cast< size_t >(val1);
-  result = (aal::Modifier)aal::modifierFromNumber(arg1);
+  {
+    try {
+      result = (aal::Modifier)aal::modifierFromNumber(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5392,30 +15552,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_methodNotImplemented(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   std::string *arg1 = 0 ;
   int res1 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_methodNotImplemented.");
-
+  
   {
     std::string *ptr = (std::string *)0;
     res1 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "methodNotImplemented" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "methodNotImplemented" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "methodNotImplemented" "', argument " "1"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "methodNotImplemented" "', argument " "1"" of type '" "std::string const &""'"); 
     }
     arg1 = ptr;
   }
-  aal::methodNotImplemented((std::string const &)*arg1);
+  {
+    try {
+      aal::methodNotImplemented((std::string const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
   if (SWIG_IsNewObj(res1)) delete arg1;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5428,13 +15594,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Unknown(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Role_Unknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Unknown));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5447,13 +15613,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Any(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Role_Any(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Any));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5466,13 +15632,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Application(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_Role_Application(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Application));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5485,13 +15651,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Window(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Role_Window(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Window));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5504,13 +15670,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Button(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Role_Button(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Button));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5523,13 +15689,13 @@ static SwigV8ReturnValue _wrap_aal_Role_RadioButton(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_Role_RadioButton(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::RadioButton));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5542,13 +15708,13 @@ static SwigV8ReturnValue _wrap_aal_Role_RadioGroup(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_aal_Role_RadioGroup(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::RadioGroup));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5561,13 +15727,13 @@ static SwigV8ReturnValue _wrap_aal_Role_CheckBox(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_CheckBox(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::CheckBox));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5580,13 +15746,13 @@ static SwigV8ReturnValue _wrap_aal_Role_ComboBox(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_ComboBox(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::ComboBox));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5599,13 +15765,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Expander(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_Expander(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Expander));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5618,13 +15784,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Grid(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Role_Grid(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Grid));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5637,13 +15803,13 @@ static SwigV8ReturnValue _wrap_aal_Role_TextBox(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Role_TextBox(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::TextBox));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5656,13 +15822,13 @@ static SwigV8ReturnValue _wrap_aal_Role_TreeView(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_TreeView(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::TreeView));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5675,13 +15841,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Label(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Role_Label(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Label));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5694,13 +15860,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Pane(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Role_Pane(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Pane));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5713,13 +15879,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Menu(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Role_Menu(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Menu));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5732,13 +15898,13 @@ static SwigV8ReturnValue _wrap_aal_Role_MenuBar(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Role_MenuBar(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::MenuBar));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5751,13 +15917,13 @@ static SwigV8ReturnValue _wrap_aal_Role_MenuItem(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_MenuItem(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::MenuItem));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5770,13 +15936,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Separator(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_aal_Role_Separator(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Separator));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5789,13 +15955,13 @@ static SwigV8ReturnValue _wrap_aal_Role_SplitContainer(v8::Local<v8::String> pro
   static SwigV8ReturnValue _wrap_aal_Role_SplitContainer(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::SplitContainer));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5808,13 +15974,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Splitter(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_Splitter(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Splitter));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5827,13 +15993,13 @@ static SwigV8ReturnValue _wrap_aal_Role_GroupBox(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_GroupBox(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::GroupBox));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5846,13 +16012,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Image(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_aal_Role_Image(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Image));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5865,13 +16031,13 @@ static SwigV8ReturnValue _wrap_aal_Role_TabView(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Role_TabView(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::TabView));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5884,13 +16050,13 @@ static SwigV8ReturnValue _wrap_aal_Role_TabPage(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Role_TabPage(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::TabPage));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5903,13 +16069,13 @@ static SwigV8ReturnValue _wrap_aal_Role_DatePicker(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_aal_Role_DatePicker(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::DatePicker));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5922,13 +16088,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Row(v8::Local<v8::String> property, cons
   static SwigV8ReturnValue _wrap_aal_Role_Row(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Row));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5941,13 +16107,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Column(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Role_Column(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Column));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5960,13 +16126,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Cell(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Role_Cell(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Cell));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5979,13 +16145,13 @@ static SwigV8ReturnValue _wrap_aal_Role_ScrollBox(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_aal_Role_ScrollBox(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::ScrollBox));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5998,13 +16164,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Slider(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_aal_Role_Slider(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Slider));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6017,13 +16183,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Stepper(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_aal_Role_Stepper(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Stepper));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6036,13 +16202,13 @@ static SwigV8ReturnValue _wrap_aal_Role_List(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_aal_Role_List(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::List));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6055,13 +16221,13 @@ static SwigV8ReturnValue _wrap_aal_Role_IconView(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_IconView(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::IconView));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6074,13 +16240,13 @@ static SwigV8ReturnValue _wrap_aal_Role_ProgressIndicator(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_aal_Role_ProgressIndicator(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::ProgressIndicator));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6093,13 +16259,13 @@ static SwigV8ReturnValue _wrap_aal_Role_BusyIndicator(v8::Local<v8::String> prop
   static SwigV8ReturnValue _wrap_aal_Role_BusyIndicator(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::BusyIndicator));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6112,13 +16278,13 @@ static SwigV8ReturnValue _wrap_aal_Role_ScrollBar(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_aal_Role_ScrollBar(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::ScrollBar));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6131,13 +16297,13 @@ static SwigV8ReturnValue _wrap_aal_Role_ScrollThumb(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_aal_Role_ScrollThumb(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::ScrollThumb));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6150,13 +16316,13 @@ static SwigV8ReturnValue _wrap_aal_Role_HyperLink(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_aal_Role_HyperLink(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::HyperLink));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6169,13 +16335,13 @@ static SwigV8ReturnValue _wrap_aal_Role_Sentinel(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_aal_Role_Sentinel(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(aal::Role::Sentinel));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6184,26 +16350,32 @@ static SwigV8ReturnValue _wrap_aal_Role_Sentinel(v8::Local<v8::String> property,
 
 static SwigV8ReturnValue _wrap_roleToString(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Role arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_roleToString.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "roleToString" "', argument " "1"" of type '" "aal::Role""'");
-  }
+  } 
   arg1 = static_cast< aal::Role >(val1);
-  result = aal::roleToString(arg1);
+  {
+    try {
+      result = aal::roleToString(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6212,26 +16384,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_roleToFriendlyString(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Role arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_roleToFriendlyString.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "roleToFriendlyString" "', argument " "1"" of type '" "aal::Role""'");
-  }
+  } 
   arg1 = static_cast< aal::Role >(val1);
-  result = aal::roleToFriendlyString(arg1);
+  {
+    try {
+      result = aal::roleToFriendlyString(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6240,26 +16418,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_roleToJSType(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Role arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_roleToJSType.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "roleToJSType" "', argument " "1"" of type '" "aal::Role""'");
-  }
+  } 
   arg1 = static_cast< aal::Role >(val1);
-  result = aal::roleToJSType(arg1);
+  {
+    try {
+      result = aal::roleToJSType(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6272,13 +16456,13 @@ static SwigV8ReturnValue _wrap_mga_Success(v8::Local<v8::String> property, const
   static SwigV8ReturnValue _wrap_mga_Success(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::Success));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6291,13 +16475,13 @@ static SwigV8ReturnValue _wrap_mga_ScriptError(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_mga_ScriptError(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::ScriptError));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6310,13 +16494,13 @@ static SwigV8ReturnValue _wrap_mga_RunLoopError(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_mga_RunLoopError(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::RunLoopError));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6329,13 +16513,13 @@ static SwigV8ReturnValue _wrap_mga_Other(v8::Local<v8::String> property, const S
   static SwigV8ReturnValue _wrap_mga_Other(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::Other));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6348,13 +16532,13 @@ static SwigV8ReturnValue _wrap_mga_CompletionFailure(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap_mga_CompletionFailure(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
-
+    
     jsresult = SWIG_From_int(static_cast< int >(mga::CompletionFailure));
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6363,26 +16547,32 @@ static SwigV8ReturnValue _wrap_mga_CompletionFailure(v8::Local<v8::String> prope
 
 static SwigV8ReturnValue _wrap_SerializableObject_toJson(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   mga::SerializableObject *arg1 = (mga::SerializableObject *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_SerializableObject_toJson.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_mga__SerializableObject, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SerializableObject_toJson" "', argument " "1"" of type '" "mga::SerializableObject const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SerializableObject_toJson" "', argument " "1"" of type '" "mga::SerializableObject const *""'"); 
   }
   arg1 = reinterpret_cast< mga::SerializableObject * >(argp1);
-  result = ((mga::SerializableObject const *)arg1)->toJson();
+  {
+    try {
+      result = ((mga::SerializableObject const *)arg1)->toJson();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6405,13 +16595,13 @@ static void _wrap_delete_SerializableObject(v8::Persistent<v8::Value> object, vo
         static void _wrap_delete_SerializableObject(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             mga::SerializableObject * arg1 = (mga::SerializableObject *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -6428,7 +16618,7 @@ static void _wrap_delete_SerializableObject(v8::Persistent<v8::Value> object, vo
 
 static SwigV8ReturnValue _wrap_new_veto_SerializableObject(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   SWIG_exception(SWIG_ERROR, "Class SerializableObject can not be instantiated");
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6441,28 +16631,28 @@ static void _wrap_Point_x_set(v8::Local<v8::String> property, v8::Local<v8::Valu
   static void _wrap_Point_x_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     geometry::Point *arg1 = (geometry::Point *) 0 ;
     int arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Point, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_x_set" "', argument " "1"" of type '" "geometry::Point *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_x_set" "', argument " "1"" of type '" "geometry::Point *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Point * >(argp1);
     ecode2 = SWIG_AsVal_int(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point_x_set" "', argument " "2"" of type '" "int""'");
-    }
+    } 
     arg2 = static_cast< int >(val2);
     if (arg1) (arg1)->x = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -6475,24 +16665,24 @@ static SwigV8ReturnValue _wrap_Point_x_get(v8::Local<v8::String> property, const
   static SwigV8ReturnValue _wrap_Point_x_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     geometry::Point *arg1 = (geometry::Point *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Point, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_x_get" "', argument " "1"" of type '" "geometry::Point *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_x_get" "', argument " "1"" of type '" "geometry::Point *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Point * >(argp1);
     result = (int) ((arg1)->x);
     jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6505,28 +16695,28 @@ static void _wrap_Point_y_set(v8::Local<v8::String> property, v8::Local<v8::Valu
   static void _wrap_Point_y_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     geometry::Point *arg1 = (geometry::Point *) 0 ;
     int arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Point, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_y_set" "', argument " "1"" of type '" "geometry::Point *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_y_set" "', argument " "1"" of type '" "geometry::Point *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Point * >(argp1);
     ecode2 = SWIG_AsVal_int(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Point_y_set" "', argument " "2"" of type '" "int""'");
-    }
+    } 
     arg2 = static_cast< int >(val2);
     if (arg1) (arg1)->y = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -6539,24 +16729,24 @@ static SwigV8ReturnValue _wrap_Point_y_get(v8::Local<v8::String> property, const
   static SwigV8ReturnValue _wrap_Point_y_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     geometry::Point *arg1 = (geometry::Point *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Point, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_y_get" "', argument " "1"" of type '" "geometry::Point *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_y_get" "', argument " "1"" of type '" "geometry::Point *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Point * >(argp1);
     result = (int) ((arg1)->y);
     jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6565,17 +16755,23 @@ static SwigV8ReturnValue _wrap_Point_y_get(v8::Local<v8::String> property, const
 
 static SwigV8ReturnValue _wrap_new_Point__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   geometry::Point *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_Point__SWIG_0.");
-  result = (geometry::Point *)new geometry::Point();
-
-
-
+  {
+    try {
+      result = (geometry::Point *)new geometry::Point();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Point, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6584,7 +16780,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Point__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   int arg1 ;
   int arg2 ;
@@ -6597,22 +16793,28 @@ static SwigV8ReturnValue _wrap_new_Point__SWIG_1(const SwigV8Arguments &args, V8
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Point" "', argument " "1"" of type '" "int""'");
-  }
+  } 
   arg1 = static_cast< int >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Point" "', argument " "2"" of type '" "int""'");
-  }
+  } 
   arg2 = static_cast< int >(val2);
-  result = (geometry::Point *)new geometry::Point(arg1,arg2);
-
-
-
-
-
+  {
+    try {
+      result = (geometry::Point *)new geometry::Point(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Point, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6621,7 +16823,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Point__SWIG_2(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   geometry::Point *arg1 = 0 ;
   void *argp1 ;
@@ -6630,20 +16832,26 @@ static SwigV8ReturnValue _wrap_new_Point__SWIG_2(const SwigV8Arguments &args, V8
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_Point__SWIG_2.");
   res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_geometry__Point,  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Point" "', argument " "1"" of type '" "geometry::Point const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Point" "', argument " "1"" of type '" "geometry::Point const &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Point" "', argument " "1"" of type '" "geometry::Point const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Point" "', argument " "1"" of type '" "geometry::Point const &""'"); 
   }
   arg1 = reinterpret_cast< geometry::Point * >(argp1);
-  result = (geometry::Point *)new geometry::Point((geometry::Point const &)*arg1);
-
-
-
-
+  {
+    try {
+      result = (geometry::Point *)new geometry::Point((geometry::Point const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Point, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6652,12 +16860,12 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Point(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   OverloadErrorHandler errorHandler;
   v8::Handle<v8::Value> self;
-
+  
   // switch all cases by means of series of if-returns.
-
+  
   if(args.Length() == 0) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -6672,7 +16880,7 @@ static SwigV8ReturnValue _wrap_new_Point(const SwigV8Arguments &args) {
     }
 #endif
   }
-
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -6687,7 +16895,7 @@ static SwigV8ReturnValue _wrap_new_Point(const SwigV8Arguments &args) {
     }
 #endif
   }
-
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -6702,11 +16910,11 @@ static SwigV8ReturnValue _wrap_new_Point(const SwigV8Arguments &args) {
     }
 #endif
   }
-
-
+  
+  
   // default:
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for construction of _exports_Point");
-
+  
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
 }
@@ -6714,26 +16922,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Point_toJson(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Point *arg1 = (geometry::Point *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Point_toJson.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Point, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_toJson" "', argument " "1"" of type '" "geometry::Point const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Point_toJson" "', argument " "1"" of type '" "geometry::Point const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Point * >(argp1);
-  result = ((geometry::Point const *)arg1)->toJson();
+  {
+    try {
+      result = ((geometry::Point const *)arg1)->toJson();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6756,13 +16970,13 @@ static void _wrap_delete_Point(v8::Persistent<v8::Value> object, void *parameter
         static void _wrap_delete_Point(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             geometry::Point * arg1 = (geometry::Point *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -6783,28 +16997,28 @@ static void _wrap_Size_width_set(v8::Local<v8::String> property, v8::Local<v8::V
   static void _wrap_Size_width_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     geometry::Size *arg1 = (geometry::Size *) 0 ;
     int arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Size, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_width_set" "', argument " "1"" of type '" "geometry::Size *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_width_set" "', argument " "1"" of type '" "geometry::Size *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Size * >(argp1);
     ecode2 = SWIG_AsVal_int(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Size_width_set" "', argument " "2"" of type '" "int""'");
-    }
+    } 
     arg2 = static_cast< int >(val2);
     if (arg1) (arg1)->width = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -6817,24 +17031,24 @@ static SwigV8ReturnValue _wrap_Size_width_get(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_Size_width_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     geometry::Size *arg1 = (geometry::Size *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Size, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_width_get" "', argument " "1"" of type '" "geometry::Size *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_width_get" "', argument " "1"" of type '" "geometry::Size *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Size * >(argp1);
     result = (int) ((arg1)->width);
     jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6847,28 +17061,28 @@ static void _wrap_Size_height_set(v8::Local<v8::String> property, v8::Local<v8::
   static void _wrap_Size_height_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     geometry::Size *arg1 = (geometry::Size *) 0 ;
     int arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Size, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_height_set" "', argument " "1"" of type '" "geometry::Size *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_height_set" "', argument " "1"" of type '" "geometry::Size *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Size * >(argp1);
     ecode2 = SWIG_AsVal_int(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Size_height_set" "', argument " "2"" of type '" "int""'");
-    }
+    } 
     arg2 = static_cast< int >(val2);
     if (arg1) (arg1)->height = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -6881,24 +17095,24 @@ static SwigV8ReturnValue _wrap_Size_height_get(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_Size_height_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     geometry::Size *arg1 = (geometry::Size *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Size, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_height_get" "', argument " "1"" of type '" "geometry::Size *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_height_get" "', argument " "1"" of type '" "geometry::Size *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Size * >(argp1);
     result = (int) ((arg1)->height);
     jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6907,17 +17121,23 @@ static SwigV8ReturnValue _wrap_Size_height_get(v8::Local<v8::String> property, c
 
 static SwigV8ReturnValue _wrap_new_Size__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   geometry::Size *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_Size__SWIG_0.");
-  result = (geometry::Size *)new geometry::Size();
-
-
-
+  {
+    try {
+      result = (geometry::Size *)new geometry::Size();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Size, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6926,7 +17146,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Size__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   int arg1 ;
   int arg2 ;
@@ -6939,22 +17159,28 @@ static SwigV8ReturnValue _wrap_new_Size__SWIG_1(const SwigV8Arguments &args, V8E
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Size" "', argument " "1"" of type '" "int""'");
-  }
+  } 
   arg1 = static_cast< int >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Size" "', argument " "2"" of type '" "int""'");
-  }
+  } 
   arg2 = static_cast< int >(val2);
-  result = (geometry::Size *)new geometry::Size(arg1,arg2);
-
-
-
-
-
+  {
+    try {
+      result = (geometry::Size *)new geometry::Size(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Size, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6963,7 +17189,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Size__SWIG_2(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   geometry::Size *arg1 = 0 ;
   void *argp1 ;
@@ -6972,20 +17198,26 @@ static SwigV8ReturnValue _wrap_new_Size__SWIG_2(const SwigV8Arguments &args, V8E
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_Size__SWIG_2.");
   res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_geometry__Size,  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Size" "', argument " "1"" of type '" "geometry::Size const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Size" "', argument " "1"" of type '" "geometry::Size const &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Size" "', argument " "1"" of type '" "geometry::Size const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Size" "', argument " "1"" of type '" "geometry::Size const &""'"); 
   }
   arg1 = reinterpret_cast< geometry::Size * >(argp1);
-  result = (geometry::Size *)new geometry::Size((geometry::Size const &)*arg1);
-
-
-
-
+  {
+    try {
+      result = (geometry::Size *)new geometry::Size((geometry::Size const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Size, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6994,12 +17226,12 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Size(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   OverloadErrorHandler errorHandler;
   v8::Handle<v8::Value> self;
-
+  
   // switch all cases by means of series of if-returns.
-
+  
   if(args.Length() == 0) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7014,7 +17246,7 @@ static SwigV8ReturnValue _wrap_new_Size(const SwigV8Arguments &args) {
     }
 #endif
   }
-
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7029,7 +17261,7 @@ static SwigV8ReturnValue _wrap_new_Size(const SwigV8Arguments &args) {
     }
 #endif
   }
-
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7044,11 +17276,11 @@ static SwigV8ReturnValue _wrap_new_Size(const SwigV8Arguments &args) {
     }
 #endif
   }
-
-
+  
+  
   // default:
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for construction of _exports_Size");
-
+  
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
 }
@@ -7056,26 +17288,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Size_toJson(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Size *arg1 = (geometry::Size *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Size_toJson.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Size, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_toJson" "', argument " "1"" of type '" "geometry::Size const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Size_toJson" "', argument " "1"" of type '" "geometry::Size const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Size * >(argp1);
-  result = ((geometry::Size const *)arg1)->toJson();
+  {
+    try {
+      result = ((geometry::Size const *)arg1)->toJson();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7098,13 +17336,13 @@ static void _wrap_delete_Size(v8::Persistent<v8::Value> object, void *parameter)
         static void _wrap_delete_Size(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             geometry::Size * arg1 = (geometry::Size *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -7125,28 +17363,28 @@ static void _wrap_Rectangle_position_set(v8::Local<v8::String> property, v8::Loc
   static void _wrap_Rectangle_position_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
     geometry::Point *arg2 = (geometry::Point *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *argp2 = 0 ;
     int res2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_position_set" "', argument " "1"" of type '" "geometry::Rectangle *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_position_set" "', argument " "1"" of type '" "geometry::Rectangle *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
     res2 = SWIG_ConvertPtr(value, &argp2,SWIGTYPE_p_geometry__Point, 0 |  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_position_set" "', argument " "2"" of type '" "geometry::Point *""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_position_set" "', argument " "2"" of type '" "geometry::Point *""'"); 
     }
     arg2 = reinterpret_cast< geometry::Point * >(argp2);
     if (arg1) (arg1)->position = *arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -7159,24 +17397,24 @@ static SwigV8ReturnValue _wrap_Rectangle_position_get(v8::Local<v8::String> prop
   static SwigV8ReturnValue _wrap_Rectangle_position_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     geometry::Point *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_position_get" "', argument " "1"" of type '" "geometry::Rectangle *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_position_get" "', argument " "1"" of type '" "geometry::Rectangle *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
     result = (geometry::Point *)& ((arg1)->position);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_geometry__Point, 0 |  0 );
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7189,28 +17427,28 @@ static void _wrap_Rectangle_size_set(v8::Local<v8::String> property, v8::Local<v
   static void _wrap_Rectangle_size_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
     geometry::Size *arg2 = (geometry::Size *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *argp2 = 0 ;
     int res2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_size_set" "', argument " "1"" of type '" "geometry::Rectangle *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_size_set" "', argument " "1"" of type '" "geometry::Rectangle *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
     res2 = SWIG_ConvertPtr(value, &argp2,SWIGTYPE_p_geometry__Size, 0 |  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_size_set" "', argument " "2"" of type '" "geometry::Size *""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_size_set" "', argument " "2"" of type '" "geometry::Size *""'"); 
     }
     arg2 = reinterpret_cast< geometry::Size * >(argp2);
     if (arg1) (arg1)->size = *arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -7223,24 +17461,24 @@ static SwigV8ReturnValue _wrap_Rectangle_size_get(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_Rectangle_size_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     geometry::Size *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_size_get" "', argument " "1"" of type '" "geometry::Rectangle *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_size_get" "', argument " "1"" of type '" "geometry::Rectangle *""'"); 
     }
     arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
     result = (geometry::Size *)& ((arg1)->size);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_geometry__Size, 0 |  0 );
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7249,17 +17487,23 @@ static SwigV8ReturnValue _wrap_Rectangle_size_get(v8::Local<v8::String> property
 
 static SwigV8ReturnValue _wrap_new_Rectangle__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   geometry::Rectangle *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_Rectangle__SWIG_0.");
-  result = (geometry::Rectangle *)new geometry::Rectangle();
-
-
-
+  {
+    try {
+      result = (geometry::Rectangle *)new geometry::Rectangle();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Rectangle, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7268,7 +17512,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Rectangle__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   geometry::Rectangle *arg1 = 0 ;
   void *argp1 ;
@@ -7277,20 +17521,26 @@ static SwigV8ReturnValue _wrap_new_Rectangle__SWIG_1(const SwigV8Arguments &args
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_Rectangle__SWIG_1.");
   res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_geometry__Rectangle,  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Rectangle" "', argument " "1"" of type '" "geometry::Rectangle const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Rectangle" "', argument " "1"" of type '" "geometry::Rectangle const &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Rectangle" "', argument " "1"" of type '" "geometry::Rectangle const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Rectangle" "', argument " "1"" of type '" "geometry::Rectangle const &""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
-  result = (geometry::Rectangle *)new geometry::Rectangle((geometry::Rectangle const &)*arg1);
-
-
-
-
+  {
+    try {
+      result = (geometry::Rectangle *)new geometry::Rectangle((geometry::Rectangle const &)*arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Rectangle, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7299,7 +17549,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Rectangle__SWIG_2(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   int arg1 ;
   int arg2 ;
@@ -7318,34 +17568,40 @@ static SwigV8ReturnValue _wrap_new_Rectangle__SWIG_2(const SwigV8Arguments &args
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Rectangle" "', argument " "1"" of type '" "int""'");
-  }
+  } 
   arg1 = static_cast< int >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Rectangle" "', argument " "2"" of type '" "int""'");
-  }
+  } 
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Rectangle" "', argument " "3"" of type '" "int""'");
-  }
+  } 
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Rectangle" "', argument " "4"" of type '" "int""'");
-  }
+  } 
   arg4 = static_cast< int >(val4);
-  result = (geometry::Rectangle *)new geometry::Rectangle(arg1,arg2,arg3,arg4);
-
-
-
-
-
-
-
+  {
+    try {
+      result = (geometry::Rectangle *)new geometry::Rectangle(arg1,arg2,arg3,arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_geometry__Rectangle, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7354,12 +17610,12 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_Rectangle(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   OverloadErrorHandler errorHandler;
   v8::Handle<v8::Value> self;
-
+  
   // switch all cases by means of series of if-returns.
-
+  
   if(args.Length() == 0) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7374,7 +17630,7 @@ static SwigV8ReturnValue _wrap_new_Rectangle(const SwigV8Arguments &args) {
     }
 #endif
   }
-
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7389,7 +17645,7 @@ static SwigV8ReturnValue _wrap_new_Rectangle(const SwigV8Arguments &args) {
     }
 #endif
   }
-
+  
   if(args.Length() == 4) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7404,11 +17660,11 @@ static SwigV8ReturnValue _wrap_new_Rectangle(const SwigV8Arguments &args) {
     }
 #endif
   }
-
-
+  
+  
   // default:
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for construction of _exports_Rectangle");
-
+  
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
 }
@@ -7417,7 +17673,7 @@ fail:
 static SwigV8ReturnValue _wrap_Rectangle_contains__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   geometry::Point *arg2 = 0 ;
@@ -7426,27 +17682,33 @@ static SwigV8ReturnValue _wrap_Rectangle_contains__SWIG_0(const SwigV8Arguments 
   void *argp2 ;
   int res2 = 0 ;
   bool result;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_contains" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_contains" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Point const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Point const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Point const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Point const &""'"); 
   }
   arg2 = reinterpret_cast< geometry::Point * >(argp2);
-  result = (bool)((geometry::Rectangle const *)arg1)->contains((geometry::Point const &)*arg2);
+  {
+    try {
+      result = (bool)((geometry::Rectangle const *)arg1)->contains((geometry::Point const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7456,7 +17718,7 @@ fail:
 static SwigV8ReturnValue _wrap_Rectangle_contains__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   geometry::Rectangle *arg2 = 0 ;
@@ -7465,27 +17727,33 @@ static SwigV8ReturnValue _wrap_Rectangle_contains__SWIG_1(const SwigV8Arguments 
   void *argp2 ;
   int res2 = 0 ;
   bool result;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_contains" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_contains" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Rectangle,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Rectangle const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Rectangle const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Rectangle const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Rectangle_contains" "', argument " "2"" of type '" "geometry::Rectangle const &""'"); 
   }
   arg2 = reinterpret_cast< geometry::Rectangle * >(argp2);
-  result = (bool)((geometry::Rectangle const *)arg1)->contains((geometry::Rectangle const &)*arg2);
+  {
+    try {
+      result = (bool)((geometry::Rectangle const *)arg1)->contains((geometry::Rectangle const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7494,11 +17762,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle__wrap_Rectangle_contains(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7513,8 +17781,8 @@ static SwigV8ReturnValue _wrap_Rectangle__wrap_Rectangle_contains(const SwigV8Ar
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7529,10 +17797,10 @@ static SwigV8ReturnValue _wrap_Rectangle__wrap_Rectangle_contains(const SwigV8Ar
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function contains.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7541,26 +17809,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle_empty(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle_empty.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_empty" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_empty" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
-  result = (bool)((geometry::Rectangle const *)arg1)->empty();
+  {
+    try {
+      result = (bool)((geometry::Rectangle const *)arg1)->empty();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7569,26 +17843,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle_minX(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle_minX.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_minX" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_minX" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
-  result = (int)((geometry::Rectangle const *)arg1)->minX();
+  {
+    try {
+      result = (int)((geometry::Rectangle const *)arg1)->minX();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7597,26 +17877,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle_maxX(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle_maxX.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_maxX" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_maxX" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
-  result = (int)((geometry::Rectangle const *)arg1)->maxX();
+  {
+    try {
+      result = (int)((geometry::Rectangle const *)arg1)->maxX();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7625,26 +17911,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle_minY(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle_minY.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_minY" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_minY" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
-  result = (int)((geometry::Rectangle const *)arg1)->minY();
+  {
+    try {
+      result = (int)((geometry::Rectangle const *)arg1)->minY();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7653,26 +17945,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle_maxY(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle_maxY.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_maxY" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_maxY" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
-  result = (int)((geometry::Rectangle const *)arg1)->maxY();
+  {
+    try {
+      result = (int)((geometry::Rectangle const *)arg1)->maxY();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7681,26 +17979,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle_toJson(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Rectangle *arg1 = (geometry::Rectangle *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle_toJson.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_geometry__Rectangle, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_toJson" "', argument " "1"" of type '" "geometry::Rectangle const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle_toJson" "', argument " "1"" of type '" "geometry::Rectangle const *""'"); 
   }
   arg1 = reinterpret_cast< geometry::Rectangle * >(argp1);
-  result = ((geometry::Rectangle const *)arg1)->toJson();
+  {
+    try {
+      result = ((geometry::Rectangle const *)arg1)->toJson();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7723,13 +18027,13 @@ static void _wrap_delete_Rectangle(v8::Persistent<v8::Value> object, void *param
         static void _wrap_delete_Rectangle(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             geometry::Rectangle * arg1 = (geometry::Rectangle *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -7750,28 +18054,28 @@ static void _wrap_TextRange_start_set(v8::Local<v8::String> property, v8::Local<
   static void _wrap_TextRange_start_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::TextRange *arg1 = (aal::TextRange *) 0 ;
     size_t arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     size_t val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__TextRange, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_start_set" "', argument " "1"" of type '" "aal::TextRange *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_start_set" "', argument " "1"" of type '" "aal::TextRange *""'"); 
     }
     arg1 = reinterpret_cast< aal::TextRange * >(argp1);
     ecode2 = SWIG_AsVal_size_t(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TextRange_start_set" "', argument " "2"" of type '" "size_t""'");
-    }
+    } 
     arg2 = static_cast< size_t >(val2);
     if (arg1) (arg1)->start = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -7784,24 +18088,24 @@ static SwigV8ReturnValue _wrap_TextRange_start_get(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_TextRange_start_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::TextRange *arg1 = (aal::TextRange *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     size_t result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__TextRange, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_start_get" "', argument " "1"" of type '" "aal::TextRange *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_start_get" "', argument " "1"" of type '" "aal::TextRange *""'"); 
     }
     arg1 = reinterpret_cast< aal::TextRange * >(argp1);
     result =  ((arg1)->start);
     jsresult = SWIG_From_size_t(static_cast< size_t >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7814,28 +18118,28 @@ static void _wrap_TextRange_end_set(v8::Local<v8::String> property, v8::Local<v8
   static void _wrap_TextRange_end_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::TextRange *arg1 = (aal::TextRange *) 0 ;
     size_t arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     size_t val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__TextRange, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_end_set" "', argument " "1"" of type '" "aal::TextRange *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_end_set" "', argument " "1"" of type '" "aal::TextRange *""'"); 
     }
     arg1 = reinterpret_cast< aal::TextRange * >(argp1);
     ecode2 = SWIG_AsVal_size_t(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TextRange_end_set" "', argument " "2"" of type '" "size_t""'");
-    }
+    } 
     arg2 = static_cast< size_t >(val2);
     if (arg1) (arg1)->end = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -7848,24 +18152,24 @@ static SwigV8ReturnValue _wrap_TextRange_end_get(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_TextRange_end_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::TextRange *arg1 = (aal::TextRange *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     size_t result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__TextRange, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_end_get" "', argument " "1"" of type '" "aal::TextRange *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_end_get" "', argument " "1"" of type '" "aal::TextRange *""'"); 
     }
     arg1 = reinterpret_cast< aal::TextRange * >(argp1);
     result =  ((arg1)->end);
     jsresult = SWIG_From_size_t(static_cast< size_t >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7874,7 +18178,7 @@ static SwigV8ReturnValue _wrap_TextRange_end_get(v8::Local<v8::String> property,
 
 static SwigV8ReturnValue _wrap_new_TextRange__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   size_t arg1 ;
   size_t arg2 ;
@@ -7887,22 +18191,28 @@ static SwigV8ReturnValue _wrap_new_TextRange__SWIG_0(const SwigV8Arguments &args
   ecode1 = SWIG_AsVal_size_t(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_TextRange" "', argument " "1"" of type '" "size_t""'");
-  }
+  } 
   arg1 = static_cast< size_t >(val1);
   ecode2 = SWIG_AsVal_size_t(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_TextRange" "', argument " "2"" of type '" "size_t""'");
-  }
+  } 
   arg2 = static_cast< size_t >(val2);
-  result = (aal::TextRange *)new aal::TextRange(arg1,arg2);
-
-
-
-
-
+  {
+    try {
+      result = (aal::TextRange *)new aal::TextRange(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_aal__TextRange, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7911,17 +18221,23 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_TextRange__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   aal::TextRange *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_TextRange__SWIG_1.");
-  result = (aal::TextRange *)new aal::TextRange();
-
-
-
+  {
+    try {
+      result = (aal::TextRange *)new aal::TextRange();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_aal__TextRange, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7930,12 +18246,12 @@ fail:
 
 static SwigV8ReturnValue _wrap_new_TextRange(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   OverloadErrorHandler errorHandler;
   v8::Handle<v8::Value> self;
-
+  
   // switch all cases by means of series of if-returns.
-
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7950,7 +18266,7 @@ static SwigV8ReturnValue _wrap_new_TextRange(const SwigV8Arguments &args) {
     }
 #endif
   }
-
+  
   if(args.Length() == 0) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -7965,11 +18281,11 @@ static SwigV8ReturnValue _wrap_new_TextRange(const SwigV8Arguments &args) {
     }
 #endif
   }
-
-
+  
+  
   // default:
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for construction of _exports_TextRange");
-
+  
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
 }
@@ -7977,26 +18293,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_TextRange_isEmpty(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::TextRange *arg1 = (aal::TextRange *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_TextRange_isEmpty.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__TextRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_isEmpty" "', argument " "1"" of type '" "aal::TextRange *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_isEmpty" "', argument " "1"" of type '" "aal::TextRange *""'"); 
   }
   arg1 = reinterpret_cast< aal::TextRange * >(argp1);
-  result = (bool)(arg1)->isEmpty();
+  {
+    try {
+      result = (bool)(arg1)->isEmpty();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8005,26 +18327,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_TextRange_toJson(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::TextRange *arg1 = (aal::TextRange *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_TextRange_toJson.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__TextRange, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_toJson" "', argument " "1"" of type '" "aal::TextRange const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TextRange_toJson" "', argument " "1"" of type '" "aal::TextRange const *""'"); 
   }
   arg1 = reinterpret_cast< aal::TextRange * >(argp1);
-  result = ((aal::TextRange const *)arg1)->toJson();
+  {
+    try {
+      result = ((aal::TextRange const *)arg1)->toJson();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8047,13 +18375,13 @@ static void _wrap_delete_TextRange(v8::Persistent<v8::Value> object, void *param
         static void _wrap_delete_TextRange(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             aal::TextRange * arg1 = (aal::TextRange *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -8074,33 +18402,33 @@ static void _wrap_AccessibleProperty_name_set(v8::Local<v8::String> property, v8
   static void _wrap_AccessibleProperty_name_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     std::string *arg2 = 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 = SWIG_OLDOBJ ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_name_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_name_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     {
       std::string *ptr = (std::string *)0;
       res2 = SWIG_AsPtr_std_string(value, &ptr);
       if (!SWIG_IsOK(res2)) {
-        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleProperty_name_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleProperty_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       if (!ptr) {
-        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleProperty_name_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleProperty_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       arg2 = ptr;
     }
     if (arg1) (arg1)->name = *arg2;
-
+    
     if (SWIG_IsNewObj(res2)) delete arg2;
-
+    
     goto fail;
   fail:
     return;
@@ -8113,24 +18441,24 @@ static SwigV8ReturnValue _wrap_AccessibleProperty_name_get(v8::Local<v8::String>
   static SwigV8ReturnValue _wrap_AccessibleProperty_name_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::string *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_name_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_name_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     result = (std::string *) & ((arg1)->name);
     jsresult = SWIG_From_std_string(static_cast< std::string >(*result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8143,33 +18471,33 @@ static void _wrap_AccessibleProperty_value_set(v8::Local<v8::String> property, v
   static void _wrap_AccessibleProperty_value_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     std::string *arg2 = 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 = SWIG_OLDOBJ ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_value_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_value_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     {
       std::string *ptr = (std::string *)0;
       res2 = SWIG_AsPtr_std_string(value, &ptr);
       if (!SWIG_IsOK(res2)) {
-        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleProperty_value_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleProperty_value_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       if (!ptr) {
-        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleProperty_value_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleProperty_value_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       arg2 = ptr;
     }
     if (arg1) (arg1)->value = *arg2;
-
+    
     if (SWIG_IsNewObj(res2)) delete arg2;
-
+    
     goto fail;
   fail:
     return;
@@ -8182,24 +18510,24 @@ static SwigV8ReturnValue _wrap_AccessibleProperty_value_get(v8::Local<v8::String
   static SwigV8ReturnValue _wrap_AccessibleProperty_value_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::string *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_value_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_value_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     result = (std::string *) & ((arg1)->value);
     jsresult = SWIG_From_std_string(static_cast< std::string >(*result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8212,28 +18540,28 @@ static void _wrap_AccessibleProperty_readOnly_set(v8::Local<v8::String> property
   static void _wrap_AccessibleProperty_readOnly_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     bool arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     bool val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_readOnly_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_readOnly_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     ecode2 = SWIG_AsVal_bool(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AccessibleProperty_readOnly_set" "', argument " "2"" of type '" "bool""'");
-    }
+    } 
     arg2 = static_cast< bool >(val2);
     if (arg1) (arg1)->readOnly = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -8246,24 +18574,24 @@ static SwigV8ReturnValue _wrap_AccessibleProperty_readOnly_get(v8::Local<v8::Str
   static SwigV8ReturnValue _wrap_AccessibleProperty_readOnly_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     bool result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_readOnly_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_readOnly_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     result = (bool) ((arg1)->readOnly);
     jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8276,28 +18604,28 @@ static void _wrap_AccessibleProperty_containsReference_set(v8::Local<v8::String>
   static void _wrap_AccessibleProperty_containsReference_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     bool arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     bool val2 ;
     int ecode2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_containsReference_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_containsReference_set" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     ecode2 = SWIG_AsVal_bool(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "AccessibleProperty_containsReference_set" "', argument " "2"" of type '" "bool""'");
-    }
+    } 
     arg2 = static_cast< bool >(val2);
     if (arg1) (arg1)->containsReference = arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -8310,24 +18638,24 @@ static SwigV8ReturnValue _wrap_AccessibleProperty_containsReference_get(v8::Loca
   static SwigV8ReturnValue _wrap_AccessibleProperty_containsReference_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleProperty *arg1 = (aal::AccessibleProperty *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     bool result;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleProperty, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_containsReference_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleProperty_containsReference_get" "', argument " "1"" of type '" "aal::AccessibleProperty *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleProperty * >(argp1);
     result = (bool) ((arg1)->containsReference);
     jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8336,17 +18664,23 @@ static SwigV8ReturnValue _wrap_AccessibleProperty_containsReference_get(v8::Loca
 
 static SwigV8ReturnValue _wrap_new_AccessibleProperty(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   aal::AccessibleProperty *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_AccessibleProperty.");
-  result = (aal::AccessibleProperty *)new aal::AccessibleProperty();
-
-
-
+  {
+    try {
+      result = (aal::AccessibleProperty *)new aal::AccessibleProperty();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_aal__AccessibleProperty, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8369,13 +18703,13 @@ static void _wrap_delete_AccessibleProperty(v8::Persistent<v8::Value> object, vo
         static void _wrap_delete_AccessibleProperty(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             aal::AccessibleProperty * arg1 = (aal::AccessibleProperty *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -8396,33 +18730,33 @@ static void _wrap_AccessibleAction_name_set(v8::Local<v8::String> property, v8::
   static void _wrap_AccessibleAction_name_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleAction *arg1 = (aal::AccessibleAction *) 0 ;
     std::string *arg2 = 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 = SWIG_OLDOBJ ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleAction, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_name_set" "', argument " "1"" of type '" "aal::AccessibleAction *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_name_set" "', argument " "1"" of type '" "aal::AccessibleAction *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleAction * >(argp1);
     {
       std::string *ptr = (std::string *)0;
       res2 = SWIG_AsPtr_std_string(value, &ptr);
       if (!SWIG_IsOK(res2)) {
-        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleAction_name_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleAction_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       if (!ptr) {
-        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleAction_name_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleAction_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       arg2 = ptr;
     }
     if (arg1) (arg1)->name = *arg2;
-
+    
     if (SWIG_IsNewObj(res2)) delete arg2;
-
+    
     goto fail;
   fail:
     return;
@@ -8435,24 +18769,24 @@ static SwigV8ReturnValue _wrap_AccessibleAction_name_get(v8::Local<v8::String> p
   static SwigV8ReturnValue _wrap_AccessibleAction_name_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleAction *arg1 = (aal::AccessibleAction *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::string *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleAction, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_name_get" "', argument " "1"" of type '" "aal::AccessibleAction *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_name_get" "', argument " "1"" of type '" "aal::AccessibleAction *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleAction * >(argp1);
     result = (std::string *) & ((arg1)->name);
     jsresult = SWIG_From_std_string(static_cast< std::string >(*result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8465,33 +18799,33 @@ static void _wrap_AccessibleAction_description_set(v8::Local<v8::String> propert
   static void _wrap_AccessibleAction_description_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleAction *arg1 = (aal::AccessibleAction *) 0 ;
     std::string *arg2 = 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 = SWIG_OLDOBJ ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleAction, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_description_set" "', argument " "1"" of type '" "aal::AccessibleAction *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_description_set" "', argument " "1"" of type '" "aal::AccessibleAction *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleAction * >(argp1);
     {
       std::string *ptr = (std::string *)0;
       res2 = SWIG_AsPtr_std_string(value, &ptr);
       if (!SWIG_IsOK(res2)) {
-        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleAction_description_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleAction_description_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       if (!ptr) {
-        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleAction_description_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleAction_description_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       arg2 = ptr;
     }
     if (arg1) (arg1)->description = *arg2;
-
+    
     if (SWIG_IsNewObj(res2)) delete arg2;
-
+    
     goto fail;
   fail:
     return;
@@ -8504,24 +18838,24 @@ static SwigV8ReturnValue _wrap_AccessibleAction_description_get(v8::Local<v8::St
   static SwigV8ReturnValue _wrap_AccessibleAction_description_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleAction *arg1 = (aal::AccessibleAction *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::string *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleAction, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_description_get" "', argument " "1"" of type '" "aal::AccessibleAction *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleAction_description_get" "', argument " "1"" of type '" "aal::AccessibleAction *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleAction * >(argp1);
     result = (std::string *) & ((arg1)->description);
     jsresult = SWIG_From_std_string(static_cast< std::string >(*result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8530,17 +18864,23 @@ static SwigV8ReturnValue _wrap_AccessibleAction_description_get(v8::Local<v8::St
 
 static SwigV8ReturnValue _wrap_new_AccessibleAction(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   aal::AccessibleAction *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_AccessibleAction.");
-  result = (aal::AccessibleAction *)new aal::AccessibleAction();
-
-
-
+  {
+    try {
+      result = (aal::AccessibleAction *)new aal::AccessibleAction();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_aal__AccessibleAction, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8563,13 +18903,13 @@ static void _wrap_delete_AccessibleAction(v8::Persistent<v8::Value> object, void
         static void _wrap_delete_AccessibleAction(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             aal::AccessibleAction * arg1 = (aal::AccessibleAction *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -8590,33 +18930,33 @@ static void _wrap_AccessibleDetails_role_set(v8::Local<v8::String> property, v8:
   static void _wrap_AccessibleDetails_role_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     std::string *arg2 = 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 = SWIG_OLDOBJ ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_role_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_role_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     {
       std::string *ptr = (std::string *)0;
       res2 = SWIG_AsPtr_std_string(value, &ptr);
       if (!SWIG_IsOK(res2)) {
-        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_role_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_role_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       if (!ptr) {
-        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleDetails_role_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleDetails_role_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       arg2 = ptr;
     }
     if (arg1) (arg1)->role = *arg2;
-
+    
     if (SWIG_IsNewObj(res2)) delete arg2;
-
+    
     goto fail;
   fail:
     return;
@@ -8629,24 +18969,24 @@ static SwigV8ReturnValue _wrap_AccessibleDetails_role_get(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_AccessibleDetails_role_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::string *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_role_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_role_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     result = (std::string *) & ((arg1)->role);
     jsresult = SWIG_From_std_string(static_cast< std::string >(*result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8659,33 +18999,33 @@ static void _wrap_AccessibleDetails_subRole_set(v8::Local<v8::String> property, 
   static void _wrap_AccessibleDetails_subRole_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     std::string *arg2 = 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 = SWIG_OLDOBJ ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_subRole_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_subRole_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     {
       std::string *ptr = (std::string *)0;
       res2 = SWIG_AsPtr_std_string(value, &ptr);
       if (!SWIG_IsOK(res2)) {
-        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_subRole_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_subRole_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       if (!ptr) {
-        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleDetails_subRole_set" "', argument " "2"" of type '" "std::string const &""'");
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "AccessibleDetails_subRole_set" "', argument " "2"" of type '" "std::string const &""'"); 
       }
       arg2 = ptr;
     }
     if (arg1) (arg1)->subRole = *arg2;
-
+    
     if (SWIG_IsNewObj(res2)) delete arg2;
-
+    
     goto fail;
   fail:
     return;
@@ -8698,24 +19038,24 @@ static SwigV8ReturnValue _wrap_AccessibleDetails_subRole_get(v8::Local<v8::Strin
   static SwigV8ReturnValue _wrap_AccessibleDetails_subRole_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::string *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_subRole_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_subRole_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     result = (std::string *) & ((arg1)->subRole);
     jsresult = SWIG_From_std_string(static_cast< std::string >(*result));
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8728,28 +19068,28 @@ static void _wrap_AccessibleDetails_properties_set(v8::Local<v8::String> propert
   static void _wrap_AccessibleDetails_properties_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     std::vector< aal::AccessibleProperty > *arg2 = (std::vector< aal::AccessibleProperty > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *argp2 = 0 ;
     int res2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_properties_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_properties_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     res2 = SWIG_ConvertPtr(value, &argp2,SWIGTYPE_p_std__vectorT_aal__AccessibleProperty_t, 0 |  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_properties_set" "', argument " "2"" of type '" "std::vector< aal::AccessibleProperty > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_properties_set" "', argument " "2"" of type '" "std::vector< aal::AccessibleProperty > *""'"); 
     }
     arg2 = reinterpret_cast< std::vector< aal::AccessibleProperty > * >(argp2);
     if (arg1) (arg1)->properties = *arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -8762,24 +19102,24 @@ static SwigV8ReturnValue _wrap_AccessibleDetails_properties_get(v8::Local<v8::St
   static SwigV8ReturnValue _wrap_AccessibleDetails_properties_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::vector< aal::AccessibleProperty > *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_properties_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_properties_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     result = (std::vector< aal::AccessibleProperty > *)& ((arg1)->properties);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_aal__AccessibleProperty_t, 0 |  0 );
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8792,28 +19132,28 @@ static void _wrap_AccessibleDetails_actions_set(v8::Local<v8::String> property, 
   static void _wrap_AccessibleDetails_actions_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     std::vector< aal::AccessibleAction > *arg2 = (std::vector< aal::AccessibleAction > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *argp2 = 0 ;
     int res2 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_actions_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_actions_set" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     res2 = SWIG_ConvertPtr(value, &argp2,SWIGTYPE_p_std__vectorT_aal__AccessibleAction_t, 0 |  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_actions_set" "', argument " "2"" of type '" "std::vector< aal::AccessibleAction > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "AccessibleDetails_actions_set" "', argument " "2"" of type '" "std::vector< aal::AccessibleAction > *""'"); 
     }
     arg2 = reinterpret_cast< std::vector< aal::AccessibleAction > * >(argp2);
     if (arg1) (arg1)->actions = *arg2;
-
-
-
+    
+    
+    
     goto fail;
   fail:
     return;
@@ -8826,24 +19166,24 @@ static SwigV8ReturnValue _wrap_AccessibleDetails_actions_get(v8::Local<v8::Strin
   static SwigV8ReturnValue _wrap_AccessibleDetails_actions_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     aal::AccessibleDetails *arg1 = (aal::AccessibleDetails *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     std::vector< aal::AccessibleAction > *result = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_aal__AccessibleDetails, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_actions_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "AccessibleDetails_actions_get" "', argument " "1"" of type '" "aal::AccessibleDetails *""'"); 
     }
     arg1 = reinterpret_cast< aal::AccessibleDetails * >(argp1);
     result = (std::vector< aal::AccessibleAction > *)& ((arg1)->actions);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_aal__AccessibleAction_t, 0 |  0 );
-
-
+    
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -8852,17 +19192,23 @@ static SwigV8ReturnValue _wrap_AccessibleDetails_actions_get(v8::Local<v8::Strin
 
 static SwigV8ReturnValue _wrap_new_AccessibleDetails(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   aal::AccessibleDetails *result;
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_AccessibleDetails.");
-  result = (aal::AccessibleDetails *)new aal::AccessibleDetails();
-
-
-
+  {
+    try {
+      result = (aal::AccessibleDetails *)new aal::AccessibleDetails();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_aal__AccessibleDetails, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8885,13 +19231,13 @@ static void _wrap_delete_AccessibleDetails(v8::Persistent<v8::Value> object, voi
         static void _wrap_delete_AccessibleDetails(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             aal::AccessibleDetails * arg1 = (aal::AccessibleDetails *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -8908,7 +19254,7 @@ static void _wrap_delete_AccessibleDetails(v8::Persistent<v8::Value> object, voi
 
 static SwigV8ReturnValue _wrap_new_Accessible(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> self = args.Holder();
   AXUIElementRef arg1 ;
   void *argp1 ;
@@ -8918,21 +19264,27 @@ static SwigV8ReturnValue _wrap_new_Accessible(const SwigV8Arguments &args) {
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_AXUIElementRef,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Accessible" "', argument " "1"" of type '" "AXUIElementRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Accessible" "', argument " "1"" of type '" "AXUIElementRef""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Accessible" "', argument " "1"" of type '" "AXUIElementRef""'");
     } else {
       arg1 = *(reinterpret_cast< AXUIElementRef * >(argp1));
     }
   }
-  result = (aal::Accessible *)new aal::Accessible(arg1);
-
-
-
+  {
+    try {
+      result = (aal::Accessible *)new aal::Accessible(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
+  
+  
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8955,13 +19307,13 @@ static void _wrap_delete_Accessible(v8::Persistent<v8::Value> object, void *para
         static void _wrap_delete_Accessible(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-
+          
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             aal::Accessible * arg1 = (aal::Accessible *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-
+          
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -8978,17 +19330,23 @@ static void _wrap_delete_Accessible(v8::Persistent<v8::Value> object, void *para
 
 static SwigV8ReturnValue _wrap_Accessible_accessibilitySetup(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_accessibilitySetup.");
-
-  result = (bool)aal::Accessible::accessibilitySetup();
+  
+  {
+    try {
+      result = (bool)aal::Accessible::accessibilitySetup();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8997,30 +19355,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getByPid(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   int arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getByPid.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "Accessible_getByPid" "', argument " "1"" of type '" "int""'");
-  }
+  } 
   arg1 = static_cast< int >(val1);
-  result = aal::Accessible::getByPid(arg1);
-
+  {
+    try {
+      result = aal::Accessible::getByPid(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9029,30 +19393,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_clone(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_clone.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_clone" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_clone" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->clone();
-
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->clone();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9061,26 +19431,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isRoot(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isRoot.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isRoot" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isRoot" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isRoot();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isRoot();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9089,26 +19465,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isValid(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isValid.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isValid" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isValid" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isValid();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isValid();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9117,26 +19499,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getHash(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getHash.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHash" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHash" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getHash();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getHash();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_size_t(static_cast< size_t >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9145,26 +19533,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_canFocus(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_canFocus.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_canFocus" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_canFocus" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->canFocus();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->canFocus();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9173,26 +19567,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isFocused(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isFocused.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isFocused" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isFocused" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isFocused();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isFocused();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9201,25 +19601,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setFocused(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setFocused.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setFocused" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setFocused" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->setFocused();
+  {
+    try {
+      (arg1)->setFocused();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9228,26 +19634,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isEnabled(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isEnabled.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isEnabled" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isEnabled" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isEnabled();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isEnabled();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9256,7 +19668,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setEnabled(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   bool arg2 ;
@@ -9264,26 +19676,32 @@ static SwigV8ReturnValue _wrap_Accessible_setEnabled(const SwigV8Arguments &args
   int res1 = 0 ;
   bool val2 ;
   int ecode2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setEnabled.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setEnabled" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setEnabled" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_bool(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_setEnabled" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
-  (arg1)->setEnabled(arg2);
+  {
+    try {
+      (arg1)->setEnabled(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9292,26 +19710,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isEditable(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isEditable.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isEditable" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isEditable" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isEditable();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isEditable();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9320,26 +19744,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isReadOnly(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isReadOnly.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isReadOnly" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isReadOnly" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isReadOnly();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isReadOnly();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9348,26 +19778,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isSecure(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isSecure.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isSecure" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isSecure" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isSecure();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isSecure();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9376,26 +19812,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isHorizontal(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isHorizontal.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isHorizontal" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isHorizontal" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isHorizontal();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isHorizontal();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9404,26 +19846,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getCheckState(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::CheckState result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getCheckState.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCheckState" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCheckState" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (aal::CheckState)((aal::Accessible const *)arg1)->getCheckState();
+  {
+    try {
+      result = (aal::CheckState)((aal::Accessible const *)arg1)->getCheckState();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9432,7 +19880,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setCheckState(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   aal::CheckState arg2 ;
@@ -9440,26 +19888,32 @@ static SwigV8ReturnValue _wrap_Accessible_setCheckState(const SwigV8Arguments &a
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setCheckState.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setCheckState" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setCheckState" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_int(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_setCheckState" "', argument " "2"" of type '" "aal::CheckState""'");
-  }
+  } 
   arg2 = static_cast< aal::CheckState >(val2);
-  (arg1)->setCheckState(arg2);
+  {
+    try {
+      (arg1)->setCheckState(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9468,26 +19922,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isExpandable(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isExpandable.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isExpandable" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isExpandable" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isExpandable();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isExpandable();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9496,26 +19956,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isExpanded(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isExpanded.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isExpanded" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isExpanded" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)(arg1)->isExpanded();
+  {
+    try {
+      result = (bool)(arg1)->isExpanded();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9524,7 +19990,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setExpanded(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   bool arg2 ;
@@ -9532,26 +19998,32 @@ static SwigV8ReturnValue _wrap_Accessible_setExpanded(const SwigV8Arguments &arg
   int res1 = 0 ;
   bool val2 ;
   int ecode2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setExpanded.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setExpanded" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setExpanded" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_bool(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_setExpanded" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
-  (arg1)->setExpanded(arg2);
+  {
+    try {
+      (arg1)->setExpanded(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9560,26 +20032,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getValue(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   double result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getValue.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getValue" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getValue" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (double)((aal::Accessible const *)arg1)->getValue();
+  {
+    try {
+      result = (double)((aal::Accessible const *)arg1)->getValue();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_double(static_cast< double >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9588,26 +20066,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getMaxValue(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   double result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getMaxValue.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getMaxValue" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getMaxValue" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (double)((aal::Accessible const *)arg1)->getMaxValue();
+  {
+    try {
+      result = (double)((aal::Accessible const *)arg1)->getMaxValue();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_double(static_cast< double >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9616,26 +20100,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getMinValue(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   double result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getMinValue.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getMinValue" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getMinValue" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (double)((aal::Accessible const *)arg1)->getMinValue();
+  {
+    try {
+      result = (double)((aal::Accessible const *)arg1)->getMinValue();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_double(static_cast< double >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9644,7 +20134,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setValue(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   double arg2 ;
@@ -9652,26 +20142,32 @@ static SwigV8ReturnValue _wrap_Accessible_setValue(const SwigV8Arguments &args) 
   int res1 = 0 ;
   double val2 ;
   int ecode2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setValue.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setValue" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setValue" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_double(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_setValue" "', argument " "2"" of type '" "double""'");
-  }
+  } 
   arg2 = static_cast< double >(val2);
-  (arg1)->setValue(arg2);
+  {
+    try {
+      (arg1)->setValue(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9680,26 +20176,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getRange(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   double result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getRange.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getRange" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getRange" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (double)((aal::Accessible const *)arg1)->getRange();
+  {
+    try {
+      result = (double)((aal::Accessible const *)arg1)->getRange();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_double(static_cast< double >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9708,26 +20210,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getActiveTabPage(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getActiveTabPage.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getActiveTabPage" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getActiveTabPage" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getActiveTabPage();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getActiveTabPage();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9736,39 +20244,45 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setActiveTabPage(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setActiveTabPage.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setActiveTabPage" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setActiveTabPage" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setActiveTabPage" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setActiveTabPage" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setActiveTabPage" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setActiveTabPage" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  (arg1)->setActiveTabPage((std::string const &)*arg2);
+  {
+    try {
+      (arg1)->setActiveTabPage((std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9777,25 +20291,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_activate(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_activate.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_activate" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_activate" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->activate();
+  {
+    try {
+      (arg1)->activate();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9804,26 +20324,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isActiveTab(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isActiveTab.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isActiveTab" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isActiveTab" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isActiveTab();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isActiveTab();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9832,26 +20358,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isSelected(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isSelected.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isSelected" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isSelected" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isSelected();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isSelected();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9860,7 +20392,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setSelected(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   bool arg2 ;
@@ -9868,26 +20400,32 @@ static SwigV8ReturnValue _wrap_Accessible_setSelected(const SwigV8Arguments &arg
   int res1 = 0 ;
   bool val2 ;
   int ecode2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setSelected.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelected" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelected" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_bool(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_setSelected" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
-  (arg1)->setSelected(arg2);
+  {
+    try {
+      (arg1)->setSelected(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9896,26 +20434,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getScrollPosition(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   double result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getScrollPosition.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getScrollPosition" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getScrollPosition" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (double)((aal::Accessible const *)arg1)->getScrollPosition();
+  {
+    try {
+      result = (double)((aal::Accessible const *)arg1)->getScrollPosition();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_double(static_cast< double >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9924,7 +20468,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setScrollPosition(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   double arg2 ;
@@ -9932,26 +20476,32 @@ static SwigV8ReturnValue _wrap_Accessible_setScrollPosition(const SwigV8Argument
   int res1 = 0 ;
   double val2 ;
   int ecode2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setScrollPosition.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setScrollPosition" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setScrollPosition" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_double(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_setScrollPosition" "', argument " "2"" of type '" "double""'");
-  }
+  } 
   arg2 = static_cast< double >(val2);
-  (arg1)->setScrollPosition(arg2);
+  {
+    try {
+      (arg1)->setScrollPosition(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9960,25 +20510,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_showMenu(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_showMenu.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_showMenu" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_showMenu" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  ((aal::Accessible const *)arg1)->showMenu();
+  {
+    try {
+      ((aal::Accessible const *)arg1)->showMenu();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -9987,26 +20543,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_menuShown(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_menuShown.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_menuShown" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_menuShown" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->menuShown();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->menuShown();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10015,7 +20577,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_equals(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   aal::Accessible *arg2 = (aal::Accessible *) 0 ;
@@ -10024,26 +20586,32 @@ static SwigV8ReturnValue _wrap_Accessible_equals(const SwigV8Arguments &args) {
   void *argp2 = 0 ;
   int res2 = 0 ;
   bool result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_equals.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_equals" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_equals" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_equals" "', argument " "2"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_equals" "', argument " "2"" of type '" "aal::Accessible *""'"); 
   }
   arg2 = reinterpret_cast< aal::Accessible * >(argp2);
-  result = (bool)((aal::Accessible const *)arg1)->equals(arg2);
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->equals(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10052,30 +20620,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getParent(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getParent.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getParent" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getParent" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getParent();
-
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getParent();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10084,30 +20658,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getContainingRow(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getContainingRow.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getContainingRow" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getContainingRow" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getContainingRow();
-
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getContainingRow();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10116,30 +20696,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getHorizontalScrollBar(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getHorizontalScrollBar.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHorizontalScrollBar" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHorizontalScrollBar" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getHorizontalScrollBar();
-
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getHorizontalScrollBar();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10148,30 +20734,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getVerticalScrollBar(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getVerticalScrollBar.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getVerticalScrollBar" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getVerticalScrollBar" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getVerticalScrollBar();
-
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getVerticalScrollBar();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10180,30 +20772,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getHeader(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getHeader.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHeader" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHeader" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getHeader();
-
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getHeader();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10212,30 +20810,36 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getCloseButton(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getCloseButton.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCloseButton" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCloseButton" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getCloseButton();
-
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getCloseButton();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10245,7 +20849,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_children__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   aal::AccessibleList *arg2 = 0 ;
@@ -10256,33 +20860,39 @@ static SwigV8ReturnValue _wrap_Accessible_children__SWIG_0(const SwigV8Arguments
   int res2 = 0 ;
   bool val3 ;
   int ecode3 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_children" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_children" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_std__vectorT_aal__AccessibleRef_t,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_children" "', argument " "2"" of type '" "aal::AccessibleList &""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_children" "', argument " "2"" of type '" "aal::AccessibleList &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_children" "', argument " "2"" of type '" "aal::AccessibleList &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_children" "', argument " "2"" of type '" "aal::AccessibleList &""'"); 
   }
   arg2 = reinterpret_cast< aal::AccessibleList * >(argp2);
   ecode3 = SWIG_AsVal_bool(args[1], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Accessible_children" "', argument " "3"" of type '" "bool""'");
-  }
+  } 
   arg3 = static_cast< bool >(val3);
-  ((aal::Accessible const *)arg1)->children(*arg2,arg3);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->children(*arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
-
+  
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10292,34 +20902,40 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_children__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleList result;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_children" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_children" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->children();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->children();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   {
     int length = (&result)->size();
     v8::Local<v8::Array> array = v8::Array::New(v8::Isolate::GetCurrent(), length);
-
+    
     for (int i = 0; i < length; i++)
     {
       array->Set(i, SWIG_NewPointerObj((&result)->at(i).release(), SWIGTYPE_p_aal__Accessible, 0 |  0 ));
     }
-
+    
     jsresult = array;
   }
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10328,11 +20944,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_children(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -10347,8 +20963,8 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_children(const SwigV8
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 0) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -10363,10 +20979,10 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_children(const SwigV8
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function children.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10375,36 +20991,42 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_windows(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleList result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_windows.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_windows" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_windows" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->windows();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->windows();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   {
     int length = (&result)->size();
     v8::Local<v8::Array> array = v8::Array::New(v8::Isolate::GetCurrent(), length);
-
+    
     for (int i = 0; i < length; i++)
     {
       array->Set(i, SWIG_NewPointerObj((&result)->at(i).release(), SWIGTYPE_p_aal__Accessible, 0 |  0 ));
     }
-
+    
     jsresult = array;
   }
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10413,36 +21035,42 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_tabPages(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleList result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_tabPages.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_tabPages" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_tabPages" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->tabPages();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->tabPages();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   {
     int length = (&result)->size();
     v8::Local<v8::Array> array = v8::Array::New(v8::Isolate::GetCurrent(), length);
-
+    
     for (int i = 0; i < length; i++)
     {
       array->Set(i, SWIG_NewPointerObj((&result)->at(i).release(), SWIGTYPE_p_aal__Accessible, 0 |  0 ));
     }
-
+    
     jsresult = array;
   }
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10451,36 +21079,42 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_rows(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleList result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_rows.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_rows" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_rows" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->rows();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->rows();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   {
     int length = (&result)->size();
     v8::Local<v8::Array> array = v8::Array::New(v8::Isolate::GetCurrent(), length);
-
+    
     for (int i = 0; i < length; i++)
     {
       array->Set(i, SWIG_NewPointerObj((&result)->at(i).release(), SWIGTYPE_p_aal__Accessible, 0 |  0 ));
     }
-
+    
     jsresult = array;
   }
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10489,36 +21123,42 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_rowEntries(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleList result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_rowEntries.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_rowEntries" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_rowEntries" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->rowEntries();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->rowEntries();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   {
     int length = (&result)->size();
     v8::Local<v8::Array> array = v8::Array::New(v8::Isolate::GetCurrent(), length);
-
+    
     for (int i = 0; i < length; i++)
     {
       array->Set(i, SWIG_NewPointerObj((&result)->at(i).release(), SWIGTYPE_p_aal__Accessible, 0 |  0 ));
     }
-
+    
     jsresult = array;
   }
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10527,36 +21167,42 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_columns(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleList result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_columns.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_columns" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_columns" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->columns();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->columns();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   {
     int length = (&result)->size();
     v8::Local<v8::Array> array = v8::Array::New(v8::Isolate::GetCurrent(), length);
-
+    
     for (int i = 0; i < length; i++)
     {
       array->Set(i, SWIG_NewPointerObj((&result)->at(i).release(), SWIGTYPE_p_aal__Accessible, 0 |  0 ));
     }
-
+    
     jsresult = array;
   }
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10565,36 +21211,42 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_columnEntries(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleList result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_columnEntries.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_columnEntries" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_columnEntries" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->columnEntries();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->columnEntries();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   {
     int length = (&result)->size();
     v8::Local<v8::Array> array = v8::Array::New(v8::Isolate::GetCurrent(), length);
-
+    
     for (int i = 0; i < length; i++)
     {
       array->Set(i, SWIG_NewPointerObj((&result)->at(i).release(), SWIGTYPE_p_aal__Accessible, 0 |  0 ));
     }
-
+    
     jsresult = array;
   }
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10603,7 +21255,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_fromPoint(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   geometry::Point arg1 ;
   aal::Accessible *arg2 = (aal::Accessible *) 0 ;
@@ -10613,14 +21265,14 @@ static SwigV8ReturnValue _wrap_Accessible_fromPoint(const SwigV8Arguments &args)
   int res2 = 0 ;
   aal::AccessibleRef result;
   void *temp ;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_fromPoint.");
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_fromPoint" "', argument " "1"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_fromPoint" "', argument " "1"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_fromPoint" "', argument " "1"" of type '" "geometry::Point""'");
     } else {
@@ -10629,18 +21281,24 @@ static SwigV8ReturnValue _wrap_Accessible_fromPoint(const SwigV8Arguments &args)
   }
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_fromPoint" "', argument " "2"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_fromPoint" "', argument " "2"" of type '" "aal::Accessible *""'"); 
   }
   arg2 = reinterpret_cast< aal::Accessible * >(argp2);
-  result = aal::Accessible::fromPoint(arg1,arg2);
-
+  {
+    try {
+      result = aal::Accessible::fromPoint(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
+  
   temp = (&result)->release();
   jsresult = SWIG_NewPointerObj(temp, SWIGTYPE_p_aal__Accessible, SWIG_POINTER_OWN);
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10649,26 +21307,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getID(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getID.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getID" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getID" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getID();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getID();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10677,26 +21341,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getName(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getName.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getName" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getName" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getName();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getName();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10705,26 +21375,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getHelp(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getHelp.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHelp" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getHelp" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getHelp();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getHelp();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10733,26 +21409,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getRole(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::Role result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getRole.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getRole" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getRole" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (aal::Role)((aal::Accessible const *)arg1)->getRole();
+  {
+    try {
+      result = (aal::Role)((aal::Accessible const *)arg1)->getRole();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_int(static_cast< int >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10761,26 +21443,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isInternal(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isInternal.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isInternal" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isInternal" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isInternal();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isInternal();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10789,7 +21477,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getBounds(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   bool arg2 ;
@@ -10798,26 +21486,32 @@ static SwigV8ReturnValue _wrap_Accessible_getBounds(const SwigV8Arguments &args)
   bool val2 ;
   int ecode2 = 0 ;
   geometry::Rectangle result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getBounds.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getBounds" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getBounds" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_bool(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_getBounds" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
-  result = ((aal::Accessible const *)arg1)->getBounds(arg2);
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getBounds(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new geometry::Rectangle(static_cast< const geometry::Rectangle& >(result))), SWIGTYPE_p_geometry__Rectangle, SWIG_POINTER_OWN |  0 );
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10826,7 +21520,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setBounds(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Rectangle *arg2 = 0 ;
@@ -10834,29 +21528,35 @@ static SwigV8ReturnValue _wrap_Accessible_setBounds(const SwigV8Arguments &args)
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setBounds.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setBounds" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setBounds" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Rectangle,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setBounds" "', argument " "2"" of type '" "geometry::Rectangle const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setBounds" "', argument " "2"" of type '" "geometry::Rectangle const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setBounds" "', argument " "2"" of type '" "geometry::Rectangle const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setBounds" "', argument " "2"" of type '" "geometry::Rectangle const &""'"); 
   }
   arg2 = reinterpret_cast< geometry::Rectangle * >(argp2);
-  (arg1)->setBounds((geometry::Rectangle const &)*arg2);
+  {
+    try {
+      (arg1)->setBounds((geometry::Rectangle const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10865,26 +21565,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getCaretPosition(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getCaretPosition.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCaretPosition" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCaretPosition" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getCaretPosition();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getCaretPosition();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_size_t(static_cast< size_t >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10893,7 +21599,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setCaretPosition(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   size_t arg2 ;
@@ -10901,26 +21607,32 @@ static SwigV8ReturnValue _wrap_Accessible_setCaretPosition(const SwigV8Arguments
   int res1 = 0 ;
   size_t val2 ;
   int ecode2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setCaretPosition.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setCaretPosition" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setCaretPosition" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_size_t(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_setCaretPosition" "', argument " "2"" of type '" "size_t""'");
-  }
+  } 
   arg2 = static_cast< size_t >(val2);
-  (arg1)->setCaretPosition(arg2);
+  {
+    try {
+      (arg1)->setCaretPosition(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10929,26 +21641,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getCharacterCount(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getCharacterCount.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCharacterCount" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getCharacterCount" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getCharacterCount();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getCharacterCount();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_size_t(static_cast< size_t >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10957,26 +21675,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getSelectedIndexes(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::set< size_t > result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getSelectedIndexes.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getSelectedIndexes" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getSelectedIndexes" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getSelectedIndexes();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getSelectedIndexes();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new std::set< size_t >(static_cast< const std::set< size_t >& >(result))), SWIGTYPE_p_std__setT_size_t_t, SWIG_POINTER_OWN |  0 );
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -10985,7 +21709,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setSelectedIndexes(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::set< size_t > *arg2 = 0 ;
@@ -10993,29 +21717,35 @@ static SwigV8ReturnValue _wrap_Accessible_setSelectedIndexes(const SwigV8Argumen
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setSelectedIndexes.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelectedIndexes" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelectedIndexes" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_std__setT_size_t_t,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setSelectedIndexes" "', argument " "2"" of type '" "std::set< size_t > const &""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setSelectedIndexes" "', argument " "2"" of type '" "std::set< size_t > const &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setSelectedIndexes" "', argument " "2"" of type '" "std::set< size_t > const &""'");
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setSelectedIndexes" "', argument " "2"" of type '" "std::set< size_t > const &""'"); 
   }
   arg2 = reinterpret_cast< std::set< size_t > * >(argp2);
-  (arg1)->setSelectedIndexes((std::set< size_t > const &)*arg2);
+  {
+    try {
+      (arg1)->setSelectedIndexes((std::set< size_t > const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11024,26 +21754,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getText(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getText.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getText" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getText" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getText();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getText();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11052,39 +21788,45 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setText(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setText.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setText" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setText" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setText" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setText" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setText" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setText" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  (arg1)->setText((std::string const &)*arg2);
+  {
+    try {
+      (arg1)->setText((std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11093,26 +21835,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getTitle(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getTitle.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getTitle" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getTitle" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getTitle();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getTitle();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11121,39 +21869,45 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setTitle(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setTitle.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setTitle" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setTitle" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setTitle" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setTitle" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setTitle" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setTitle" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  (arg1)->setTitle((std::string const &)*arg2);
+  {
+    try {
+      (arg1)->setTitle((std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11162,7 +21916,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_insertText(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::size_t arg2 ;
@@ -11172,38 +21926,44 @@ static SwigV8ReturnValue _wrap_Accessible_insertText(const SwigV8Arguments &args
   size_t val2 ;
   int ecode2 = 0 ;
   int res3 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_insertText.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_insertText" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_insertText" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_size_t(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_insertText" "', argument " "2"" of type '" "std::size_t""'");
-  }
+  } 
   arg2 = static_cast< std::size_t >(val2);
   {
     std::string *ptr = (std::string *)0;
     res3 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_insertText" "', argument " "3"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_insertText" "', argument " "3"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_insertText" "', argument " "3"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_insertText" "', argument " "3"" of type '" "std::string const &""'"); 
     }
     arg3 = ptr;
   }
-  (arg1)->insertText(arg2,(std::string const &)*arg3);
+  {
+    try {
+      (arg1)->insertText(arg2,(std::string const &)*arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   if (SWIG_IsNewObj(res3)) delete arg3;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11212,26 +21972,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getDescription(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getDescription.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getDescription" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getDescription" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getDescription();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getDescription();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11240,26 +22006,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getSelectedText(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getSelectedText.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getSelectedText" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getSelectedText" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getSelectedText();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getSelectedText();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11268,39 +22040,45 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setSelectedText(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setSelectedText.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelectedText" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelectedText" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setSelectedText" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setSelectedText" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setSelectedText" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setSelectedText" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  (arg1)->setSelectedText((std::string const &)*arg2);
+  {
+    try {
+      (arg1)->setSelectedText((std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11309,26 +22087,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getSelectionRange(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::TextRange result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getSelectionRange.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getSelectionRange" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getSelectionRange" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getSelectionRange();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getSelectionRange();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new aal::TextRange(static_cast< const aal::TextRange& >(result))), SWIGTYPE_p_aal__TextRange, SWIG_POINTER_OWN |  0 );
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11337,7 +22121,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setSelectionRange(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   aal::TextRange arg2 ;
@@ -11345,31 +22129,37 @@ static SwigV8ReturnValue _wrap_Accessible_setSelectionRange(const SwigV8Argument
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setSelectionRange.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelectionRange" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setSelectionRange" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_aal__TextRange,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setSelectionRange" "', argument " "2"" of type '" "aal::TextRange""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setSelectionRange" "', argument " "2"" of type '" "aal::TextRange""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setSelectionRange" "', argument " "2"" of type '" "aal::TextRange""'");
     } else {
       arg2 = *(reinterpret_cast< aal::TextRange * >(argp2));
     }
   }
-  (arg1)->setSelectionRange(arg2);
+  {
+    try {
+      (arg1)->setSelectionRange(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11378,26 +22168,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getDate(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getDate.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getDate" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getDate" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getDate();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getDate();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11406,39 +22202,45 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_setDate(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_setDate.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setDate" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_setDate" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setDate" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_setDate" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setDate" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_setDate" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  (arg1)->setDate((std::string const &)*arg2);
+  {
+    try {
+      (arg1)->setDate((std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11448,7 +22250,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_mouseDown__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11459,17 +22261,17 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDown__SWIG_0(const SwigV8Argument
   int res2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDown" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDown" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDown" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDown" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseDown" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
@@ -11479,15 +22281,21 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDown__SWIG_0(const SwigV8Argument
   ecode3 = SWIG_AsVal_int(args[1], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Accessible_mouseDown" "', argument " "3"" of type '" "aal::MouseButton""'");
-  }
+  } 
   arg3 = static_cast< aal::MouseButton >(val3);
-  (arg1)->mouseDown(arg2,arg3);
+  {
+    try {
+      (arg1)->mouseDown(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11497,7 +22305,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_mouseDown__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11505,29 +22313,35 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDown__SWIG_1(const SwigV8Argument
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDown" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDown" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDown" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDown" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseDown" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
       arg2 = *(reinterpret_cast< geometry::Point * >(argp2));
     }
   }
-  (arg1)->mouseDown(arg2);
+  {
+    try {
+      (arg1)->mouseDown(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11536,11 +22350,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseDown(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -11555,8 +22369,8 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseDown(const SwigV
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -11571,10 +22385,10 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseDown(const SwigV
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function mouseDown.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11584,7 +22398,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_mouseUp__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11595,17 +22409,17 @@ static SwigV8ReturnValue _wrap_Accessible_mouseUp__SWIG_0(const SwigV8Arguments 
   int res2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseUp" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseUp" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseUp" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseUp" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseUp" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
@@ -11615,15 +22429,21 @@ static SwigV8ReturnValue _wrap_Accessible_mouseUp__SWIG_0(const SwigV8Arguments 
   ecode3 = SWIG_AsVal_int(args[1], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Accessible_mouseUp" "', argument " "3"" of type '" "aal::MouseButton""'");
-  }
+  } 
   arg3 = static_cast< aal::MouseButton >(val3);
-  (arg1)->mouseUp(arg2,arg3);
+  {
+    try {
+      (arg1)->mouseUp(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11633,7 +22453,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_mouseUp__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11641,29 +22461,35 @@ static SwigV8ReturnValue _wrap_Accessible_mouseUp__SWIG_1(const SwigV8Arguments 
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseUp" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseUp" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseUp" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseUp" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseUp" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
       arg2 = *(reinterpret_cast< geometry::Point * >(argp2));
     }
   }
-  (arg1)->mouseUp(arg2);
+  {
+    try {
+      (arg1)->mouseUp(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11672,11 +22498,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseUp(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -11691,8 +22517,8 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseUp(const SwigV8A
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -11707,10 +22533,10 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseUp(const SwigV8A
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function mouseUp.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11719,7 +22545,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_mouseMove(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11727,31 +22553,37 @@ static SwigV8ReturnValue _wrap_Accessible_mouseMove(const SwigV8Arguments &args)
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_mouseMove.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseMove" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseMove" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseMove" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseMove" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseMove" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
       arg2 = *(reinterpret_cast< geometry::Point * >(argp2));
     }
   }
-  ((aal::Accessible const *)arg1)->mouseMove(arg2);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->mouseMove(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11760,7 +22592,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_mouseMoveTo(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11768,31 +22600,37 @@ static SwigV8ReturnValue _wrap_Accessible_mouseMoveTo(const SwigV8Arguments &arg
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_mouseMoveTo.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseMoveTo" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseMoveTo" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseMoveTo" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseMoveTo" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseMoveTo" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
       arg2 = *(reinterpret_cast< geometry::Point * >(argp2));
     }
   }
-  ((aal::Accessible const *)arg1)->mouseMoveTo(arg2);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->mouseMoveTo(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11802,7 +22640,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_mouseDrag__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11816,17 +22654,17 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDrag__SWIG_0(const SwigV8Argument
   int res3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDrag" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDrag" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDrag" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDrag" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseDrag" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
@@ -11836,8 +22674,8 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDrag__SWIG_0(const SwigV8Argument
   {
     res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_mouseDrag" "', argument " "3"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_mouseDrag" "', argument " "3"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp3) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseDrag" "', argument " "3"" of type '" "geometry::Point""'");
     } else {
@@ -11847,15 +22685,21 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDrag__SWIG_0(const SwigV8Argument
   ecode4 = SWIG_AsVal_int(args[2], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Accessible_mouseDrag" "', argument " "4"" of type '" "aal::MouseButton""'");
-  }
+  } 
   arg4 = static_cast< aal::MouseButton >(val4);
-  (arg1)->mouseDrag(arg2,arg3,arg4);
+  {
+    try {
+      (arg1)->mouseDrag(arg2,arg3,arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11865,7 +22709,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_mouseDrag__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   geometry::Point arg2 ;
@@ -11876,17 +22720,17 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDrag__SWIG_1(const SwigV8Argument
   int res2 = 0 ;
   void *argp3 ;
   int res3 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDrag" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_mouseDrag" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     res2 = SWIG_ConvertPtr(args[0], &argp2, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDrag" "', argument " "2"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_mouseDrag" "', argument " "2"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseDrag" "', argument " "2"" of type '" "geometry::Point""'");
     } else {
@@ -11896,20 +22740,26 @@ static SwigV8ReturnValue _wrap_Accessible_mouseDrag__SWIG_1(const SwigV8Argument
   {
     res3 = SWIG_ConvertPtr(args[1], &argp3, SWIGTYPE_p_geometry__Point,  0 );
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_mouseDrag" "', argument " "3"" of type '" "geometry::Point""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_mouseDrag" "', argument " "3"" of type '" "geometry::Point""'"); 
+    }  
     if (!argp3) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_mouseDrag" "', argument " "3"" of type '" "geometry::Point""'");
     } else {
       arg3 = *(reinterpret_cast< geometry::Point * >(argp3));
     }
   }
-  (arg1)->mouseDrag(arg2,arg3);
+  {
+    try {
+      (arg1)->mouseDrag(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11918,11 +22768,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseDrag(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 3) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -11937,8 +22787,8 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseDrag(const SwigV
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -11953,10 +22803,10 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_mouseDrag(const SwigV
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function mouseDrag.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11965,26 +22815,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getMousePosition(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   geometry::Point result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getMousePosition.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getMousePosition" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getMousePosition" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getMousePosition();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getMousePosition();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new geometry::Point(static_cast< const geometry::Point& >(result))), SWIGTYPE_p_geometry__Point, SWIG_POINTER_OWN |  0 );
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -11993,7 +22849,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_keyDown(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   aal::Key arg2 ;
@@ -12004,32 +22860,38 @@ static SwigV8ReturnValue _wrap_Accessible_keyDown(const SwigV8Arguments &args) {
   int ecode2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_keyDown.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_keyDown" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_keyDown" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_int(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_keyDown" "', argument " "2"" of type '" "aal::Key""'");
-  }
+  } 
   arg2 = static_cast< aal::Key >(val2);
   ecode3 = SWIG_AsVal_int(args[1], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Accessible_keyDown" "', argument " "3"" of type '" "aal::Modifier""'");
-  }
+  } 
   arg3 = static_cast< aal::Modifier >(val3);
-  ((aal::Accessible const *)arg1)->keyDown(arg2,arg3);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->keyDown(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
-
+  
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12038,7 +22900,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_keyUp(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   aal::Key arg2 ;
@@ -12049,32 +22911,38 @@ static SwigV8ReturnValue _wrap_Accessible_keyUp(const SwigV8Arguments &args) {
   int ecode2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_keyUp.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_keyUp" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_keyUp" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_int(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_keyUp" "', argument " "2"" of type '" "aal::Key""'");
-  }
+  } 
   arg2 = static_cast< aal::Key >(val2);
   ecode3 = SWIG_AsVal_int(args[1], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Accessible_keyUp" "', argument " "3"" of type '" "aal::Modifier""'");
-  }
+  } 
   arg3 = static_cast< aal::Modifier >(val3);
-  ((aal::Accessible const *)arg1)->keyUp(arg2,arg3);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->keyUp(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
-
+  
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12083,7 +22951,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_keyPress(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   aal::Key arg2 ;
@@ -12094,32 +22962,38 @@ static SwigV8ReturnValue _wrap_Accessible_keyPress(const SwigV8Arguments &args) 
   int ecode2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_keyPress.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_keyPress" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_keyPress" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_int(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_keyPress" "', argument " "2"" of type '" "aal::Key""'");
-  }
+  } 
   arg2 = static_cast< aal::Key >(val2);
   ecode3 = SWIG_AsVal_int(args[1], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Accessible_keyPress" "', argument " "3"" of type '" "aal::Modifier""'");
-  }
+  } 
   arg3 = static_cast< aal::Modifier >(val3);
-  ((aal::Accessible const *)arg1)->keyPress(arg2,arg3);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->keyPress(arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
-
+  
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12128,39 +23002,45 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_typeString(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_typeString.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_typeString" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_typeString" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_typeString" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_typeString" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_typeString" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_typeString" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  ((aal::Accessible const *)arg1)->typeString((std::string const &)*arg2);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->typeString((std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12169,25 +23049,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_click(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_click.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_click" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_click" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->click();
+  {
+    try {
+      (arg1)->click();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12197,7 +23083,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_confirm__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   bool arg2 ;
@@ -12205,24 +23091,30 @@ static SwigV8ReturnValue _wrap_Accessible_confirm__SWIG_0(const SwigV8Arguments 
   int res1 = 0 ;
   bool val2 ;
   int ecode2 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_confirm" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_confirm" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_bool(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_confirm" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
-  (arg1)->confirm(arg2);
+  {
+    try {
+      (arg1)->confirm(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12232,23 +23124,29 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_confirm__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_confirm" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_confirm" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->confirm();
+  {
+    try {
+      (arg1)->confirm();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12257,11 +23155,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_confirm(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -12276,8 +23174,8 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_confirm(const SwigV8A
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 0) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -12292,10 +23190,10 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_confirm(const SwigV8A
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function confirm.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12304,25 +23202,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_stepUp(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_stepUp.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_stepUp" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_stepUp" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->stepUp();
+  {
+    try {
+      (arg1)->stepUp();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12331,25 +23235,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_stepDown(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_stepDown.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_stepDown" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_stepDown" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->stepDown();
+  {
+    try {
+      (arg1)->stepDown();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12358,25 +23268,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_scrollLeft(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_scrollLeft.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollLeft" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollLeft" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->scrollLeft();
+  {
+    try {
+      (arg1)->scrollLeft();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12385,25 +23301,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_scrollRight(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_scrollRight.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollRight" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollRight" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->scrollRight();
+  {
+    try {
+      (arg1)->scrollRight();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12412,25 +23334,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_scrollUp(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_scrollUp.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollUp" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollUp" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->scrollUp();
+  {
+    try {
+      (arg1)->scrollUp();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12439,25 +23367,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_scrollDown(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_scrollDown.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollDown" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_scrollDown" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->scrollDown();
+  {
+    try {
+      (arg1)->scrollDown();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12466,25 +23400,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_increment(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_increment.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_increment" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_increment" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->increment();
+  {
+    try {
+      (arg1)->increment();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12493,25 +23433,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_decrement(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_decrement.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_decrement" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_decrement" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->decrement();
+  {
+    try {
+      (arg1)->decrement();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12520,25 +23466,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_show(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_show.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_show" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_show" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->show();
+  {
+    try {
+      (arg1)->show();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12547,25 +23499,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_bringToFront(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_bringToFront.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_bringToFront" "', argument " "1"" of type '" "aal::Accessible *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_bringToFront" "', argument " "1"" of type '" "aal::Accessible *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  (arg1)->bringToFront();
+  {
+    try {
+      (arg1)->bringToFront();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12574,7 +23532,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_highlight(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   NSColor *arg2 = (NSColor *) 0 ;
@@ -12582,26 +23540,32 @@ static SwigV8ReturnValue _wrap_Accessible_highlight(const SwigV8Arguments &args)
   int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_highlight.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_highlight" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_highlight" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   res2 = SWIG_ConvertPtr(args[0], &argp2,SWIGTYPE_p_NSColor, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_highlight" "', argument " "2"" of type '" "NSColor *""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_highlight" "', argument " "2"" of type '" "NSColor *""'"); 
   }
   arg2 = reinterpret_cast< NSColor * >(argp2);
-  ((aal::Accessible const *)arg1)->highlight(arg2);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->highlight(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12610,25 +23574,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_removeHighlight(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_removeHighlight.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_removeHighlight" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_removeHighlight" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  ((aal::Accessible const *)arg1)->removeHighlight();
+  {
+    try {
+      ((aal::Accessible const *)arg1)->removeHighlight();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12637,26 +23607,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_isHighlightActive(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_isHighlightActive.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isHighlightActive" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_isHighlightActive" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = (bool)((aal::Accessible const *)arg1)->isHighlightActive();
+  {
+    try {
+      result = (bool)((aal::Accessible const *)arg1)->isHighlightActive();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12665,26 +23641,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getPlatformRoleName(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getPlatformRoleName.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getPlatformRoleName" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getPlatformRoleName" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getPlatformRoleName();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getPlatformRoleName();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12694,7 +23676,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_dump__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   bool arg2 ;
@@ -12705,36 +23687,42 @@ static SwigV8ReturnValue _wrap_Accessible_dump__SWIG_0(const SwigV8Arguments &ar
   int ecode2 = 0 ;
   int res3 = SWIG_OLDOBJ ;
   std::string result;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_dump" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_dump" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_bool(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_dump" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
   {
     std::string *ptr = (std::string *)0;
     res3 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_dump" "', argument " "3"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Accessible_dump" "', argument " "3"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_dump" "', argument " "3"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_dump" "', argument " "3"" of type '" "std::string const &""'"); 
     }
     arg3 = ptr;
   }
-  result = ((aal::Accessible const *)arg1)->dump(arg2,(std::string const &)*arg3);
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->dump(arg2,(std::string const &)*arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   if (SWIG_IsNewObj(res3)) delete arg3;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12744,7 +23732,7 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_dump__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   bool arg2 ;
@@ -12753,24 +23741,30 @@ static SwigV8ReturnValue _wrap_Accessible_dump__SWIG_1(const SwigV8Arguments &ar
   bool val2 ;
   int ecode2 = 0 ;
   std::string result;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_dump" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_dump" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   ecode2 = SWIG_AsVal_bool(args[0], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Accessible_dump" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
-  result = ((aal::Accessible const *)arg1)->dump(arg2);
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->dump(arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12780,24 +23774,30 @@ fail:
 static SwigV8ReturnValue _wrap_Accessible_dump__SWIG_2(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   std::string result;
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_dump" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_dump" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->dump();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->dump();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12806,11 +23806,11 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_dump(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -12825,8 +23825,8 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_dump(const SwigV8Argu
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -12841,8 +23841,8 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_dump(const SwigV8Argu
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 0) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -12857,10 +23857,10 @@ static SwigV8ReturnValue _wrap_Accessible__wrap_Accessible_dump(const SwigV8Argu
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function dump.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12869,25 +23869,31 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_printNativeInfo(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_printNativeInfo.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_printNativeInfo" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_printNativeInfo" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  ((aal::Accessible const *)arg1)->printNativeInfo();
+  {
+    try {
+      ((aal::Accessible const *)arg1)->printNativeInfo();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12896,26 +23902,32 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_getDetails(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   aal::AccessibleDetails result;
-
+  
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_getDetails.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getDetails" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_getDetails" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
-  result = ((aal::Accessible const *)arg1)->getDetails();
+  {
+    try {
+      result = ((aal::Accessible const *)arg1)->getDetails();
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new aal::AccessibleDetails(static_cast< const aal::AccessibleDetails& >(result))), SWIGTYPE_p_aal__AccessibleDetails, SWIG_POINTER_OWN |  0 );
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12924,7 +23936,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_takeScreenShot(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
@@ -12937,49 +23949,55 @@ static SwigV8ReturnValue _wrap_Accessible_takeScreenShot(const SwigV8Arguments &
   int ecode3 = 0 ;
   void *argp4 ;
   int res4 = 0 ;
-
+  
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_takeScreenShot.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_takeScreenShot" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_takeScreenShot" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_takeScreenShot" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_takeScreenShot" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_takeScreenShot" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_takeScreenShot" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
   ecode3 = SWIG_AsVal_bool(args[1], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Accessible_takeScreenShot" "', argument " "3"" of type '" "bool""'");
-  }
+  } 
   arg3 = static_cast< bool >(val3);
   {
     res4 = SWIG_ConvertPtr(args[2], &argp4, SWIGTYPE_p_geometry__Rectangle,  0 );
     if (!SWIG_IsOK(res4)) {
-      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "Accessible_takeScreenShot" "', argument " "4"" of type '" "geometry::Rectangle""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "Accessible_takeScreenShot" "', argument " "4"" of type '" "geometry::Rectangle""'"); 
+    }  
     if (!argp4) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_takeScreenShot" "', argument " "4"" of type '" "geometry::Rectangle""'");
     } else {
       arg4 = *(reinterpret_cast< geometry::Rectangle * >(argp4));
     }
   }
-  ((aal::Accessible const *)arg1)->takeScreenShot((std::string const &)*arg2,arg3,arg4);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->takeScreenShot((std::string const &)*arg2,arg3,arg4);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -12988,39 +24006,45 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_saveImage(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Accessible *arg1 = (aal::Accessible *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_saveImage.");
-
+  
   res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_aal__Accessible, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_saveImage" "', argument " "1"" of type '" "aal::Accessible const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_saveImage" "', argument " "1"" of type '" "aal::Accessible const *""'"); 
   }
   arg1 = reinterpret_cast< aal::Accessible * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[0], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_saveImage" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_saveImage" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_saveImage" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_saveImage" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  ((aal::Accessible const *)arg1)->saveImage((std::string const &)*arg2);
+  {
+    try {
+      ((aal::Accessible const *)arg1)->saveImage((std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13029,21 +24053,21 @@ fail:
 
 static SwigV8ReturnValue _wrap_Accessible_handleUnsupportedError(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   AXError arg1 ;
   std::string *arg2 = 0 ;
   void *argp1 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Accessible_handleUnsupportedError.");
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_AXError,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_handleUnsupportedError" "', argument " "1"" of type '" "AXError""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Accessible_handleUnsupportedError" "', argument " "1"" of type '" "AXError""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_handleUnsupportedError" "', argument " "1"" of type '" "AXError""'");
     } else {
@@ -13054,19 +24078,25 @@ static SwigV8ReturnValue _wrap_Accessible_handleUnsupportedError(const SwigV8Arg
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(args[1], &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_handleUnsupportedError" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Accessible_handleUnsupportedError" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_handleUnsupportedError" "', argument " "2"" of type '" "std::string const &""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Accessible_handleUnsupportedError" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  aal::Accessible::handleUnsupportedError(arg1,(std::string const &)*arg2);
+  {
+    try {
+      aal::Accessible::handleUnsupportedError(arg1,(std::string const &)*arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
   if (SWIG_IsNewObj(res2)) delete arg2;
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13075,7 +24105,7 @@ fail:
 
 static SwigV8ReturnValue _wrap__AXUIElementGetWindow(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   AXUIElementRef arg1 ;
   CGWindowID *arg2 = (CGWindowID *) 0 ;
@@ -13084,14 +24114,14 @@ static SwigV8ReturnValue _wrap__AXUIElementGetWindow(const SwigV8Arguments &args
   void *argp2 = 0 ;
   int res2 = 0 ;
   AXError result;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap__AXUIElementGetWindow.");
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_AXUIElementRef,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_AXUIElementGetWindow" "', argument " "1"" of type '" "AXUIElementRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_AXUIElementGetWindow" "', argument " "1"" of type '" "AXUIElementRef""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "_AXUIElementGetWindow" "', argument " "1"" of type '" "AXUIElementRef""'");
     } else {
@@ -13100,15 +24130,21 @@ static SwigV8ReturnValue _wrap__AXUIElementGetWindow(const SwigV8Arguments &args
   }
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_CGWindowID, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "_AXUIElementGetWindow" "', argument " "2"" of type '" "CGWindowID *""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "_AXUIElementGetWindow" "', argument " "2"" of type '" "CGWindowID *""'"); 
   }
   arg2 = reinterpret_cast< CGWindowID * >(argp2);
-  result = _AXUIElementGetWindow(arg1,arg2);
+  {
+    try {
+      result = _AXUIElementGetWindow(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new AXError(static_cast< const AXError& >(result))), SWIGTYPE_p_AXError, SWIG_POINTER_OWN |  0 );
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13118,7 +24154,7 @@ fail:
 static SwigV8ReturnValue _wrap_getNativeRole__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   AXUIElementRef arg1 ;
   CFStringRef arg2 ;
@@ -13127,12 +24163,12 @@ static SwigV8ReturnValue _wrap_getNativeRole__SWIG_0(const SwigV8Arguments &args
   void *argp2 ;
   int res2 = 0 ;
   std::string result;
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_AXUIElementRef,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getNativeRole" "', argument " "1"" of type '" "AXUIElementRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getNativeRole" "', argument " "1"" of type '" "AXUIElementRef""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getNativeRole" "', argument " "1"" of type '" "AXUIElementRef""'");
     } else {
@@ -13142,19 +24178,25 @@ static SwigV8ReturnValue _wrap_getNativeRole__SWIG_0(const SwigV8Arguments &args
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_CFStringRef,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "getNativeRole" "', argument " "2"" of type '" "CFStringRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "getNativeRole" "', argument " "2"" of type '" "CFStringRef""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getNativeRole" "', argument " "2"" of type '" "CFStringRef""'");
     } else {
       arg2 = *(reinterpret_cast< CFStringRef * >(argp2));
     }
   }
-  result = getNativeRole(arg1,arg2);
+  {
+    try {
+      result = getNativeRole(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13164,29 +24206,35 @@ fail:
 static SwigV8ReturnValue _wrap_getNativeRole__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   AXUIElementRef arg1 ;
   void *argp1 ;
   int res1 = 0 ;
   std::string result;
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_AXUIElementRef,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getNativeRole" "', argument " "1"" of type '" "AXUIElementRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getNativeRole" "', argument " "1"" of type '" "AXUIElementRef""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getNativeRole" "', argument " "1"" of type '" "AXUIElementRef""'");
     } else {
       arg1 = *(reinterpret_cast< AXUIElementRef * >(argp1));
     }
   }
-  result = getNativeRole(arg1);
+  {
+    try {
+      result = getNativeRole(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13195,11 +24243,11 @@ fail:
 
 static SwigV8ReturnValue _wrap___wrap_getNativeRole(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -13214,8 +24262,8 @@ static SwigV8ReturnValue _wrap___wrap_getNativeRole(const SwigV8Arguments &args)
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 1) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -13230,10 +24278,10 @@ static SwigV8ReturnValue _wrap___wrap_getNativeRole(const SwigV8Arguments &args)
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function getNativeRole.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13243,7 +24291,7 @@ fail:
 static SwigV8ReturnValue _wrap_nativeRoleIsOneOf__SWIG_0(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   AXUIElementRef arg1 ;
   SwigValueWrapper< std::vector< CFStringRef > > arg2 ;
@@ -13255,12 +24303,12 @@ static SwigV8ReturnValue _wrap_nativeRoleIsOneOf__SWIG_0(const SwigV8Arguments &
   void *argp3 ;
   int res3 = 0 ;
   bool result;
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_AXUIElementRef,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nativeRoleIsOneOf" "', argument " "1"" of type '" "AXUIElementRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nativeRoleIsOneOf" "', argument " "1"" of type '" "AXUIElementRef""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "nativeRoleIsOneOf" "', argument " "1"" of type '" "AXUIElementRef""'");
     } else {
@@ -13270,8 +24318,8 @@ static SwigV8ReturnValue _wrap_nativeRoleIsOneOf__SWIG_0(const SwigV8Arguments &
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_std__vectorT_CFStringRef_t,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "nativeRoleIsOneOf" "', argument " "2"" of type '" "std::vector< CFStringRef >""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "nativeRoleIsOneOf" "', argument " "2"" of type '" "std::vector< CFStringRef >""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "nativeRoleIsOneOf" "', argument " "2"" of type '" "std::vector< CFStringRef >""'");
     } else {
@@ -13281,19 +24329,25 @@ static SwigV8ReturnValue _wrap_nativeRoleIsOneOf__SWIG_0(const SwigV8Arguments &
   {
     res3 = SWIG_ConvertPtr(args[2], &argp3, SWIGTYPE_p_CFStringRef,  0 );
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "nativeRoleIsOneOf" "', argument " "3"" of type '" "CFStringRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "nativeRoleIsOneOf" "', argument " "3"" of type '" "CFStringRef""'"); 
+    }  
     if (!argp3) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "nativeRoleIsOneOf" "', argument " "3"" of type '" "CFStringRef""'");
     } else {
       arg3 = *(reinterpret_cast< CFStringRef * >(argp3));
     }
   }
-  result = (bool)nativeRoleIsOneOf(arg1,arg2,arg3);
+  {
+    try {
+      result = (bool)nativeRoleIsOneOf(arg1,arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13303,7 +24357,7 @@ fail:
 static SwigV8ReturnValue _wrap_nativeRoleIsOneOf__SWIG_1(const SwigV8Arguments &args, V8ErrorHandler &SWIGV8_ErrorHandler)
 {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   AXUIElementRef arg1 ;
   SwigValueWrapper< std::vector< CFStringRef > > arg2 ;
@@ -13312,12 +24366,12 @@ static SwigV8ReturnValue _wrap_nativeRoleIsOneOf__SWIG_1(const SwigV8Arguments &
   void *argp2 ;
   int res2 = 0 ;
   bool result;
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_AXUIElementRef,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nativeRoleIsOneOf" "', argument " "1"" of type '" "AXUIElementRef""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "nativeRoleIsOneOf" "', argument " "1"" of type '" "AXUIElementRef""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "nativeRoleIsOneOf" "', argument " "1"" of type '" "AXUIElementRef""'");
     } else {
@@ -13327,19 +24381,25 @@ static SwigV8ReturnValue _wrap_nativeRoleIsOneOf__SWIG_1(const SwigV8Arguments &
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_std__vectorT_CFStringRef_t,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "nativeRoleIsOneOf" "', argument " "2"" of type '" "std::vector< CFStringRef >""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "nativeRoleIsOneOf" "', argument " "2"" of type '" "std::vector< CFStringRef >""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "nativeRoleIsOneOf" "', argument " "2"" of type '" "std::vector< CFStringRef >""'");
     } else {
       arg2 = *(reinterpret_cast< std::vector< CFStringRef > * >(argp2));
     }
   }
-  result = (bool)nativeRoleIsOneOf(arg1,arg2);
+  {
+    try {
+      result = (bool)nativeRoleIsOneOf(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_From_bool(static_cast< bool >(result));
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13348,11 +24408,11 @@ fail:
 
 static SwigV8ReturnValue _wrap___wrap_nativeRoleIsOneOf(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   OverloadErrorHandler errorHandler;
-
-
+  
+  
   if(args.Length() == 3) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -13367,8 +24427,8 @@ static SwigV8ReturnValue _wrap___wrap_nativeRoleIsOneOf(const SwigV8Arguments &a
     }
 #endif
   }
-
-
+  
+  
   if(args.Length() == 2) {
     errorHandler.err.Clear();
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
@@ -13383,10 +24443,10 @@ static SwigV8ReturnValue _wrap___wrap_nativeRoleIsOneOf(const SwigV8Arguments &a
     }
 #endif
   }
-
-
+  
+  
   SWIG_exception_fail(SWIG_ERROR, "Illegal arguments for function nativeRoleIsOneOf.");
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13399,19 +24459,19 @@ static void _wrap_highlightWindow_set(v8::Local<v8::String> property, v8::Local<
   static void _wrap_highlightWindow_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     HighlightWindow *arg1 = (HighlightWindow *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(value, &argp1,SWIGTYPE_p_HighlightWindow, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "highlightWindow_set" "', argument " "1"" of type '" "HighlightWindow *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "highlightWindow_set" "', argument " "1"" of type '" "HighlightWindow *""'"); 
     }
     arg1 = reinterpret_cast< HighlightWindow * >(argp1);
     highlightWindow = arg1;
-
-
+    
+    
     goto fail;
   fail:
     return;
@@ -13424,15 +24484,15 @@ static SwigV8ReturnValue _wrap_highlightWindow_get(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_highlightWindow_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     HighlightWindow *result = 0 ;
-
+    
     result = (HighlightWindow *)highlightWindow;
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_HighlightWindow, 0 |  0 );
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -13445,19 +24505,19 @@ static void _wrap_attributeToPropertyMap_set(v8::Local<v8::String> property, v8:
   static void _wrap_attributeToPropertyMap_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     std::map< std::string,std::string,std::less< std::string > > *arg1 = (std::map< std::string,std::string,std::less< std::string > > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(value, &argp1,SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "attributeToPropertyMap_set" "', argument " "1"" of type '" "std::map< std::string,std::string,std::less< std::string > > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "attributeToPropertyMap_set" "', argument " "1"" of type '" "std::map< std::string,std::string,std::less< std::string > > *""'"); 
     }
     arg1 = reinterpret_cast< std::map< std::string,std::string,std::less< std::string > > * >(argp1);
     attributeToPropertyMap = *arg1;
-
-
+    
+    
     goto fail;
   fail:
     return;
@@ -13470,15 +24530,15 @@ static SwigV8ReturnValue _wrap_attributeToPropertyMap_get(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_attributeToPropertyMap_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     std::map< std::string,std::string,std::less< std::string > > *result = 0 ;
-
+    
     result = (std::map< std::string,std::string,std::less< std::string > > *)&attributeToPropertyMap;
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t, 0 |  0 );
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -13491,19 +24551,19 @@ static void _wrap_ignoredAttributes_set(v8::Local<v8::String> property, v8::Loca
   static void _wrap_ignoredAttributes_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     std::set< std::string > *arg1 = (std::set< std::string > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(value, &argp1,SWIGTYPE_p_std__setT_std__string_t, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ignoredAttributes_set" "', argument " "1"" of type '" "std::set< std::string > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ignoredAttributes_set" "', argument " "1"" of type '" "std::set< std::string > *""'"); 
     }
     arg1 = reinterpret_cast< std::set< std::string > * >(argp1);
     ignoredAttributes = *arg1;
-
-
+    
+    
     goto fail;
   fail:
     return;
@@ -13516,15 +24576,15 @@ static SwigV8ReturnValue _wrap_ignoredAttributes_get(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap_ignoredAttributes_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     std::set< std::string > *result = 0 ;
-
+    
     result = (std::set< std::string > *)&ignoredAttributes;
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__setT_std__string_t, 0 |  0 );
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -13537,19 +24597,19 @@ static void _wrap_subRoleMap_set(v8::Local<v8::String> property, v8::Local<v8::V
   static void _wrap_subRoleMap_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     std::map< std::string,std::string,std::less< std::string > > *arg1 = (std::map< std::string,std::string,std::less< std::string > > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(value, &argp1,SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "subRoleMap_set" "', argument " "1"" of type '" "std::map< std::string,std::string,std::less< std::string > > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "subRoleMap_set" "', argument " "1"" of type '" "std::map< std::string,std::string,std::less< std::string > > *""'"); 
     }
     arg1 = reinterpret_cast< std::map< std::string,std::string,std::less< std::string > > * >(argp1);
     subRoleMap = *arg1;
-
-
+    
+    
     goto fail;
   fail:
     return;
@@ -13562,15 +24622,15 @@ static SwigV8ReturnValue _wrap_subRoleMap_get(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_subRoleMap_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     std::map< std::string,std::string,std::less< std::string > > *result = 0 ;
-
+    
     result = (std::map< std::string,std::string,std::less< std::string > > *)&subRoleMap;
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t, 0 |  0 );
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -13583,19 +24643,19 @@ static void _wrap_references_set(v8::Local<v8::String> property, v8::Local<v8::V
   static void _wrap_references_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     std::set< std::string > *arg1 = (std::set< std::string > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(value, &argp1,SWIGTYPE_p_std__setT_std__string_t, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "references_set" "', argument " "1"" of type '" "std::set< std::string > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "references_set" "', argument " "1"" of type '" "std::set< std::string > *""'"); 
     }
     arg1 = reinterpret_cast< std::set< std::string > * >(argp1);
     references = *arg1;
-
-
+    
+    
     goto fail;
   fail:
     return;
@@ -13608,15 +24668,15 @@ static SwigV8ReturnValue _wrap_references_get(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_references_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     std::set< std::string > *result = 0 ;
-
+    
     result = (std::set< std::string > *)&references;
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__setT_std__string_t, 0 |  0 );
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -13629,19 +24689,19 @@ static void _wrap_actionMap_set(v8::Local<v8::String> property, v8::Local<v8::Va
   static void _wrap_actionMap_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     std::map< std::string,std::string,std::less< std::string > > *arg1 = (std::map< std::string,std::string,std::less< std::string > > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(value, &argp1,SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "actionMap_set" "', argument " "1"" of type '" "std::map< std::string,std::string,std::less< std::string > > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "actionMap_set" "', argument " "1"" of type '" "std::map< std::string,std::string,std::less< std::string > > *""'"); 
     }
     arg1 = reinterpret_cast< std::map< std::string,std::string,std::less< std::string > > * >(argp1);
     actionMap = *arg1;
-
-
+    
+    
     goto fail;
   fail:
     return;
@@ -13654,15 +24714,15 @@ static SwigV8ReturnValue _wrap_actionMap_get(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_actionMap_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     std::map< std::string,std::string,std::less< std::string > > *result = 0 ;
-
+    
     result = (std::map< std::string,std::string,std::less< std::string > > *)&actionMap;
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t, 0 |  0 );
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -13671,7 +24731,7 @@ static SwigV8ReturnValue _wrap_actionMap_get(v8::Local<v8::String> property, con
 
 static SwigV8ReturnValue _wrap_eventTypeFromButton(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::MouseButton arg1 ;
   bool arg2 ;
@@ -13680,26 +24740,32 @@ static SwigV8ReturnValue _wrap_eventTypeFromButton(const SwigV8Arguments &args) 
   bool val2 ;
   int ecode2 = 0 ;
   CGEventType result;
-
+  
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_eventTypeFromButton.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "eventTypeFromButton" "', argument " "1"" of type '" "aal::MouseButton""'");
-  }
+  } 
   arg1 = static_cast< aal::MouseButton >(val1);
   ecode2 = SWIG_AsVal_bool(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "eventTypeFromButton" "', argument " "2"" of type '" "bool""'");
-  }
+  } 
   arg2 = static_cast< bool >(val2);
-  result = eventTypeFromButton(arg1,arg2);
+  {
+    try {
+      result = eventTypeFromButton(arg1,arg2);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new CGEventType(static_cast< const CGEventType& >(result))), SWIGTYPE_p_CGEventType, SWIG_POINTER_OWN |  0 );
-
-
-
+  
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13708,7 +24774,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_sendMouseEvent(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   CGEventType arg1 ;
   CGPoint arg2 ;
@@ -13719,14 +24785,14 @@ static SwigV8ReturnValue _wrap_sendMouseEvent(const SwigV8Arguments &args) {
   int res2 = 0 ;
   void *argp3 ;
   int res3 = 0 ;
-
+  
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_sendMouseEvent.");
-
+  
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_CGEventType,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "sendMouseEvent" "', argument " "1"" of type '" "CGEventType""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "sendMouseEvent" "', argument " "1"" of type '" "CGEventType""'"); 
+    }  
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "sendMouseEvent" "', argument " "1"" of type '" "CGEventType""'");
     } else {
@@ -13736,8 +24802,8 @@ static SwigV8ReturnValue _wrap_sendMouseEvent(const SwigV8Arguments &args) {
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_CGPoint,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "sendMouseEvent" "', argument " "2"" of type '" "CGPoint""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "sendMouseEvent" "', argument " "2"" of type '" "CGPoint""'"); 
+    }  
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "sendMouseEvent" "', argument " "2"" of type '" "CGPoint""'");
     } else {
@@ -13747,19 +24813,25 @@ static SwigV8ReturnValue _wrap_sendMouseEvent(const SwigV8Arguments &args) {
   {
     res3 = SWIG_ConvertPtr(args[2], &argp3, SWIGTYPE_p_CGMouseButton,  0 );
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "sendMouseEvent" "', argument " "3"" of type '" "CGMouseButton""'");
-    }
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "sendMouseEvent" "', argument " "3"" of type '" "CGMouseButton""'"); 
+    }  
     if (!argp3) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "sendMouseEvent" "', argument " "3"" of type '" "CGMouseButton""'");
     } else {
       arg3 = *(reinterpret_cast< CGMouseButton * >(argp3));
     }
   }
-  sendMouseEvent(arg1,arg2,arg3);
+  {
+    try {
+      sendMouseEvent(arg1,arg2,arg3);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIGV8_UNDEFINED();
-
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13772,19 +24844,19 @@ static void _wrap_keyCodeMap_set(v8::Local<v8::String> property, v8::Local<v8::V
   static void _wrap_keyCodeMap_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     std::vector< CGKeyCode > *arg1 = (std::vector< CGKeyCode > *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-
+    
     res1 = SWIG_ConvertPtr(value, &argp1,SWIGTYPE_p_std__vectorT_CGKeyCode_t, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "keyCodeMap_set" "', argument " "1"" of type '" "std::vector< CGKeyCode > *""'");
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "keyCodeMap_set" "', argument " "1"" of type '" "std::vector< CGKeyCode > *""'"); 
     }
     arg1 = reinterpret_cast< std::vector< CGKeyCode > * >(argp1);
     keyCodeMap = *arg1;
-
-
+    
+    
     goto fail;
   fail:
     return;
@@ -13797,15 +24869,15 @@ static SwigV8ReturnValue _wrap_keyCodeMap_get(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_keyCodeMap_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-
+    
     v8::Handle<v8::Value> jsresult;
     std::vector< CGKeyCode > *result = 0 ;
-
+    
     result = (std::vector< CGKeyCode > *)&keyCodeMap;
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_CGKeyCode_t, 0 |  0 );
-
+    
     SWIGV8_RETURN_INFO(jsresult, info);
-
+    
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -13814,26 +24886,32 @@ static SwigV8ReturnValue _wrap_keyCodeMap_get(v8::Local<v8::String> property, co
 
 static SwigV8ReturnValue _wrap_modifierToFlags(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Value> jsresult;
   aal::Modifier arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   CGEventFlags result;
-
+  
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_modifierToFlags.");
-
+  
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "modifierToFlags" "', argument " "1"" of type '" "aal::Modifier""'");
-  }
+  } 
   arg1 = static_cast< aal::Modifier >(val1);
-  result = modifierToFlags(arg1);
+  {
+    try {
+      result = modifierToFlags(arg1);
+    } catch(std::runtime_error e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+  }
   jsresult = SWIG_NewPointerObj((new CGEventFlags(static_cast< const CGEventFlags& >(result))), SWIGTYPE_p_CGEventFlags, SWIG_POINTER_OWN |  0 );
-
-
+  
+  
   SWIGV8_RETURN(jsresult);
-
+  
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -13862,8 +24940,10 @@ static swig_type_info _swigt__p_CGEventType = {"_p_CGEventType", "CGEventType *"
 static swig_type_info _swigt__p_CGMouseButton = {"_p_CGMouseButton", "CGMouseButton *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_CGPoint = {"_p_CGPoint", "CGPoint *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_CGWindowID = {"_p_CGWindowID", "CGWindowID *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_CPPCONN_PUBLIC_FUNC = {"_p_CPPCONN_PUBLIC_FUNC", "CPPCONN_PUBLIC_FUNC *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_HighlightWindow = {"_p_HighlightWindow", "HighlightWindow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_NSColor = {"_p_NSColor", "NSColor *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_SQLString = {"_p_SQLString", "SQLString *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_aal__Accessible = {"_p_aal__Accessible", "aal::Accessible *|p_aal__Accessible", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_aal__AccessibleAction = {"_p_aal__AccessibleAction", "aal::AccessibleAction *|p_aal__AccessibleAction", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_aal__AccessibleDetails = {"_p_aal__AccessibleDetails", "aal::AccessibleDetails *|p_aal__AccessibleDetails", 0, 0, (void*)0, 0};
@@ -13877,6 +24957,16 @@ static swig_type_info _swigt__p_geometry__Size = {"_p_geometry__Size", "p_geomet
 static swig_type_info _swigt__p_mga__SerializableObject = {"_p_mga__SerializableObject", "mga::SerializableObject *|p_mga__SerializableObject", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_mga__Utilities = {"_p_mga__Utilities", "p_mga__Utilities", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__Connection = {"_p_sql__Connection", "sql::Connection *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__DatabaseMetaData = {"_p_sql__DatabaseMetaData", "sql::DatabaseMetaData *|p_sql__DatabaseMetaData", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__ResultSet = {"_p_sql__ResultSet", "sql::ResultSet *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__ResultSet__enum_type = {"_p_sql__ResultSet__enum_type", "sql::ResultSet::enum_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__SQLString = {"_p_sql__SQLString", "sql::SQLString *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__SQLWarning = {"_p_sql__SQLWarning", "sql::SQLWarning *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__Savepoint = {"_p_sql__Savepoint", "sql::Savepoint *|p_sql__Savepoint", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__Statement = {"_p_sql__Statement", "p_sql__Statement|sql::Statement *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__Variant = {"_p_sql__Variant", "sql::Variant *|sql::ConnectPropertyVal *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_sql__transaction_isolation = {"_p_sql__transaction_isolation", "enum sql::transaction_isolation *|sql::enum_transaction_isolation *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__chrono__milliseconds = {"_p_std__chrono__milliseconds", "std::chrono::milliseconds *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t = {"_p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t", "mga::PropertyGetter *|std::function< mga::JSVariant (mga::ScriptingContext *,mga::JSExport *,std::string const &) > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__functionT_void_fmga__JSClass_RF_t = {"_p_std__functionT_void_fmga__JSClass_RF_t", "mga::ClassDefCallback *|std::function< void (mga::JSClass &) > *", 0, 0, (void*)0, 0};
@@ -13885,6 +24975,9 @@ static swig_type_info _swigt__p_std__functionT_void_fmga__JSObject_RF_t = {"_p_s
 static swig_type_info _swigt__p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t = {"_p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t", "mga::ConstructorFunction *|std::function< void (mga::JSObject *,mga::JSValues &) > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t = {"_p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t", "mga::ModuleActivationFunction *|std::function< void (mga::ScriptingContext &,mga::JSObject &) > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t = {"_p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t", "mga::PropertySetter *|std::function< void (mga::ScriptingContext *,mga::JSExport *,std::string const &,mga::JSVariant const &) > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__listT_int_t = {"_p_std__listT_int_t", "std::list< int > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__listT_sql__SQLString_t = {"_p_std__listT_sql__SQLString_t", "std::list< sql::SQLString > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__mapT_sql__SQLString_sql__Variant_std__lessT_sql__SQLString_t_t = {"_p_std__mapT_sql__SQLString_sql__Variant_std__lessT_sql__SQLString_t_t", "std::map< sql::SQLString,sql::Variant,std::less< sql::SQLString > > *|sql::ConnectOptionsMap *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_t = {"_p_std__mapT_std__string_std__string_std__lessT_std__string_t_t", "std::map< std::string,std::string,std::less< std::string > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__setT_size_t_t = {"_p_std__setT_size_t_t", "std::set< size_t > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__setT_std__string_t = {"_p_std__setT_std__string_t", "std::set< std::string > *", 0, 0, (void*)0, 0};
@@ -13900,6 +24993,7 @@ static swig_type_info _swigt__p_std__vectorT_aal__AccessibleRef_t = {"_p_std__ve
 static swig_type_info _swigt__p_std__vectorT_std__string_t = {"_p_std__vectorT_std__string_t", "mga::StringArray *|std::vector< std::string > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t = {"_p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t", "std::vector< std::unique_ptr< mga::UIElement > > *|mga::UIElementList *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__wstring = {"_p_std__wstring", "std::wstring *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_uint64_t = {"_p_uint64_t", "uint64_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
@@ -13911,8 +25005,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_CGMouseButton,
   &_swigt__p_CGPoint,
   &_swigt__p_CGWindowID,
+  &_swigt__p_CPPCONN_PUBLIC_FUNC,
   &_swigt__p_HighlightWindow,
   &_swigt__p_NSColor,
+  &_swigt__p_SQLString,
   &_swigt__p_aal__Accessible,
   &_swigt__p_aal__AccessibleAction,
   &_swigt__p_aal__AccessibleDetails,
@@ -13926,6 +25022,16 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_mga__SerializableObject,
   &_swigt__p_mga__Utilities,
   &_swigt__p_size_type,
+  &_swigt__p_sql__Connection,
+  &_swigt__p_sql__DatabaseMetaData,
+  &_swigt__p_sql__ResultSet,
+  &_swigt__p_sql__ResultSet__enum_type,
+  &_swigt__p_sql__SQLString,
+  &_swigt__p_sql__SQLWarning,
+  &_swigt__p_sql__Savepoint,
+  &_swigt__p_sql__Statement,
+  &_swigt__p_sql__Variant,
+  &_swigt__p_sql__transaction_isolation,
   &_swigt__p_std__chrono__milliseconds,
   &_swigt__p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t,
   &_swigt__p_std__functionT_void_fmga__JSClass_RF_t,
@@ -13934,6 +25040,9 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t,
   &_swigt__p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t,
   &_swigt__p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t,
+  &_swigt__p_std__listT_int_t,
+  &_swigt__p_std__listT_sql__SQLString_t,
+  &_swigt__p_std__mapT_sql__SQLString_sql__Variant_std__lessT_sql__SQLString_t_t,
   &_swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_t,
   &_swigt__p_std__setT_size_t_t,
   &_swigt__p_std__setT_std__string_t,
@@ -13949,6 +25058,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__vectorT_std__string_t,
   &_swigt__p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t,
   &_swigt__p_std__wstring,
+  &_swigt__p_uint64_t,
   &_swigt__p_value_type,
 };
 
@@ -13960,8 +25070,10 @@ static swig_cast_info _swigc__p_CGEventType[] = {  {&_swigt__p_CGEventType, 0, 0
 static swig_cast_info _swigc__p_CGMouseButton[] = {  {&_swigt__p_CGMouseButton, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CGPoint[] = {  {&_swigt__p_CGPoint, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CGWindowID[] = {  {&_swigt__p_CGWindowID, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_CPPCONN_PUBLIC_FUNC[] = {  {&_swigt__p_CPPCONN_PUBLIC_FUNC, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_HighlightWindow[] = {  {&_swigt__p_HighlightWindow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_NSColor[] = {  {&_swigt__p_NSColor, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SQLString[] = {  {&_swigt__p_SQLString, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_aal__Accessible[] = {  {&_swigt__p_aal__Accessible, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_aal__AccessibleAction[] = {  {&_swigt__p_aal__AccessibleAction, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_aal__AccessibleDetails[] = {  {&_swigt__p_aal__AccessibleDetails, 0, 0, 0},{0, 0, 0, 0}};
@@ -13975,6 +25087,16 @@ static swig_cast_info _swigc__p_geometry__Size[] = {  {&_swigt__p_geometry__Size
 static swig_cast_info _swigc__p_mga__SerializableObject[] = {  {&_swigt__p_geometry__Size, _p_geometry__SizeTo_p_mga__SerializableObject, 0, 0},  {&_swigt__p_aal__TextRange, _p_aal__TextRangeTo_p_mga__SerializableObject, 0, 0},  {&_swigt__p_geometry__Rectangle, _p_geometry__RectangleTo_p_mga__SerializableObject, 0, 0},  {&_swigt__p_mga__SerializableObject, 0, 0, 0},  {&_swigt__p_geometry__Point, _p_geometry__PointTo_p_mga__SerializableObject, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_mga__Utilities[] = {  {&_swigt__p_mga__Utilities, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__Connection[] = {  {&_swigt__p_sql__Connection, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__DatabaseMetaData[] = {  {&_swigt__p_sql__DatabaseMetaData, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__ResultSet[] = {  {&_swigt__p_sql__ResultSet, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__ResultSet__enum_type[] = {  {&_swigt__p_sql__ResultSet__enum_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__SQLString[] = {  {&_swigt__p_sql__SQLString, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__SQLWarning[] = {  {&_swigt__p_sql__SQLWarning, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__Savepoint[] = {  {&_swigt__p_sql__Savepoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__Statement[] = {  {&_swigt__p_sql__Statement, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__Variant[] = {  {&_swigt__p_sql__Variant, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_sql__transaction_isolation[] = {  {&_swigt__p_sql__transaction_isolation, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__chrono__milliseconds[] = {  {&_swigt__p_std__chrono__milliseconds, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t[] = {  {&_swigt__p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__functionT_void_fmga__JSClass_RF_t[] = {  {&_swigt__p_std__functionT_void_fmga__JSClass_RF_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -13983,6 +25105,9 @@ static swig_cast_info _swigc__p_std__functionT_void_fmga__JSObject_RF_t[] = {  {
 static swig_cast_info _swigc__p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t[] = {  {&_swigt__p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t[] = {  {&_swigt__p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t[] = {  {&_swigt__p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__listT_int_t[] = {  {&_swigt__p_std__listT_int_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__listT_sql__SQLString_t[] = {  {&_swigt__p_std__listT_sql__SQLString_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__mapT_sql__SQLString_sql__Variant_std__lessT_sql__SQLString_t_t[] = {  {&_swigt__p_std__mapT_sql__SQLString_sql__Variant_std__lessT_sql__SQLString_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__mapT_std__string_std__string_std__lessT_std__string_t_t[] = {  {&_swigt__p_std__mapT_std__string_std__string_std__lessT_std__string_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__setT_size_t_t[] = {  {&_swigt__p_std__setT_size_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__setT_std__string_t[] = {  {&_swigt__p_std__setT_std__string_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -13998,6 +25123,7 @@ static swig_cast_info _swigc__p_std__vectorT_aal__AccessibleRef_t[] = {  {&_swig
 static swig_cast_info _swigc__p_std__vectorT_std__string_t[] = {  {&_swigt__p_std__vectorT_std__string_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t[] = {  {&_swigt__p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__wstring[] = {  {&_swigt__p_std__wstring, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_uint64_t[] = {  {&_swigt__p_uint64_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
@@ -14009,8 +25135,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_CGMouseButton,
   _swigc__p_CGPoint,
   _swigc__p_CGWindowID,
+  _swigc__p_CPPCONN_PUBLIC_FUNC,
   _swigc__p_HighlightWindow,
   _swigc__p_NSColor,
+  _swigc__p_SQLString,
   _swigc__p_aal__Accessible,
   _swigc__p_aal__AccessibleAction,
   _swigc__p_aal__AccessibleDetails,
@@ -14024,6 +25152,16 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_mga__SerializableObject,
   _swigc__p_mga__Utilities,
   _swigc__p_size_type,
+  _swigc__p_sql__Connection,
+  _swigc__p_sql__DatabaseMetaData,
+  _swigc__p_sql__ResultSet,
+  _swigc__p_sql__ResultSet__enum_type,
+  _swigc__p_sql__SQLString,
+  _swigc__p_sql__SQLWarning,
+  _swigc__p_sql__Savepoint,
+  _swigc__p_sql__Statement,
+  _swigc__p_sql__Variant,
+  _swigc__p_sql__transaction_isolation,
   _swigc__p_std__chrono__milliseconds,
   _swigc__p_std__functionT_mga__JSVariant_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_RF_t,
   _swigc__p_std__functionT_void_fmga__JSClass_RF_t,
@@ -14032,6 +25170,9 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__functionT_void_fmga__JSObject_p_mga__JSValues_RF_t,
   _swigc__p_std__functionT_void_fmga__ScriptingContext_R_mga__JSObject_RF_t,
   _swigc__p_std__functionT_void_fmga__ScriptingContext_p_mga__JSExport_p_std__string_const_R_mga__JSVariant_const_RF_t,
+  _swigc__p_std__listT_int_t,
+  _swigc__p_std__listT_sql__SQLString_t,
+  _swigc__p_std__mapT_sql__SQLString_sql__Variant_std__lessT_sql__SQLString_t_t,
   _swigc__p_std__mapT_std__string_std__string_std__lessT_std__string_t_t,
   _swigc__p_std__setT_size_t_t,
   _swigc__p_std__setT_std__string_t,
@@ -14047,6 +25188,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__vectorT_std__string_t,
   _swigc__p_std__vectorT_std__unique_ptrT_mga__UIElement_t_t,
   _swigc__p_std__wstring,
+  _swigc__p_uint64_t,
   _swigc__p_value_type,
 };
 
@@ -14350,7 +25492,7 @@ void SWIGV8_INIT (v8::Handle<v8::Object> exports, v8::Handle<v8::Object> /*modul
   SWIG_InitializeModule(static_cast<void *>(&exports));
 
   SWIGV8_HANDLESCOPE();
-
+  
   v8::Handle<v8::Object> exports_obj = exports;
 
 
@@ -14358,10 +25500,31 @@ void SWIGV8_INIT (v8::Handle<v8::Object> exports, v8::Handle<v8::Object> /*modul
   SWIGV8_SET_CLASS_TEMPL(SWIGV8_SWIGTYPE_Proxy_class_templ, SWIGV8_CreateClassTemplate("SwigProxy"));
 
   /* create objects for namespaces */
-
+  
 
   /* create class templates */
-  /* Name: _exports_Utilities, Type: p_mga__Utilities, Dtor: _wrap_delete_Utilities */
+  /* Name: _exports_Savepoint, Type: p_sql__Savepoint, Dtor: _wrap_delete_Savepoint */
+v8::Handle<v8::FunctionTemplate> _exports_Savepoint_class = SWIGV8_CreateClassTemplate("_exports_Savepoint");
+SWIGV8_SET_CLASS_TEMPL(_exports_Savepoint_clientData.class_templ, _exports_Savepoint_class);
+_exports_Savepoint_clientData.dtor = _wrap_delete_Savepoint;
+if (SWIGTYPE_p_sql__Savepoint->clientdata == 0) {
+  SWIGTYPE_p_sql__Savepoint->clientdata = &_exports_Savepoint_clientData;
+}
+/* Name: _exports_Statement, Type: p_sql__Statement, Dtor: _wrap_delete_Statement */
+v8::Handle<v8::FunctionTemplate> _exports_Statement_class = SWIGV8_CreateClassTemplate("_exports_Statement");
+SWIGV8_SET_CLASS_TEMPL(_exports_Statement_clientData.class_templ, _exports_Statement_class);
+_exports_Statement_clientData.dtor = _wrap_delete_Statement;
+if (SWIGTYPE_p_sql__Statement->clientdata == 0) {
+  SWIGTYPE_p_sql__Statement->clientdata = &_exports_Statement_clientData;
+}
+/* Name: _exports_DatabaseMetaData, Type: p_sql__DatabaseMetaData, Dtor: 0 */
+v8::Handle<v8::FunctionTemplate> _exports_DatabaseMetaData_class = SWIGV8_CreateClassTemplate("_exports_DatabaseMetaData");
+SWIGV8_SET_CLASS_TEMPL(_exports_DatabaseMetaData_clientData.class_templ, _exports_DatabaseMetaData_class);
+_exports_DatabaseMetaData_clientData.dtor = 0;
+if (SWIGTYPE_p_sql__DatabaseMetaData->clientdata == 0) {
+  SWIGTYPE_p_sql__DatabaseMetaData->clientdata = &_exports_DatabaseMetaData_clientData;
+}
+/* Name: _exports_Utilities, Type: p_mga__Utilities, Dtor: _wrap_delete_Utilities */
 v8::Handle<v8::FunctionTemplate> _exports_Utilities_class = SWIGV8_CreateClassTemplate("_exports_Utilities");
 SWIGV8_SET_CLASS_TEMPL(_exports_Utilities_clientData.class_templ, _exports_Utilities_class);
 _exports_Utilities_clientData.dtor = _wrap_delete_Utilities;
@@ -14434,7 +25597,218 @@ if (SWIGTYPE_p_aal__Accessible->clientdata == 0) {
 
 
   /* register wrapper functions */
-  SWIGV8_AddStaticVariable(exports_obj, "Hidden", _wrap_mga_Hidden, JS_veto_set_variable);
+  SWIGV8_AddStaticVariable(exports_obj, "Driver", _wrap_Driver_get, _wrap_Driver_set);
+SWIGV8_AddStaticVariable(exports_obj, "TRANSACTION_NONE", _wrap_sql_TRANSACTION_NONE, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "TRANSACTION_READ_COMMITTED", _wrap_sql_TRANSACTION_READ_COMMITTED, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "TRANSACTION_READ_UNCOMMITTED", _wrap_sql_TRANSACTION_READ_UNCOMMITTED, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "TRANSACTION_REPEATABLE_READ", _wrap_sql_TRANSACTION_REPEATABLE_READ, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "TRANSACTION_SERIALIZABLE", _wrap_sql_TRANSACTION_SERIALIZABLE, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "SSL_MODE_DISABLED", _wrap_sql_SSL_MODE_DISABLED, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "SSL_MODE_PREFERRED", _wrap_sql_SSL_MODE_PREFERRED, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "SSL_MODE_REQUIRED", _wrap_sql_SSL_MODE_REQUIRED, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "SSL_MODE_VERIFY_CA", _wrap_sql_SSL_MODE_VERIFY_CA, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(exports_obj, "SSL_MODE_VERIFY_IDENTITY", _wrap_sql_SSL_MODE_VERIFY_IDENTITY, JS_veto_set_variable);
+SWIGV8_AddMemberFunction(_exports_Savepoint_class, "getSavepointId", _wrap_Savepoint_getSavepointId);
+SWIGV8_AddMemberFunction(_exports_Savepoint_class, "getSavepointName", _wrap_Savepoint_getSavepointName);
+SWIGV8_AddStaticVariable(exports_obj, "Connection", _wrap_Connection_get, _wrap_Connection_set);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getConnection", _wrap_Statement_getConnection);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "cancel", _wrap_Statement_cancel);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "clearWarnings", _wrap_Statement_clearWarnings);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "close", _wrap_Statement_close);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "execute", _wrap_Statement_execute);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "executeQuery", _wrap_Statement_executeQuery);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "executeUpdate", _wrap_Statement_executeUpdate);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getFetchSize", _wrap_Statement_getFetchSize);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getMaxFieldSize", _wrap_Statement_getMaxFieldSize);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getMaxRows", _wrap_Statement_getMaxRows);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getMoreResults", _wrap_Statement_getMoreResults);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getQueryTimeout", _wrap_Statement_getQueryTimeout);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getResultSet", _wrap_Statement_getResultSet);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getResultSetType", _wrap_Statement_getResultSetType);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getUpdateCount", _wrap_Statement_getUpdateCount);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "getWarnings", _wrap_Statement_getWarnings);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "setCursorName", _wrap_Statement_setCursorName);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "setEscapeProcessing", _wrap_Statement_setEscapeProcessing);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "setFetchSize", _wrap_Statement_setFetchSize);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "setMaxFieldSize", _wrap_Statement_setMaxFieldSize);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "setMaxRows", _wrap_Statement_setMaxRows);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "setQueryTimeout", _wrap_Statement_setQueryTimeout);
+SWIGV8_AddMemberFunction(_exports_Statement_class, "setResultSetType", _wrap_Statement_setResultSetType);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "allProceduresAreCallable", _wrap_DatabaseMetaData_allProceduresAreCallable);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "allTablesAreSelectable", _wrap_DatabaseMetaData_allTablesAreSelectable);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "dataDefinitionCausesTransactionCommit", _wrap_DatabaseMetaData_dataDefinitionCausesTransactionCommit);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "dataDefinitionIgnoredInTransactions", _wrap_DatabaseMetaData_dataDefinitionIgnoredInTransactions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "deletesAreDetected", _wrap_DatabaseMetaData_deletesAreDetected);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "doesMaxRowSizeIncludeBlobs", _wrap_DatabaseMetaData_doesMaxRowSizeIncludeBlobs);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getAttributes", _wrap_DatabaseMetaData_getAttributes);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getBestRowIdentifier", _wrap_DatabaseMetaData_getBestRowIdentifier);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getCatalogs", _wrap_DatabaseMetaData_getCatalogs);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getCatalogSeparator", _wrap_DatabaseMetaData_getCatalogSeparator);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getCatalogTerm", _wrap_DatabaseMetaData_getCatalogTerm);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getColumnPrivileges", _wrap_DatabaseMetaData_getColumnPrivileges);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getColumns", _wrap_DatabaseMetaData_getColumns);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getConnection", _wrap_DatabaseMetaData_getConnection);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getCrossReference", _wrap_DatabaseMetaData_getCrossReference);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDatabaseMajorVersion", _wrap_DatabaseMetaData_getDatabaseMajorVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDatabaseMinorVersion", _wrap_DatabaseMetaData_getDatabaseMinorVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDatabasePatchVersion", _wrap_DatabaseMetaData_getDatabasePatchVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDatabaseProductName", _wrap_DatabaseMetaData_getDatabaseProductName);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDatabaseProductVersion", _wrap_DatabaseMetaData_getDatabaseProductVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDefaultTransactionIsolation", _wrap_DatabaseMetaData_getDefaultTransactionIsolation);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDriverMajorVersion", _wrap_DatabaseMetaData_getDriverMajorVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDriverMinorVersion", _wrap_DatabaseMetaData_getDriverMinorVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDriverPatchVersion", _wrap_DatabaseMetaData_getDriverPatchVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDriverName", _wrap_DatabaseMetaData_getDriverName);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getDriverVersion", _wrap_DatabaseMetaData_getDriverVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getExportedKeys", _wrap_DatabaseMetaData_getExportedKeys);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getExtraNameCharacters", _wrap_DatabaseMetaData_getExtraNameCharacters);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getIdentifierQuoteString", _wrap_DatabaseMetaData_getIdentifierQuoteString);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getImportedKeys", _wrap_DatabaseMetaData_getImportedKeys);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getIndexInfo", _wrap_DatabaseMetaData_getIndexInfo);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getCDBCMajorVersion", _wrap_DatabaseMetaData_getCDBCMajorVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getCDBCMinorVersion", _wrap_DatabaseMetaData_getCDBCMinorVersion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxBinaryLiteralLength", _wrap_DatabaseMetaData_getMaxBinaryLiteralLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxCatalogNameLength", _wrap_DatabaseMetaData_getMaxCatalogNameLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxCharLiteralLength", _wrap_DatabaseMetaData_getMaxCharLiteralLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxColumnNameLength", _wrap_DatabaseMetaData_getMaxColumnNameLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxColumnsInGroupBy", _wrap_DatabaseMetaData_getMaxColumnsInGroupBy);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxColumnsInIndex", _wrap_DatabaseMetaData_getMaxColumnsInIndex);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxColumnsInOrderBy", _wrap_DatabaseMetaData_getMaxColumnsInOrderBy);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxColumnsInSelect", _wrap_DatabaseMetaData_getMaxColumnsInSelect);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxColumnsInTable", _wrap_DatabaseMetaData_getMaxColumnsInTable);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxConnections", _wrap_DatabaseMetaData_getMaxConnections);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxCursorNameLength", _wrap_DatabaseMetaData_getMaxCursorNameLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxIndexLength", _wrap_DatabaseMetaData_getMaxIndexLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxProcedureNameLength", _wrap_DatabaseMetaData_getMaxProcedureNameLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxRowSize", _wrap_DatabaseMetaData_getMaxRowSize);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxSchemaNameLength", _wrap_DatabaseMetaData_getMaxSchemaNameLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxStatementLength", _wrap_DatabaseMetaData_getMaxStatementLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxStatements", _wrap_DatabaseMetaData_getMaxStatements);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxTableNameLength", _wrap_DatabaseMetaData_getMaxTableNameLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxTablesInSelect", _wrap_DatabaseMetaData_getMaxTablesInSelect);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getMaxUserNameLength", _wrap_DatabaseMetaData_getMaxUserNameLength);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getNumericFunctions", _wrap_DatabaseMetaData_getNumericFunctions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getPrimaryKeys", _wrap_DatabaseMetaData_getPrimaryKeys);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getProcedureColumns", _wrap_DatabaseMetaData_getProcedureColumns);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getProcedures", _wrap_DatabaseMetaData_getProcedures);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getProcedureTerm", _wrap_DatabaseMetaData_getProcedureTerm);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getResultSetHoldability", _wrap_DatabaseMetaData_getResultSetHoldability);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSchemas", _wrap_DatabaseMetaData_getSchemas);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSchemaTerm", _wrap_DatabaseMetaData_getSchemaTerm);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSchemaCollation", _wrap_DatabaseMetaData_getSchemaCollation);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSchemaCharset", _wrap_DatabaseMetaData_getSchemaCharset);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSearchStringEscape", _wrap_DatabaseMetaData_getSearchStringEscape);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSQLKeywords", _wrap_DatabaseMetaData_getSQLKeywords);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSQLStateType", _wrap_DatabaseMetaData_getSQLStateType);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getStringFunctions", _wrap_DatabaseMetaData_getStringFunctions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSuperTables", _wrap_DatabaseMetaData_getSuperTables);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSuperTypes", _wrap_DatabaseMetaData_getSuperTypes);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSystemFunctions", _wrap_DatabaseMetaData_getSystemFunctions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getTablePrivileges", _wrap_DatabaseMetaData_getTablePrivileges);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getTables", _wrap_DatabaseMetaData_getTables);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getTableTypes", _wrap_DatabaseMetaData_getTableTypes);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getTableCollation", _wrap_DatabaseMetaData_getTableCollation);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getTableCharset", _wrap_DatabaseMetaData_getTableCharset);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getTimeDateFunctions", _wrap_DatabaseMetaData_getTimeDateFunctions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getTypeInfo", _wrap_DatabaseMetaData_getTypeInfo);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getUDTs", _wrap_DatabaseMetaData_getUDTs);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getURL", _wrap_DatabaseMetaData_getURL);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getUserName", _wrap_DatabaseMetaData_getUserName);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getVersionColumns", _wrap_DatabaseMetaData_getVersionColumns);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "insertsAreDetected", _wrap_DatabaseMetaData_insertsAreDetected);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "isCatalogAtStart", _wrap_DatabaseMetaData_isCatalogAtStart);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "isReadOnly", _wrap_DatabaseMetaData_isReadOnly);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "locatorsUpdateCopy", _wrap_DatabaseMetaData_locatorsUpdateCopy);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "nullPlusNonNullIsNull", _wrap_DatabaseMetaData_nullPlusNonNullIsNull);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "nullsAreSortedAtEnd", _wrap_DatabaseMetaData_nullsAreSortedAtEnd);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "nullsAreSortedAtStart", _wrap_DatabaseMetaData_nullsAreSortedAtStart);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "nullsAreSortedHigh", _wrap_DatabaseMetaData_nullsAreSortedHigh);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "nullsAreSortedLow", _wrap_DatabaseMetaData_nullsAreSortedLow);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "othersDeletesAreVisible", _wrap_DatabaseMetaData_othersDeletesAreVisible);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "othersInsertsAreVisible", _wrap_DatabaseMetaData_othersInsertsAreVisible);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "othersUpdatesAreVisible", _wrap_DatabaseMetaData_othersUpdatesAreVisible);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "ownDeletesAreVisible", _wrap_DatabaseMetaData_ownDeletesAreVisible);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "ownInsertsAreVisible", _wrap_DatabaseMetaData_ownInsertsAreVisible);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "ownUpdatesAreVisible", _wrap_DatabaseMetaData_ownUpdatesAreVisible);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "storesLowerCaseIdentifiers", _wrap_DatabaseMetaData_storesLowerCaseIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "storesLowerCaseQuotedIdentifiers", _wrap_DatabaseMetaData_storesLowerCaseQuotedIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "storesMixedCaseIdentifiers", _wrap_DatabaseMetaData_storesMixedCaseIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "storesMixedCaseQuotedIdentifiers", _wrap_DatabaseMetaData_storesMixedCaseQuotedIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "storesUpperCaseIdentifiers", _wrap_DatabaseMetaData_storesUpperCaseIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "storesUpperCaseQuotedIdentifiers", _wrap_DatabaseMetaData_storesUpperCaseQuotedIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsAlterTableWithAddColumn", _wrap_DatabaseMetaData_supportsAlterTableWithAddColumn);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsAlterTableWithDropColumn", _wrap_DatabaseMetaData_supportsAlterTableWithDropColumn);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsANSI92EntryLevelSQL", _wrap_DatabaseMetaData_supportsANSI92EntryLevelSQL);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsANSI92FullSQL", _wrap_DatabaseMetaData_supportsANSI92FullSQL);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsANSI92IntermediateSQL", _wrap_DatabaseMetaData_supportsANSI92IntermediateSQL);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsBatchUpdates", _wrap_DatabaseMetaData_supportsBatchUpdates);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsCatalogsInDataManipulation", _wrap_DatabaseMetaData_supportsCatalogsInDataManipulation);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsCatalogsInIndexDefinitions", _wrap_DatabaseMetaData_supportsCatalogsInIndexDefinitions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsCatalogsInPrivilegeDefinitions", _wrap_DatabaseMetaData_supportsCatalogsInPrivilegeDefinitions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsCatalogsInProcedureCalls", _wrap_DatabaseMetaData_supportsCatalogsInProcedureCalls);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsCatalogsInTableDefinitions", _wrap_DatabaseMetaData_supportsCatalogsInTableDefinitions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsColumnAliasing", _wrap_DatabaseMetaData_supportsColumnAliasing);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsConvert", _wrap_DatabaseMetaData__wrap_DatabaseMetaData_supportsConvert);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsCoreSQLGrammar", _wrap_DatabaseMetaData_supportsCoreSQLGrammar);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsCorrelatedSubqueries", _wrap_DatabaseMetaData_supportsCorrelatedSubqueries);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsDataDefinitionAndDataManipulationTransactions", _wrap_DatabaseMetaData_supportsDataDefinitionAndDataManipulationTransactions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsDataManipulationTransactionsOnly", _wrap_DatabaseMetaData_supportsDataManipulationTransactionsOnly);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsDifferentTableCorrelationNames", _wrap_DatabaseMetaData_supportsDifferentTableCorrelationNames);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsExpressionsInOrderBy", _wrap_DatabaseMetaData_supportsExpressionsInOrderBy);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsExtendedSQLGrammar", _wrap_DatabaseMetaData_supportsExtendedSQLGrammar);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsFullOuterJoins", _wrap_DatabaseMetaData_supportsFullOuterJoins);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsGetGeneratedKeys", _wrap_DatabaseMetaData_supportsGetGeneratedKeys);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsGroupBy", _wrap_DatabaseMetaData_supportsGroupBy);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsGroupByBeyondSelect", _wrap_DatabaseMetaData_supportsGroupByBeyondSelect);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsGroupByUnrelated", _wrap_DatabaseMetaData_supportsGroupByUnrelated);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsIntegrityEnhancementFacility", _wrap_DatabaseMetaData_supportsIntegrityEnhancementFacility);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsLikeEscapeClause", _wrap_DatabaseMetaData_supportsLikeEscapeClause);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsLimitedOuterJoins", _wrap_DatabaseMetaData_supportsLimitedOuterJoins);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsMinimumSQLGrammar", _wrap_DatabaseMetaData_supportsMinimumSQLGrammar);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsMixedCaseIdentifiers", _wrap_DatabaseMetaData_supportsMixedCaseIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsMixedCaseQuotedIdentifiers", _wrap_DatabaseMetaData_supportsMixedCaseQuotedIdentifiers);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsMultipleOpenResults", _wrap_DatabaseMetaData_supportsMultipleOpenResults);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsMultipleResultSets", _wrap_DatabaseMetaData_supportsMultipleResultSets);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsMultipleTransactions", _wrap_DatabaseMetaData_supportsMultipleTransactions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsNamedParameters", _wrap_DatabaseMetaData_supportsNamedParameters);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsNonNullableColumns", _wrap_DatabaseMetaData_supportsNonNullableColumns);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsOpenCursorsAcrossCommit", _wrap_DatabaseMetaData_supportsOpenCursorsAcrossCommit);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsOpenCursorsAcrossRollback", _wrap_DatabaseMetaData_supportsOpenCursorsAcrossRollback);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsOpenStatementsAcrossCommit", _wrap_DatabaseMetaData_supportsOpenStatementsAcrossCommit);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsOpenStatementsAcrossRollback", _wrap_DatabaseMetaData_supportsOpenStatementsAcrossRollback);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsOrderByUnrelated", _wrap_DatabaseMetaData_supportsOrderByUnrelated);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsOuterJoins", _wrap_DatabaseMetaData_supportsOuterJoins);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsPositionedDelete", _wrap_DatabaseMetaData_supportsPositionedDelete);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsPositionedUpdate", _wrap_DatabaseMetaData_supportsPositionedUpdate);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsResultSetConcurrency", _wrap_DatabaseMetaData_supportsResultSetConcurrency);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsResultSetHoldability", _wrap_DatabaseMetaData_supportsResultSetHoldability);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsResultSetType", _wrap_DatabaseMetaData_supportsResultSetType);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSavepoints", _wrap_DatabaseMetaData_supportsSavepoints);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSchemasInDataManipulation", _wrap_DatabaseMetaData_supportsSchemasInDataManipulation);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSchemasInIndexDefinitions", _wrap_DatabaseMetaData_supportsSchemasInIndexDefinitions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSchemasInPrivilegeDefinitions", _wrap_DatabaseMetaData_supportsSchemasInPrivilegeDefinitions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSchemasInProcedureCalls", _wrap_DatabaseMetaData_supportsSchemasInProcedureCalls);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSchemasInTableDefinitions", _wrap_DatabaseMetaData_supportsSchemasInTableDefinitions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSelectForUpdate", _wrap_DatabaseMetaData_supportsSelectForUpdate);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsStatementPooling", _wrap_DatabaseMetaData_supportsStatementPooling);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsStoredProcedures", _wrap_DatabaseMetaData_supportsStoredProcedures);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSubqueriesInComparisons", _wrap_DatabaseMetaData_supportsSubqueriesInComparisons);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSubqueriesInExists", _wrap_DatabaseMetaData_supportsSubqueriesInExists);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSubqueriesInIns", _wrap_DatabaseMetaData_supportsSubqueriesInIns);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsSubqueriesInQuantifieds", _wrap_DatabaseMetaData_supportsSubqueriesInQuantifieds);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsTableCorrelationNames", _wrap_DatabaseMetaData_supportsTableCorrelationNames);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsTransactionIsolationLevel", _wrap_DatabaseMetaData_supportsTransactionIsolationLevel);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsTransactions", _wrap_DatabaseMetaData_supportsTransactions);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsTypeConversion", _wrap_DatabaseMetaData_supportsTypeConversion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsUnion", _wrap_DatabaseMetaData_supportsUnion);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "supportsUnionAll", _wrap_DatabaseMetaData_supportsUnionAll);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "updatesAreDetected", _wrap_DatabaseMetaData_updatesAreDetected);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "usesLocalFilePerTable", _wrap_DatabaseMetaData_usesLocalFilePerTable);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "usesLocalFiles", _wrap_DatabaseMetaData_usesLocalFiles);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSchemata", _wrap_DatabaseMetaData__wrap_DatabaseMetaData_getSchemata);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSchemaObjects", _wrap_DatabaseMetaData__wrap_DatabaseMetaData_getSchemaObjects);
+SWIGV8_AddMemberFunction(_exports_DatabaseMetaData_class, "getSchemaObjectTypes", _wrap_DatabaseMetaData_getSchemaObjectTypes);
+SWIGV8_AddStaticVariable(exports_obj, "Hidden", _wrap_mga_Hidden, JS_veto_set_variable);
 SWIGV8_AddStaticVariable(exports_obj, "Normal", _wrap_mga_Normal, JS_veto_set_variable);
 SWIGV8_AddStaticVariable(exports_obj, "Maximized", _wrap_mga_Maximized, JS_veto_set_variable);
 SWIGV8_AddStaticVariable(exports_obj, "HideOthers", _wrap_mga_HideOthers, JS_veto_set_variable);
@@ -14730,7 +26104,7 @@ SWIGV8_AddStaticVariable(exports_obj, "keyCodeMap", _wrap_keyCodeMap_get, _wrap_
       static_cast<SWIGV8_ClientData *>(SWIGTYPE_p_mga__SerializableObject->clientdata)->class_templ)
     );
 #endif
-
+  
 #ifdef SWIGRUNTIME_DEBUG
   printf("Inheritance successful _exports_Point _mga__SerializableObject\n");
 #endif
@@ -14750,7 +26124,7 @@ if (SWIGTYPE_p_mga__SerializableObject->clientdata && !(static_cast<SWIGV8_Clien
       static_cast<SWIGV8_ClientData *>(SWIGTYPE_p_mga__SerializableObject->clientdata)->class_templ)
     );
 #endif
-
+  
 #ifdef SWIGRUNTIME_DEBUG
   printf("Inheritance successful _exports_Size _mga__SerializableObject\n");
 #endif
@@ -14770,7 +26144,7 @@ if (SWIGTYPE_p_mga__SerializableObject->clientdata && !(static_cast<SWIGV8_Clien
       static_cast<SWIGV8_ClientData *>(SWIGTYPE_p_mga__SerializableObject->clientdata)->class_templ)
     );
 #endif
-
+  
 #ifdef SWIGRUNTIME_DEBUG
   printf("Inheritance successful _exports_Rectangle _mga__SerializableObject\n");
 #endif
@@ -14790,7 +26164,7 @@ if (SWIGTYPE_p_mga__SerializableObject->clientdata && !(static_cast<SWIGV8_Clien
       static_cast<SWIGV8_ClientData *>(SWIGTYPE_p_mga__SerializableObject->clientdata)->class_templ)
     );
 #endif
-
+  
 #ifdef SWIGRUNTIME_DEBUG
   printf("Inheritance successful _exports_TextRange _mga__SerializableObject\n");
 #endif
@@ -14802,7 +26176,25 @@ if (SWIGTYPE_p_mga__SerializableObject->clientdata && !(static_cast<SWIGV8_Clien
 
 
   /* class instances */
-  /* Class: Utilities (_exports_Utilities) */
+  /* Class: Savepoint (_exports_Savepoint) */
+v8::Handle<v8::FunctionTemplate> _exports_Savepoint_class_0 = SWIGV8_CreateClassTemplate("Savepoint");
+_exports_Savepoint_class_0->SetCallHandler(_wrap_new_veto_Savepoint);
+_exports_Savepoint_class_0->Inherit(_exports_Savepoint_class);
+_exports_Savepoint_class_0->SetHiddenPrototype(true);
+v8::Handle<v8::Object> _exports_Savepoint_obj = _exports_Savepoint_class_0->GetFunction();
+/* Class: Statement (_exports_Statement) */
+v8::Handle<v8::FunctionTemplate> _exports_Statement_class_0 = SWIGV8_CreateClassTemplate("Statement");
+_exports_Statement_class_0->SetCallHandler(_wrap_new_veto_Statement);
+_exports_Statement_class_0->Inherit(_exports_Statement_class);
+_exports_Statement_class_0->SetHiddenPrototype(true);
+v8::Handle<v8::Object> _exports_Statement_obj = _exports_Statement_class_0->GetFunction();
+/* Class: DatabaseMetaData (_exports_DatabaseMetaData) */
+v8::Handle<v8::FunctionTemplate> _exports_DatabaseMetaData_class_0 = SWIGV8_CreateClassTemplate("DatabaseMetaData");
+_exports_DatabaseMetaData_class_0->SetCallHandler(_wrap_new_veto_DatabaseMetaData);
+_exports_DatabaseMetaData_class_0->Inherit(_exports_DatabaseMetaData_class);
+_exports_DatabaseMetaData_class_0->SetHiddenPrototype(true);
+v8::Handle<v8::Object> _exports_DatabaseMetaData_obj = _exports_DatabaseMetaData_class_0->GetFunction();
+/* Class: Utilities (_exports_Utilities) */
 v8::Handle<v8::FunctionTemplate> _exports_Utilities_class_0 = SWIGV8_CreateClassTemplate("Utilities");
 _exports_Utilities_class_0->SetCallHandler(_wrap_new_Utilities);
 _exports_Utilities_class_0->Inherit(_exports_Utilities_class);
@@ -14865,7 +26257,55 @@ v8::Handle<v8::Object> _exports_Accessible_obj = _exports_Accessible_class_0->Ge
 
 
   /* add static class functions and variables */
-  SWIGV8_AddStaticFunction(_exports_Utilities_obj, "formatTime", _wrap_Utilities_formatTime);
+  SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "attributeNoNulls", _wrap_sql_DatabaseMetaData_attributeNoNulls, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "attributeNullable", _wrap_sql_DatabaseMetaData_attributeNullable, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "attributeNullableUnknown", _wrap_sql_DatabaseMetaData_attributeNullableUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "bestRowTemporary", _wrap_sql_DatabaseMetaData_bestRowTemporary, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "bestRowTransaction", _wrap_sql_DatabaseMetaData_bestRowTransaction, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "bestRowSession", _wrap_sql_DatabaseMetaData_bestRowSession, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "bestRowUnknown", _wrap_sql_DatabaseMetaData_bestRowUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "bestRowNotPseudo", _wrap_sql_DatabaseMetaData_bestRowNotPseudo, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "bestRowPseudo", _wrap_sql_DatabaseMetaData_bestRowPseudo, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "columnNoNulls", _wrap_sql_DatabaseMetaData_columnNoNulls, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "columnNullable", _wrap_sql_DatabaseMetaData_columnNullable, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "columnNullableUnknown", _wrap_sql_DatabaseMetaData_columnNullableUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeyCascade", _wrap_sql_DatabaseMetaData_importedKeyCascade, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeyInitiallyDeferred", _wrap_sql_DatabaseMetaData_importedKeyInitiallyDeferred, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeyInitiallyImmediate", _wrap_sql_DatabaseMetaData_importedKeyInitiallyImmediate, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeyNoAction", _wrap_sql_DatabaseMetaData_importedKeyNoAction, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeyNotDeferrable", _wrap_sql_DatabaseMetaData_importedKeyNotDeferrable, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeyRestrict", _wrap_sql_DatabaseMetaData_importedKeyRestrict, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeySetDefault", _wrap_sql_DatabaseMetaData_importedKeySetDefault, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "importedKeySetNull", _wrap_sql_DatabaseMetaData_importedKeySetNull, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureColumnIn", _wrap_sql_DatabaseMetaData_procedureColumnIn, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureColumnInOut", _wrap_sql_DatabaseMetaData_procedureColumnInOut, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureColumnOut", _wrap_sql_DatabaseMetaData_procedureColumnOut, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureColumnResult", _wrap_sql_DatabaseMetaData_procedureColumnResult, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureColumnReturn", _wrap_sql_DatabaseMetaData_procedureColumnReturn, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureColumnUnknown", _wrap_sql_DatabaseMetaData_procedureColumnUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureNoNulls", _wrap_sql_DatabaseMetaData_procedureNoNulls, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureNoResult", _wrap_sql_DatabaseMetaData_procedureNoResult, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureNullable", _wrap_sql_DatabaseMetaData_procedureNullable, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureNullableUnknown", _wrap_sql_DatabaseMetaData_procedureNullableUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureResultUnknown", _wrap_sql_DatabaseMetaData_procedureResultUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "procedureReturnsResult", _wrap_sql_DatabaseMetaData_procedureReturnsResult, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "sqlStateSQL99", _wrap_sql_DatabaseMetaData_sqlStateSQL99, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "sqlStateXOpen", _wrap_sql_DatabaseMetaData_sqlStateXOpen, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "tableIndexClustered", _wrap_sql_DatabaseMetaData_tableIndexClustered, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "tableIndexHashed", _wrap_sql_DatabaseMetaData_tableIndexHashed, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "tableIndexOther", _wrap_sql_DatabaseMetaData_tableIndexOther, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "tableIndexStatistic", _wrap_sql_DatabaseMetaData_tableIndexStatistic, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "versionColumnUnknown", _wrap_sql_DatabaseMetaData_versionColumnUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "versionColumnNotPseudo", _wrap_sql_DatabaseMetaData_versionColumnNotPseudo, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "versionColumnPseudo", _wrap_sql_DatabaseMetaData_versionColumnPseudo, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "typeNoNulls", _wrap_sql_DatabaseMetaData_typeNoNulls, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "typeNullable", _wrap_sql_DatabaseMetaData_typeNullable, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "typeNullableUnknown", _wrap_sql_DatabaseMetaData_typeNullableUnknown, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "typePredNone", _wrap_sql_DatabaseMetaData_typePredNone, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "typePredChar", _wrap_sql_DatabaseMetaData_typePredChar, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "typePredBasic", _wrap_sql_DatabaseMetaData_typePredBasic, JS_veto_set_variable);
+SWIGV8_AddStaticVariable(_exports_DatabaseMetaData_obj, "typeSearchable", _wrap_sql_DatabaseMetaData_typeSearchable, JS_veto_set_variable);
+SWIGV8_AddStaticFunction(_exports_Utilities_obj, "formatTime", _wrap_Utilities_formatTime);
 SWIGV8_AddStaticFunction(_exports_Utilities_obj, "toLower", _wrap_Utilities_toLower);
 SWIGV8_AddStaticFunction(_exports_Utilities_obj, "hasPrefix", _wrap_Utilities_hasPrefix);
 SWIGV8_AddStaticFunction(_exports_Utilities_obj, "hasSuffix", _wrap_Utilities_hasSuffix);
@@ -14905,7 +26345,10 @@ SWIGV8_AddStaticFunction(exports_obj, "modifierToFlags", _wrap_modifierToFlags);
 
 
   /* register classes */
-  exports_obj->Set(SWIGV8_SYMBOL_NEW("Utilities"), _exports_Utilities_obj);
+  exports_obj->Set(SWIGV8_SYMBOL_NEW("Savepoint"), _exports_Savepoint_obj);
+exports_obj->Set(SWIGV8_SYMBOL_NEW("Statement"), _exports_Statement_obj);
+exports_obj->Set(SWIGV8_SYMBOL_NEW("DatabaseMetaData"), _exports_DatabaseMetaData_obj);
+exports_obj->Set(SWIGV8_SYMBOL_NEW("Utilities"), _exports_Utilities_obj);
 exports_obj->Set(SWIGV8_SYMBOL_NEW("SerializableObject"), _exports_SerializableObject_obj);
 exports_obj->Set(SWIGV8_SYMBOL_NEW("Point"), _exports_Point_obj);
 exports_obj->Set(SWIGV8_SYMBOL_NEW("Size"), _exports_Size_obj);
@@ -14918,7 +26361,7 @@ exports_obj->Set(SWIGV8_SYMBOL_NEW("Accessible"), _exports_Accessible_obj);
 
 
   /* create and register namespace objects */
-
+  
 }
 
 #if defined(BUILDING_NODE_EXTENSION)
