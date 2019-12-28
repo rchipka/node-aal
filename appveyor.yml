@@ -12,6 +12,8 @@ environment:
     - nodejs_version: 8
     - nodejs_version: 9
     - nodejs_version: 10
+    - nodejs_version: 11
+    # - nodejs_version: 12
 
 platform:
   # - x86
@@ -28,7 +30,7 @@ init:
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
   - npm --version
-  - npm config set msvs_version 2015
+  # - npm config set msvs_version 2015
   - npm config set python C:\Python27\python.exe
   - npm install -g npm@%npm_version%
   - npm --version
@@ -41,7 +43,7 @@ install:
   - npm config set registry http://registry.npmjs.org/
 
 build_script:
-  - npm install --msvs_version=2015
+  - npm install # --msvs_version=2015
 
 # test_script:
   # - node --expose-gc node_modules/nodeunit/bin/nodeunit test
