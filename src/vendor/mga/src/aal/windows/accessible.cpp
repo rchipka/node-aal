@@ -29,7 +29,7 @@
 
 using namespace aal;
 
-void init() {
+void Accessible::init() {
   AccessibleWr::init();
 }
 
