@@ -41,8 +41,8 @@ install:
 build_script:
   - npm install --msvs_version=2015
 
-test_script:
-  - node --expose-gc node_modules/nodeunit/bin/nodeunit test
+# test_script:
+  # - node --expose-gc node_modules/nodeunit/bin/nodeunit test
 
 after_test:
   - node-pre-gyp package 2>&1
