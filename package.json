@@ -1,7 +1,7 @@
 {
   "name": "node-aal",
   "main": "index.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "binary": {
     "module_name": "mga-aal",
     "module_path": "./build/Release/",
