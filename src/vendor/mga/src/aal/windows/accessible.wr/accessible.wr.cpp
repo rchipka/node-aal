@@ -28,7 +28,7 @@ using namespace aal;
 namespace SWA = System::Windows::Automation;
 
 #using <mscorlib.dll>
-#using "bin/x64/Release/aal.dll"
+#using "../../../../bin/x64/Release/aal.dll"
 #include <gcroot.h>
 
 using namespace System::Runtime::InteropServices;
