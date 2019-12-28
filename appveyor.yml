@@ -26,7 +26,7 @@ artifacts:
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
   - npm --version
-  - npm config set msvs_version 2017
+  - npm config set msvs_version 2015
   - npm config set python C:\Python27\python.exe
   - npm install -g npm@%npm_version%
   - npm --version
@@ -39,7 +39,7 @@ install:
   - npm config set registry http://registry.npmjs.org/
 
 build_script:
-  - npm install --msvs_version=2017
+  - npm install --msvs_version=2015
 
 test_script:
   - node --expose-gc node_modules/nodeunit/bin/nodeunit test
