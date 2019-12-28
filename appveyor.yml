@@ -17,7 +17,7 @@ platform:
   - x86
   - x64
 
-image: Visual Studio 2015
+image: Visual Studio 2017
 
 artifacts:
   - path: build\**\*.tar.gz
