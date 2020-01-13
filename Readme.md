@@ -10,9 +10,9 @@ which is used for the [MySQL Workbench](https://github.com/mysql/mysql-workbench
 
 # Support
 
- * Linux (x64) / Node v4 - v11
- * Windows (x64) / Node v4 - v11
- * macOS (x64) / Node v6 - v11
+ * Linux / Node v4 - v11
+ * Windows / Node v4 - v11
+ * macOS / Node v6 - v11
 
 ### Node v12
 
