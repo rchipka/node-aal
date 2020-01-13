@@ -228,7 +228,7 @@ module.exports = {
   };
   ```
   
-## Accessible
+## Accessible Node
 
 ```c++
 
@@ -375,7 +375,7 @@ void saveImage(std::string& path)
 static void handleUnsupportedError(AXError error, std::string& attribute)
 ```
   
-## Roles
+## Accessible Node Roles
 ```c++
 enum class Role {
     Unknown = 0,
